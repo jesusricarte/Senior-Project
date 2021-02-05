@@ -8,6 +8,7 @@
 #include "cave_splash_data.c"
 #include "cave_splash_map.c"
 #include <string.h>
+#include <rand.h>
 
 char triv[20][200];
 int ans[20]={1,0,0,1,1,0,1,1,0,1,1,1,1,0,1};
@@ -23,9 +24,13 @@ void chblankscreenOFF();
 void charfiller(int);
 void question(int);
 int takeInput(int);
-
+void shuffle();
+unsigned int seed;
+int j,temp;
+int randomseq[15];
 int check(int,int);
 int choice;
+int score =0;
 UINT8 player[2],i,a;
 
 
@@ -43,58 +48,64 @@ void main() {
 	
 	while(1) {
 		restart(); 
+		//chblankscreenON();
+		while(!joypad()){seed++;if(seed>=100)seed=1;}
+		waitpadup(J_START);
+		//chblankscreenOFF();
+		shuffle();
 		//question(str);
    	 	//printf("\n%s",triv[0]);
 		//charfiller(16);
-		//chblankscreenON();
-		question(0);
-		if (takeInput(0)==1){
-			question(1);
-			if (takeInput(1)==1){
-				question(2);
-				if (takeInput(2)==1){
-					question(3);
-					if (takeInput(3)==1){
-						question(4);
-						if (takeInput(4)==1){
-							question(5);
-							if (takeInput(5)==1){
-								printf("Correct");
+		
+		question(randomseq[0]);
+		if (takeInput(randomseq[0])==1){
+			score++;
+			question(randomseq[1]);
+			if (takeInput(randomseq[1])==1){score++;
+				question(randomseq[2]);
+				if (takeInput(randomseq[2])==1){score++;
+					question(randomseq[3]);
+					if (takeInput(randomseq[3])==1){score++;
+						question(randomseq[4]);
+						if (takeInput(randomseq[4])==1){score++;
+							question(randomseq[5]);
+							if (takeInput(randomseq[5])==1){score++;
+								//printf("Correct");
 							
-								question(6);
-								if (takeInput(6)==1){
-									printf("Correct");
+								question(randomseq[6]);
+								if (takeInput(randomseq[6])==1){score++;
+									//printf("Correct");
 								
-									question(7);
-									if (takeInput(7)==1){
-										printf("Correct");
+									question(randomseq[7]);
+									if (takeInput(randomseq[7])==1){score++;
+										//printf("Correct");
 									
-										question(8);
-										if (takeInput(8)==1){
-											printf("Correct");
+										question(randomseq[8]);
+										if (takeInput(randomseq[8])==1){score++;
+											//printf("Correct");
 										
-											question(9);
-											if (takeInput(9)==1){
-												printf("Correct");
+											question(randomseq[9]);
+											if (takeInput(randomseq[9])==1){score++;
+												//printf("Correct");
 											
-												question(10);
-												if (takeInput(10)==1){
-													printf("Correct");
+												question(randomseq[10]);
+												if (takeInput(randomseq[10])==1){score++;
+													//printf("Correct");
 												
-													question(11);
-													if (takeInput(11)==1){
-														printf("Correct");
+													question(randomseq[11]);
+													if (takeInput(randomseq[11])==1){score++;
+														//printf("Correct");
 													
-														question(12);
-														if (takeInput(12)==1){
-															printf("Correct");
+														question(randomseq[12]);
+														if (takeInput(randomseq[12])==1){score++;
+															//printf("Correct");
 														
-															question(13);
-															if (takeInput(13)==1){
-																printf("Correct");
+															question(randomseq[13]);
+															if (takeInput(randomseq[13])==1){score++;
+																//printf("Correct");
 															
-																question(14);
-																if (takeInput(14)==1){
+																question(randomseq[14]);
+																if (takeInput(randomseq[14])==1){score++;
 																	chblankscreenOFF();		
 
 																	printf("\n      YOU WON!   \n");
@@ -102,74 +113,53 @@ void main() {
 																	printf("     for playing   ");
 																	charfiller(14);
 																	chblankscreenON();
+																	delay(1500);
 																}
-																else{
-																	printf("Wrong");
-																	}
+																
 															}		
-															else{
-																printf("Wrong");
-															}
+															
 														}
-														else{
-															printf("Wrong");
-															}
+														
 													}
-													else{
-														printf("Wrong");
-														}
+													
 												}
-												else{
-													printf("Wrong");
-													}
+												
 											}
-											else{
-												printf("Wrong");
-												}
+											
 										}
-										else{
-											printf("Wrong");
-											}
+										
 									}
-									else{
-										printf("Wrong");
-										}
+									
 								}
-								else{
-									printf("Wrong");
-									}
+								
 							}	
-							else{
-								printf("Wrong");
-								}
+							
 						}	
-						else{
-								printf("Wrong");
-							}
+						
 					}
-					else{
-						printf("Wrong");
-					}
+					
 				}
-				else{
-						printf("Wrong");
-					}
+				
 			}
-			else{
-					printf("Wrong");
-				}
+			
 		}
-		else{
-				printf("Wrong");
-			}
+		
 		
 			//printf("A""for true \n""B""for false"" \n");
 chblankscreenOFF();		
 
-printf("\n      YOU WON!   \n");
-printf("      Thank you   \n");
-printf("     for playing   ");
-charfiller(14);
+printf("\n     GAME ENDED   \n");
+printf("    Press select   \n");
+printf("   to play again   ");
+if(score==15){
+	
+printf("      MAX SCORE     ");
+}
+else{
+	
+printf("       SCORE: %d",score);
+}
+charfiller(13);
 chblankscreenON();
 
 
@@ -205,6 +195,36 @@ chblankscreenON();
 	
 }
 
+void shuffle(){
+		for(i=0;i<15;i++)
+    {
+
+        randomseq[i] =i;
+        //printf("    %d",randomseq[i]);
+        
+    }
+    
+    for(i = 0; i < 15; i++)
+    {
+		initrand(DIV_REG);
+		delay(seed);
+        j = (rand()%13)+1;
+        temp = randomseq[i];
+        randomseq[i]=randomseq[j];
+        randomseq[j] = temp; 
+    }
+	//printf("\n\n");
+    /*for(i =0;i<15;i++){
+		
+    printf("    %d",randomseq[i]);
+    } 
+	for(i =0;i<15;i++){
+		
+    printf("    %s",triv[randomseq[i]]);
+	waitpad(J_START);
+    } */
+}
+
 int takeInput(int index){
 	waitpad(J_A|J_B);
 	if(joypad()==J_A) // If A is pressed
@@ -223,14 +243,15 @@ int takeInput(int index){
 		}
 	if(check(index,choice)==1){
 		chblankscreenOFF();
-		printf("Correct");
+		printf("\nCorrect");
 		charfiller(17);
 		chblankscreenON();
+		
 		return 1;
 	}
 	else{
 		chblankscreenOFF();
-		printf("Wrong");
+		printf("\nWrong");
 		charfiller(17);
 		chblankscreenON();
 		return 0;
@@ -250,28 +271,30 @@ int check(int index,int choice){
 
 
 void getQ(){
-	    	 printf("Press Start to Begin");
-	strcpy(triv[0], "Abraham Lincoln had \nno middle name");
-	strcpy(triv[1], "Germany drinks the \nmost beer in the\n world per person");
-	strcpy(triv[2], "Nemo \nis a puffer fish");
-	strcpy(triv[3], "There was no World \nSeries in 1994");
-	strcpy(triv[4], "Japan has square \nwatermelons");
-	strcpy(triv[5], "Pinocchio was the first animated, full-color Walt Disney feature film");
-	strcpy(triv[6], "Porcupines can float");
-	strcpy(triv[7], "Before becoming queen, Queen Elizabeth was a mechanic");//1
-	strcpy(triv[8], "All the kings in a standard deck of cards have a mustache");//0
-	strcpy(triv[9], "In some states, it’s illegal to eat specific foods while walking backwards");//1
-	strcpy(triv[10], "Mario of Super Mario Bros. was once a carpenter"); //1
-	strcpy(triv[11], "Cows sleep standing up");//1
-	strcpy(triv[12], "Polar bears’ skin is black");//1
-	strcpy(triv[13], "The name of Batman’s butler is Albert");//0
-	strcpy(triv[14], "People in Japan eat Kentucky Fried Chicken for Christmas dinner");//1
+	    	 //printf("Press Start to Begin,Press Start to Begin,Press Start to Begin,Press Start to Begin");
+	strcpy(triv[0], "Abraham Lincoln had\nno middle name");
+	strcpy(triv[1], "Germany drinks the\nmost beer in the\n world per person");
+	strcpy(triv[2], "Nemo\nis a puffer fish");
+	strcpy(triv[3], "There was no World\nSeries in 1994");
+	strcpy(triv[4], "Japan has square\nwatermelons");
+	strcpy(triv[5], "Pinocchio was the\nfirst animated, full\ncolor Walt Disney\nfeature film");
+	strcpy(triv[6], "Porcupines\ncan float");
+	strcpy(triv[7], "Before becoming\nQueen Elizabeth, she\nwas a mechanic");//1
+	strcpy(triv[8], "All the kings in a\nstandard deck of\ncards have a\nmustache");//0
+	strcpy(triv[9], "In some states, it\nis illegal to eat\nspecific foods\nwhile walking\nbackwards");//1
+	strcpy(triv[10], "Mario of\nSuper Mario Bros.\nwas once a\ncarpenter"); //1
+	strcpy(triv[11], "Cows sleep standing\nup");//1
+	strcpy(triv[12], "Polar bears skin\nis black");//1
+	strcpy(triv[13], "The name of Batmans\nbutler is Albert");//0
+	strcpy(triv[14], "People in Japan eat\nKFC for Christmas \ndinner");//1
 }
 
 void question(int index){
 	chblankscreenOFF();
 	printf("\n%s",triv[index]);
-	charfiller(13);
+	charfiller(12);
+	//printf("                    ");
+	printf("           Score: %d",score);
 	chblankscreenON();
 	printf("");
 }
@@ -327,8 +350,8 @@ void restart() {
 		printf("Press Start to Begin");
 		charfiller(1);
 	chblankscreenON();
-		waitpad(J_START);
-	chblankscreenOFF();
+		//waitpad(J_START);
+	//chblankscreenOFF();
 	// Turn on the display
 	//NR52_REG = 0x8F;	// Turn on the sound
 	//NR51_REG = 0x11;	// Enable the sound channels
