@@ -1,0 +1,174 @@
+void main()
+ {
+	int left,right;
+	//left = waitpad(J_LEFT);
+	//right = waitpad(J_RIGHT);
+	
+    int i = 0;
+	int one = 1;
+	int zero = 0;
+	char triv[3][50];
+	
+    
+
+
+
+
+    strcpy(triv[0],"\nWhat's larger? \na. 2  b.19");
+    strcpy(triv[1],"\nWhat's smaller? \na. sqrt100 b. 9.91");
+    strcpy(triv[2],"\nWhat's larger?  \na. -10  b.-14/211");
+    init();
+    splashscreen();
+    HIDE_SPRITES;
+    updateSwitches();            // Make sure the SHOW_SPRITES and SHOW_BKG switches are on each loop
+    wait_vbl_done();            // Wait until VBLANK to avoid corrupting visual memory
+
+         set_bkg_data(0,512,blankScreen);
+         set_bkg_tiles(0,0,20,18,blankScreen);
+         fadein();
+         SHOW_BKG;
+         HIDE_BKG;
+         HIDE_SPRITES;
+         printf("   TRIVIA TUNNEL     \n\n");
+         printf("   try to get out!     \n");
+        
+
+         printf("Question 1: 2+2 = 4?");
+         printf("->""for true \n""<-""for false"" \n");
+
+
+		 
+	left = waitpad(J_LEFT);
+	right = waitpad(J_RIGHT);
+	/*
+	while(1){
+		switch(joypad()){
+			case J_LEFT:
+			printf("LEFTTT");
+			delay(200);
+			break;
+			case J_RIGHT:
+			printf("RIGHTTT");
+			delay(200);
+			break;
+
+
+		}
+	}
+	*/
+/*
+		if (left)
+		{
+			printf("leftttt");
+		
+			break;
+		
+		}
+		else if (right)
+		{
+		printf("righttt");
+		
+		break;
+		} 
+*/
+		//printf("my favorite number is %d", i);
+	
+		
+        while(1){
+         switch(joypad()){
+            case  J_LEFT:
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("GAME OVER!\n");
+				delay(100);
+				reset();
+                delay(100);
+                break;
+            case J_RIGHT: 
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("Correct!!\n\n");
+                
+
+
+                delay(100);
+                
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("Question 2: 1+1 = 2 \n");
+                printf("up ""for true \n""down ""for false"" \n");
+                
+                
+
+                break;
+ 
+                
+                
+
+            case J_DOWN: 
+            printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+            printf("GAME OVER!\n");
+			delay(100);
+			reset();
+            delay(100);
+            break;
+
+            case J_UP: 
+            printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("Correct!!! \n\nYou made it out of \n the cave!\n");
+             printf("                     \n");
+                printf("                     \n");
+                printf("                     \n");
+                printf("Thanks for playing \n our game :)");
+            delay(100);
+            break;
+
+
+                
+         }
+
+
+
+         }
+
+        if(1){
+            printf("TEST");
+        }
+
+            
+            
+
+
+         }
