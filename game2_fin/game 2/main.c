@@ -153,9 +153,7 @@ NR51_REG = 0xFF; //..
 		score=score+1;
 		switch(score)
 		{
-			case 1: 
-			case 2:
-			case 3:
+		
 			case 4:
 				level = 1;
 				break;
@@ -170,9 +168,7 @@ NR51_REG = 0xFF; //..
 
 				
 				break;
-			case 6:
-			case 7:
-			case 8:
+		
 			case 9:
 			level = 2;
 			secondghostspeed = 10;

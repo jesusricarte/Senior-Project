@@ -1,0 +1,163 @@
+; no$gmb format .sym file
+; Generated automagically by ASxxxx linker V01.75 (SDK 3.0.0)
+; Area: .  .ABS.
+00:0000 s__HEADER
+00:0000 .init
+00:0200 s__CODE
+00:034E s__HOME
+00:04FA s__BASE
+00:0757 s__GSINITTAIL
+00:0757 s__LIT
+00:0757 s__GSINIT
+00:0758 s__GSFINAL
+01:4000 s__CODE_2
+01:4000 s__CODE_3
+00:C000 .OAM
+00:C0A0 s__DATA
+00:C0AD s__BSS
+00:C108 s__HEAP
+00:C108 s__BSEG
+00:C108 s__ISEG
+00:C108 s__XSEG
+00:C108 s__OVERLAY
+00:E000 .STACK
+00:FF80 .refresh_OAM
+; Area: _CODE
+00:0200 _main
+00:025E _vblint
+00:0268 _rand
+00:0268 _randw
+00:0293 _set_bkg_palette_entry
+00:02BB _set_sprite_palette_entry
+00:02E3 _cpu_slow
+00:02FE _cpu_fast
+00:0305 _cgb_compatibility
+; Area: _HEADER
+00:01D2 _exit
+; Area: _HOME
+00:034E .set_mode
+00:035E .remove_VBL
+00:0364 .remove_LCD
+00:036A .remove_TIM
+00:0370 .remove_SIO
+00:0376 .remove_JOY
+00:037C .add_VBL
+00:0382 .add_LCD
+00:0388 .add_TIM
+00:038E .add_SIO
+00:0394 .add_JOY
+00:039A .remove_int
+00:03BA .add_int
+00:03D6 .wait_vbl_done
+00:03D6 _wait_vbl_done
+00:03ED _display_off
+00:03ED .display_off
+00:040E .serial_IO
+00:043D _mode
+00:0446 _get_mode
+00:044B _enable_interrupts
+00:044D _disable_interrupts
+00:044F _reset
+00:044F .reset
+00:0455 _set_interrupts
+00:0460 _remove_VBL
+00:046B _remove_LCD
+00:0476 _remove_TIM
+00:0481 _remove_SIO
+00:048C _remove_JOY
+00:0497 _add_VBL
+00:04A2 _add_LCD
+00:04AD _add_TIM
+00:04B8 _add_SIO
+00:04C3 _add_JOY
+00:04CE _clock
+00:04D7 __printTStates
+00:04D8 banked_call
+00:04F1 banked_ret
+; Area: _BASE
+00:04FA _scroll_bkg
+00:0510 _initrand
+00:0512 .initrand
+00:051B .padup
+00:051B _waitpadup
+00:052B .jpad
+00:0558 .wait_pad
+00:055F _joypad
+00:0564 _waitpad
+00:056E _set_bkg_palette
+00:0599 _set_sprite_palette
+00:05C4 .mv_sprite
+00:05D3 _move_sprite
+00:05E0 _set_win_data
+00:05E0 _set_bkg_data
+00:062D _set_sprite_data
+00:065C .set_sprite_tile
+00:0669 _set_sprite_tile
+00:0674 .delay
+00:06AE _delay
+00:06B7 .copy_vram
+00:06C6 _get_data
+00:06C6 _set_data
+00:06D9 _set_bkg_tiles
+00:06ED .set_xy_wtt
+00:06FE .set_xy_btt
+00:070D .set_xy_tt
+00:073E _set_tiles
+; Area: _LIT
+; Area: _GSINIT
+00:0757 gsinit
+; Area: _GSINITTAIL
+; Area: _GSFINAL
+; Area: _DATA
+00:C0A0 _seed
+00:C0A2 _playing
+00:C0A3 _joypad_state
+00:C0A4 _player_x
+00:C0A5 _player_y
+00:C0A6 _badguy_x
+00:C0A7 _badguy_y
+00:C0A8 _badguy_z
+00:C0A9 _badguy_offset
+00:C0AA _player_shot_x
+00:C0AB _player_shot_y
+00:C0AC _player_shot_z
+; Area: _BSS
+00:C0AD __cpu
+00:C0AE .mode
+00:C0AF __io_out
+00:C0B0 __io_in
+00:C0B1 __io_status
+00:C0B2 .vbl_done
+00:C0B3 __current_bank
+00:C0B4 _sys_time
+00:C0B4 .sys_time
+00:C0B6 .int_0x40
+00:C0C6 .int_0x48
+00:C0D6 .int_0x50
+00:C0E6 .int_0x58
+00:C0F6 .int_0x60
+00:C106 .randhi
+00:C107 .randlo
+; Area: _HEAP
+00:C108 _malloc_heap_start
+; Area: _OVERLAY
+; Area: _ISEG
+; Area: _BSEG
+; Area: _XSEG
+; Area: _CODE_2
+01:4000 _update_graphics
+01:4053 _badguy_ai
+01:4153 _update_joypad
+01:41F7 _update_badguy
+01:423F _collision_detection
+01:42DD _do_gameplay
+; Area: _CODE_3
+01:4000 _draw_title_screen
+01:4099 _bg_title_tiledata
+01:4A89 _bg_title_tilemap
+01:4BF1 _BGTile
+01:4C01 _SpriteTiles
+01:4C31 _gamemap
+01:5031 _bgpal
+01:5039 _spritepal
+01:5041 _load_game_tiles

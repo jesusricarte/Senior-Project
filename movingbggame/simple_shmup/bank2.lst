@@ -1,0 +1,1020 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.2.1 Thu Mar 18 22:15:37 2021
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc153000
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _do_gameplay
+                             12 	.globl _collision_detection
+                             13 	.globl _update_badguy
+                             14 	.globl _update_joypad
+                             15 	.globl _update_graphics
+                             16 	.globl _rand
+                             17 	.globl _move_sprite
+                             18 	.globl _scroll_bkg
+                             19 	.globl _disable_interrupts
+                             20 	.globl _enable_interrupts
+                             21 	.globl _joypad
+                             22 	.globl _delay
+                             23 	.globl _player_shot_z
+                             24 	.globl _player_shot_y
+                             25 	.globl _player_shot_x
+                             26 	.globl _badguy_offset
+                             27 	.globl _badguy_z
+                             28 	.globl _badguy_y
+                             29 	.globl _badguy_x
+                             30 	.globl _player_y
+                             31 	.globl _player_x
+                             32 	.globl _joypad_state
+                             33 	.globl _playing
+                             34 	.globl _do_gameplay
+                             35 	.globl _collision_detection
+                             36 	.globl _update_badguy
+                             37 	.globl _update_joypad
+                             38 	.globl _badguy_ai
+                             39 	.globl _update_graphics
+                             40 ;--------------------------------------------------------
+                             41 ; Externals used
+                             42 ;--------------------------------------------------------
+                             43 	.globl __io_out
+                             44 	.globl __io_in
+                             45 	.globl __io_status
+                             46 	.globl _sys_time
+                             47 	.globl __cpu
+                             48 ;--------------------------------------------------------
+                             49 ; special function registers
+                             50 ;--------------------------------------------------------
+                             51 ;--------------------------------------------------------
+                             52 ; special function bits 
+                             53 ;--------------------------------------------------------
+                             54 ;--------------------------------------------------------
+                             55 ; internal ram data
+                             56 ;--------------------------------------------------------
+                             57 	.area _DATA
+   0000                      58 _playing::
+   0000                      59 	.ds 1
+   0001                      60 _joypad_state::
+   0001                      61 	.ds 1
+   0002                      62 _player_x::
+   0002                      63 	.ds 1
+   0003                      64 _player_y::
+   0003                      65 	.ds 1
+   0004                      66 _badguy_x::
+   0004                      67 	.ds 1
+   0005                      68 _badguy_y::
+   0005                      69 	.ds 1
+   0006                      70 _badguy_z::
+   0006                      71 	.ds 1
+   0007                      72 _badguy_offset::
+   0007                      73 	.ds 1
+   0008                      74 _player_shot_x::
+   0008                      75 	.ds 1
+   0009                      76 _player_shot_y::
+   0009                      77 	.ds 1
+   000A                      78 _player_shot_z::
+   000A                      79 	.ds 1
+                             80 ;--------------------------------------------------------
+                             81 ; overlayable items in internal ram 
+                             82 ;--------------------------------------------------------
+                             83 	.area _OVERLAY
+                             84 ;--------------------------------------------------------
+                             85 ; indirectly addressable internal ram data
+                             86 ;--------------------------------------------------------
+                             87 	.area _ISEG
+                             88 ;--------------------------------------------------------
+                             89 ; bit data
+                             90 ;--------------------------------------------------------
+                             91 	.area _BSEG
+                             92 ;--------------------------------------------------------
+                             93 ; external ram data
+                             94 ;--------------------------------------------------------
+                             95 	.area _XSEG
+                             96 ;--------------------------------------------------------
+                             97 ; global & static initialisations
+                             98 ;--------------------------------------------------------
+                             99 	.area _GSINIT
+                            100 	.area _GSFINAL
+                            101 	.area _GSINIT
+                            102 ;--------------------------------------------------------
+                            103 ; Home
+                            104 ;--------------------------------------------------------
+                            105 	.area _HOME
+                            106 	.area _CODE_2
+                            107 ;--------------------------------------------------------
+                            108 ; code
+                            109 ;--------------------------------------------------------
+                            110 	.area _CODE_2
+                            111 ;	bank2.c 48
+                            112 ; genLabel
+                            113 ; genFunction
+                            114 ;	---------------------------------
+                            115 ; Function update_graphics
+                            116 ; ---------------------------------
+   0000                     117 ___update_graphics_start:
+   0000                     118 _update_graphics:
+                            119 	
+                            120 ;	bank2.c 49
+                            121 ; genCall
+   0000 CD 00 00            122 	call	_disable_interrupts
+                            123 ;	bank2.c 51
+                            124 ; genIpush
+   0003 3E 00               125 	ld	a,#0x00
+   0005 F5                  126 	push	af
+   0006 33                  127 	inc	sp
+                            128 ; genIpush
+   0007 3E 01               129 	ld	a,#0x01
+   0009 F5                  130 	push	af
+   000A 33                  131 	inc	sp
+                            132 ; genCall
+   000B CD 00 00            133 	call	_scroll_bkg
+   000E E8 02               134 	lda	sp,2(sp)
+                            135 ;	bank2.c 53
+                            136 ; genIpush
+                            137 ; AOP_HL for _player_y
+   0010 21 03 00            138 	ld	hl,#_player_y + 0
+   0013 7E                  139 	ld	a,(hl)
+   0014 F5                  140 	push	af
+   0015 33                  141 	inc	sp
+                            142 ; genIpush
+                            143 ; AOP_HL for _player_x
+   0016 21 02 00            144 	ld	hl,#_player_x + 0
+   0019 7E                  145 	ld	a,(hl)
+   001A F5                  146 	push	af
+   001B 33                  147 	inc	sp
+                            148 ; genIpush
+   001C 3E 00               149 	ld	a,#0x00
+   001E F5                  150 	push	af
+   001F 33                  151 	inc	sp
+                            152 ; genCall
+   0020 CD 00 00            153 	call	_move_sprite
+   0023 E8 03               154 	lda	sp,3(sp)
+                            155 ;	bank2.c 55
+                            156 ; genIpush
+                            157 ; AOP_HL for _badguy_y
+   0025 21 05 00            158 	ld	hl,#_badguy_y + 0
+   0028 7E                  159 	ld	a,(hl)
+   0029 F5                  160 	push	af
+   002A 33                  161 	inc	sp
+                            162 ; genIpush
+                            163 ; AOP_HL for _badguy_x
+   002B 21 04 00            164 	ld	hl,#_badguy_x + 0
+   002E 7E                  165 	ld	a,(hl)
+   002F F5                  166 	push	af
+   0030 33                  167 	inc	sp
+                            168 ; genIpush
+   0031 3E 01               169 	ld	a,#0x01
+   0033 F5                  170 	push	af
+   0034 33                  171 	inc	sp
+                            172 ; genCall
+   0035 CD 00 00            173 	call	_move_sprite
+   0038 E8 03               174 	lda	sp,3(sp)
+                            175 ;	bank2.c 57
+                            176 ; genIpush
+                            177 ; AOP_HL for _player_shot_y
+   003A 21 09 00            178 	ld	hl,#_player_shot_y + 0
+   003D 7E                  179 	ld	a,(hl)
+   003E F5                  180 	push	af
+   003F 33                  181 	inc	sp
+                            182 ; genIpush
+                            183 ; AOP_HL for _player_shot_x
+   0040 21 08 00            184 	ld	hl,#_player_shot_x + 0
+   0043 7E                  185 	ld	a,(hl)
+   0044 F5                  186 	push	af
+   0045 33                  187 	inc	sp
+                            188 ; genIpush
+   0046 3E 02               189 	ld	a,#0x02
+   0048 F5                  190 	push	af
+   0049 33                  191 	inc	sp
+                            192 ; genCall
+   004A CD 00 00            193 	call	_move_sprite
+   004D E8 03               194 	lda	sp,3(sp)
+                            195 ;	bank2.c 59
+                            196 ; genCall
+   004F CD 00 00            197 	call	_enable_interrupts
+                            198 ; genLabel
+   0052                     199 00101$:
+                            200 ; genEndFunction
+                            201 	
+   0052 C9                  202 	ret
+   0053                     203 ___update_graphics_end:
+   0053                     204 _badguy_ai:
+   0053 20                  205 	.db #0x20
+   0054 20                  206 	.db #0x20
+   0055 21                  207 	.db #0x21
+   0056 22                  208 	.db #0x22
+   0057 23                  209 	.db #0x23
+   0058 23                  210 	.db #0x23
+   0059 24                  211 	.db #0x24
+   005A 25                  212 	.db #0x25
+   005B 26                  213 	.db #0x26
+   005C 26                  214 	.db #0x26
+   005D 27                  215 	.db #0x27
+   005E 28                  216 	.db #0x28
+   005F 29                  217 	.db #0x29
+   0060 29                  218 	.db #0x29
+   0061 2A                  219 	.db #0x2A
+   0062 2B                  220 	.db #0x2B
+   0063 2C                  221 	.db #0x2C
+   0064 2C                  222 	.db #0x2C
+   0065 2D                  223 	.db #0x2D
+   0066 2E                  224 	.db #0x2E
+   0067 2E                  225 	.db #0x2E
+   0068 2F                  226 	.db #0x2F
+   0069 30                  227 	.db #0x30
+   006A 30                  228 	.db #0x30
+   006B 31                  229 	.db #0x31
+   006C 32                  230 	.db #0x32
+   006D 32                  231 	.db #0x32
+   006E 33                  232 	.db #0x33
+   006F 33                  233 	.db #0x33
+   0070 34                  234 	.db #0x34
+   0071 35                  235 	.db #0x35
+   0072 35                  236 	.db #0x35
+   0073 36                  237 	.db #0x36
+   0074 36                  238 	.db #0x36
+   0075 37                  239 	.db #0x37
+   0076 37                  240 	.db #0x37
+   0077 38                  241 	.db #0x38
+   0078 38                  242 	.db #0x38
+   0079 39                  243 	.db #0x39
+   007A 39                  244 	.db #0x39
+   007B 3A                  245 	.db #0x3A
+   007C 3A                  246 	.db #0x3A
+   007D 3A                  247 	.db #0x3A
+   007E 3B                  248 	.db #0x3B
+   007F 3B                  249 	.db #0x3B
+   0080 3C                  250 	.db #0x3C
+   0081 3C                  251 	.db #0x3C
+   0082 3C                  252 	.db #0x3C
+   0083 3D                  253 	.db #0x3D
+   0084 3D                  254 	.db #0x3D
+   0085 3D                  255 	.db #0x3D
+   0086 3D                  256 	.db #0x3D
+   0087 3E                  257 	.db #0x3E
+   0088 3E                  258 	.db #0x3E
+   0089 3E                  259 	.db #0x3E
+   008A 3E                  260 	.db #0x3E
+   008B 3E                  261 	.db #0x3E
+   008C 3F                  262 	.db #0x3F
+   008D 3F                  263 	.db #0x3F
+   008E 3F                  264 	.db #0x3F
+   008F 3F                  265 	.db #0x3F
+   0090 3F                  266 	.db #0x3F
+   0091 3F                  267 	.db #0x3F
+   0092 3F                  268 	.db #0x3F
+   0093 3F                  269 	.db #0x3F
+   0094 3F                  270 	.db #0x3F
+   0095 3F                  271 	.db #0x3F
+   0096 3F                  272 	.db #0x3F
+   0097 3F                  273 	.db #0x3F
+   0098 3F                  274 	.db #0x3F
+   0099 3F                  275 	.db #0x3F
+   009A 3F                  276 	.db #0x3F
+   009B 3E                  277 	.db #0x3E
+   009C 3E                  278 	.db #0x3E
+   009D 3E                  279 	.db #0x3E
+   009E 3E                  280 	.db #0x3E
+   009F 3E                  281 	.db #0x3E
+   00A0 3D                  282 	.db #0x3D
+   00A1 3D                  283 	.db #0x3D
+   00A2 3D                  284 	.db #0x3D
+   00A3 3D                  285 	.db #0x3D
+   00A4 3C                  286 	.db #0x3C
+   00A5 3C                  287 	.db #0x3C
+   00A6 3C                  288 	.db #0x3C
+   00A7 3B                  289 	.db #0x3B
+   00A8 3B                  290 	.db #0x3B
+   00A9 3B                  291 	.db #0x3B
+   00AA 3A                  292 	.db #0x3A
+   00AB 3A                  293 	.db #0x3A
+   00AC 39                  294 	.db #0x39
+   00AD 39                  295 	.db #0x39
+   00AE 38                  296 	.db #0x38
+   00AF 38                  297 	.db #0x38
+   00B0 37                  298 	.db #0x37
+   00B1 37                  299 	.db #0x37
+   00B2 36                  300 	.db #0x36
+   00B3 36                  301 	.db #0x36
+   00B4 35                  302 	.db #0x35
+   00B5 35                  303 	.db #0x35
+   00B6 34                  304 	.db #0x34
+   00B7 34                  305 	.db #0x34
+   00B8 33                  306 	.db #0x33
+   00B9 32                  307 	.db #0x32
+   00BA 32                  308 	.db #0x32
+   00BB 31                  309 	.db #0x31
+   00BC 31                  310 	.db #0x31
+   00BD 30                  311 	.db #0x30
+   00BE 2F                  312 	.db #0x2F
+   00BF 2F                  313 	.db #0x2F
+   00C0 2E                  314 	.db #0x2E
+   00C1 2D                  315 	.db #0x2D
+   00C2 2C                  316 	.db #0x2C
+   00C3 2C                  317 	.db #0x2C
+   00C4 2B                  318 	.db #0x2B
+   00C5 2A                  319 	.db #0x2A
+   00C6 2A                  320 	.db #0x2A
+   00C7 29                  321 	.db #0x29
+   00C8 28                  322 	.db #0x28
+   00C9 27                  323 	.db #0x27
+   00CA 27                  324 	.db #0x27
+   00CB 26                  325 	.db #0x26
+   00CC 25                  326 	.db #0x25
+   00CD 24                  327 	.db #0x24
+   00CE 24                  328 	.db #0x24
+   00CF 23                  329 	.db #0x23
+   00D0 22                  330 	.db #0x22
+   00D1 21                  331 	.db #0x21
+   00D2 21                  332 	.db #0x21
+   00D3 20                  333 	.db #0x20
+   00D4 1F                  334 	.db #0x1F
+   00D5 1E                  335 	.db #0x1E
+   00D6 1D                  336 	.db #0x1D
+   00D7 1D                  337 	.db #0x1D
+   00D8 1C                  338 	.db #0x1C
+   00D9 1B                  339 	.db #0x1B
+   00DA 1A                  340 	.db #0x1A
+   00DB 1A                  341 	.db #0x1A
+   00DC 19                  342 	.db #0x19
+   00DD 18                  343 	.db #0x18
+   00DE 17                  344 	.db #0x17
+   00DF 17                  345 	.db #0x17
+   00E0 16                  346 	.db #0x16
+   00E1 15                  347 	.db #0x15
+   00E2 14                  348 	.db #0x14
+   00E3 14                  349 	.db #0x14
+   00E4 13                  350 	.db #0x13
+   00E5 12                  351 	.db #0x12
+   00E6 12                  352 	.db #0x12
+   00E7 11                  353 	.db #0x11
+   00E8 10                  354 	.db #0x10
+   00E9 10                  355 	.db #0x10
+   00EA 0F                  356 	.db #0x0F
+   00EB 0E                  357 	.db #0x0E
+   00EC 0E                  358 	.db #0x0E
+   00ED 0D                  359 	.db #0x0D
+   00EE 0C                  360 	.db #0x0C
+   00EF 0C                  361 	.db #0x0C
+   00F0 0B                  362 	.db #0x0B
+   00F1 0B                  363 	.db #0x0B
+   00F2 0A                  364 	.db #0x0A
+   00F3 09                  365 	.db #0x09
+   00F4 09                  366 	.db #0x09
+   00F5 08                  367 	.db #0x08
+   00F6 08                  368 	.db #0x08
+   00F7 07                  369 	.db #0x07
+   00F8 07                  370 	.db #0x07
+   00F9 06                  371 	.db #0x06
+   00FA 06                  372 	.db #0x06
+   00FB 06                  373 	.db #0x06
+   00FC 05                  374 	.db #0x05
+   00FD 05                  375 	.db #0x05
+   00FE 04                  376 	.db #0x04
+   00FF 04                  377 	.db #0x04
+   0100 04                  378 	.db #0x04
+   0101 03                  379 	.db #0x03
+   0102 03                  380 	.db #0x03
+   0103 03                  381 	.db #0x03
+   0104 02                  382 	.db #0x02
+   0105 02                  383 	.db #0x02
+   0106 02                  384 	.db #0x02
+   0107 01                  385 	.db #0x01
+   0108 01                  386 	.db #0x01
+   0109 01                  387 	.db #0x01
+   010A 01                  388 	.db #0x01
+   010B 01                  389 	.db #0x01
+   010C 01                  390 	.db #0x01
+   010D 00                  391 	.db #0x00
+   010E 00                  392 	.db #0x00
+   010F 00                  393 	.db #0x00
+   0110 00                  394 	.db #0x00
+   0111 00                  395 	.db #0x00
+   0112 00                  396 	.db #0x00
+   0113 00                  397 	.db #0x00
+   0114 00                  398 	.db #0x00
+   0115 00                  399 	.db #0x00
+   0116 00                  400 	.db #0x00
+   0117 00                  401 	.db #0x00
+   0118 00                  402 	.db #0x00
+   0119 00                  403 	.db #0x00
+   011A 00                  404 	.db #0x00
+   011B 01                  405 	.db #0x01
+   011C 01                  406 	.db #0x01
+   011D 01                  407 	.db #0x01
+   011E 01                  408 	.db #0x01
+   011F 01                  409 	.db #0x01
+   0120 01                  410 	.db #0x01
+   0121 02                  411 	.db #0x02
+   0122 02                  412 	.db #0x02
+   0123 02                  413 	.db #0x02
+   0124 03                  414 	.db #0x03
+   0125 03                  415 	.db #0x03
+   0126 03                  416 	.db #0x03
+   0127 04                  417 	.db #0x04
+   0128 04                  418 	.db #0x04
+   0129 04                  419 	.db #0x04
+   012A 05                  420 	.db #0x05
+   012B 05                  421 	.db #0x05
+   012C 05                  422 	.db #0x05
+   012D 06                  423 	.db #0x06
+   012E 06                  424 	.db #0x06
+   012F 07                  425 	.db #0x07
+   0130 07                  426 	.db #0x07
+   0131 08                  427 	.db #0x08
+   0132 08                  428 	.db #0x08
+   0133 09                  429 	.db #0x09
+   0134 09                  430 	.db #0x09
+   0135 0A                  431 	.db #0x0A
+   0136 0B                  432 	.db #0x0B
+   0137 0B                  433 	.db #0x0B
+   0138 0C                  434 	.db #0x0C
+   0139 0C                  435 	.db #0x0C
+   013A 0D                  436 	.db #0x0D
+   013B 0E                  437 	.db #0x0E
+   013C 0E                  438 	.db #0x0E
+   013D 0F                  439 	.db #0x0F
+   013E 10                  440 	.db #0x10
+   013F 10                  441 	.db #0x10
+   0140 11                  442 	.db #0x11
+   0141 12                  443 	.db #0x12
+   0142 12                  444 	.db #0x12
+   0143 13                  445 	.db #0x13
+   0144 14                  446 	.db #0x14
+   0145 14                  447 	.db #0x14
+   0146 15                  448 	.db #0x15
+   0147 16                  449 	.db #0x16
+   0148 17                  450 	.db #0x17
+   0149 17                  451 	.db #0x17
+   014A 18                  452 	.db #0x18
+   014B 19                  453 	.db #0x19
+   014C 1A                  454 	.db #0x1A
+   014D 1A                  455 	.db #0x1A
+   014E 1B                  456 	.db #0x1B
+   014F 1C                  457 	.db #0x1C
+   0150 1D                  458 	.db #0x1D
+   0151 1D                  459 	.db #0x1D
+   0152 1E                  460 	.db #0x1E
+                            461 ;	bank2.c 62
+                            462 ; genLabel
+                            463 ; genFunction
+                            464 ;	---------------------------------
+                            465 ; Function update_joypad
+                            466 ; ---------------------------------
+   0153                     467 ___update_joypad_start:
+   0153                     468 _update_joypad:
+                            469 	
+                            470 ;	bank2.c 63
+                            471 ; genCall
+   0153 CD 00 00            472 	call	_joypad
+                            473 ; AOP_HL for _joypad_state
+   0156 21 01 00            474 	ld	hl,#_joypad_state + 0
+   0159 73                  475 	ld	(hl),e
+                            476 ;	bank2.c 65
+                            477 ; genAnd
+                            478 ; AOP_HL for _joypad_state
+   015A 7E                  479 	ld	a,(hl)
+   015B CB 4F               480 	bit	1,a
+   015D CA 6B 01            481 	jp	z,00104$
+                            482 ;	bank2.c 66
+                            483 ; genCmpGt
+                            484 ; AOP_HL for _player_x
+   0160 AF                  485 	xor	a,a
+   0161 3E 08               486 	ld	a,#0x08
+   0163 21 02 00            487 	ld	hl,#_player_x + 0
+   0166 9E                  488 	sbc	a,(hl) ; 2
+   0167 D2 6B 01            489 	jp	nc,00104$
+                            490 ;	bank2.c 67
+                            491 ; genMinus
+                            492 ; AOP_HL for _player_x
+   016A 35                  493 	dec	(hl)
+                            494 ; genLabel
+   016B                     495 00104$:
+                            496 ;	bank2.c 69
+                            497 ; genAnd
+                            498 ; AOP_HL for _joypad_state
+   016B 21 01 00            499 	ld	hl,#_joypad_state + 0
+   016E 7E                  500 	ld	a,(hl)
+   016F CB 47               501 	bit	0,a
+   0171 CA 7E 01            502 	jp	z,00108$
+                            503 ;	bank2.c 70
+                            504 ; genCmpLt
+                            505 ; AOP_HL for _player_x
+   0174 21 02 00            506 	ld	hl,#_player_x + 0
+   0177 7E                  507 	ld	a,(hl)
+   0178 FE A0               508 	cp	#0xA0
+   017A D2 7E 01            509 	jp	nc,00108$
+                            510 ;	bank2.c 71
+                            511 ; genPlus
+                            512 ; AOP_HL for _player_x
+                            513 ; genPlusIncr
+   017D 34                  514 	inc	(hl)
+                            515 ; genLabel
+   017E                     516 00108$:
+                            517 ;	bank2.c 73
+                            518 ; genAnd
+                            519 ; AOP_HL for _joypad_state
+   017E 21 01 00            520 	ld	hl,#_joypad_state + 0
+   0181 7E                  521 	ld	a,(hl)
+   0182 CB 57               522 	bit	2,a
+   0184 CA 92 01            523 	jp	z,00112$
+                            524 ;	bank2.c 74
+                            525 ; genCmpGt
+                            526 ; AOP_HL for _player_y
+   0187 AF                  527 	xor	a,a
+   0188 3E 10               528 	ld	a,#0x10
+   018A 21 03 00            529 	ld	hl,#_player_y + 0
+   018D 9E                  530 	sbc	a,(hl) ; 2
+   018E D2 92 01            531 	jp	nc,00112$
+                            532 ;	bank2.c 75
+                            533 ; genMinus
+                            534 ; AOP_HL for _player_y
+   0191 35                  535 	dec	(hl)
+                            536 ; genLabel
+   0192                     537 00112$:
+                            538 ;	bank2.c 77
+                            539 ; genAnd
+                            540 ; AOP_HL for _joypad_state
+   0192 21 01 00            541 	ld	hl,#_joypad_state + 0
+   0195 7E                  542 	ld	a,(hl)
+   0196 CB 5F               543 	bit	3,a
+   0198 CA A5 01            544 	jp	z,00116$
+                            545 ;	bank2.c 78
+                            546 ; genCmpLt
+                            547 ; AOP_HL for _player_y
+   019B 21 03 00            548 	ld	hl,#_player_y + 0
+   019E 7E                  549 	ld	a,(hl)
+   019F FE 98               550 	cp	#0x98
+   01A1 D2 A5 01            551 	jp	nc,00116$
+                            552 ;	bank2.c 79
+                            553 ; genPlus
+                            554 ; AOP_HL for _player_y
+                            555 ; genPlusIncr
+   01A4 34                  556 	inc	(hl)
+                            557 ; genLabel
+   01A5                     558 00116$:
+                            559 ;	bank2.c 82
+                            560 ; genAnd
+                            561 ; AOP_HL for _joypad_state
+   01A5 21 01 00            562 	ld	hl,#_joypad_state + 0
+   01A8 7E                  563 	ld	a,(hl)
+   01A9 CB 67               564 	bit	4,a
+   01AB CA D0 01            565 	jp	z,00120$
+                            566 ;	bank2.c 83
+                            567 ; genCmpEq
+                            568 ; AOP_HL for _player_shot_z
+   01AE 21 0A 00            569 	ld	hl,#_player_shot_z + 0
+   01B1 7E                  570 	ld	a,(hl)
+   01B2 B7                  571 	or	a,a
+   01B3 C2 B8 01            572 	jp	nz,00139$
+   01B6 18 03               573 	jr	00140$
+   01B8                     574 00139$:
+   01B8 C3 D0 01            575 	jp	00120$
+   01BB                     576 00140$:
+                            577 ;	bank2.c 84
+                            578 ; genAssign
+                            579 ; AOP_HL for _player_shot_z
+   01BB 21 0A 00            580 	ld	hl,#_player_shot_z + 0
+   01BE 36 01               581 	ld	(hl),#0x01
+                            582 ;	bank2.c 85
+                            583 ; genAssign
+                            584 ; AOP_HL for _player_x
+                            585 ; AOP_HL for _player_shot_x
+   01C0 21 02 00            586 	ld	hl,#_player_x + 0
+   01C3 7E                  587 	ld	a,(hl)
+   01C4 21 08 00            588 	ld	hl,#_player_shot_x + 0
+   01C7 77                  589 	ld	(hl),a
+                            590 ;	bank2.c 86
+                            591 ; genAssign
+                            592 ; AOP_HL for _player_y
+                            593 ; AOP_HL for _player_shot_y
+   01C8 21 03 00            594 	ld	hl,#_player_y + 0
+   01CB 7E                  595 	ld	a,(hl)
+   01CC 21 09 00            596 	ld	hl,#_player_shot_y + 0
+   01CF 77                  597 	ld	(hl),a
+                            598 ; genLabel
+   01D0                     599 00120$:
+                            600 ;	bank2.c 89
+                            601 ; genCmpEq
+                            602 ; AOP_HL for _player_shot_z
+   01D0 21 0A 00            603 	ld	hl,#_player_shot_z + 0
+   01D3 7E                  604 	ld	a,(hl) ; 2
+   01D4 FE 01               605 	cp	a,#0x01
+   01D6 C2 DB 01            606 	jp	nz,00141$
+   01D9 18 03               607 	jr	00142$
+   01DB                     608 00141$:
+   01DB C3 F6 01            609 	jp	00125$
+   01DE                     610 00142$:
+                            611 ;	bank2.c 90
+                            612 ; genPlus
+                            613 ; AOP_HL for _player_shot_x
+                            614 ; genPlusIncr
+   01DE 21 08 00            615 	ld	hl,#_player_shot_x + 0
+   01E1 34                  616 	inc	(hl)
+   01E2 34                  617 	inc	(hl)
+                            618 ;	bank2.c 91
+                            619 ; genCmpGt
+                            620 ; AOP_HL for _player_shot_x
+   01E3 AF                  621 	xor	a,a
+   01E4 3E F0               622 	ld	a,#0xF0
+   01E6 9E                  623 	sbc	a,(hl) ; 2
+   01E7 D2 F6 01            624 	jp	nc,00125$
+                            625 ;	bank2.c 92
+                            626 ; genAssign
+                            627 ; AOP_HL for _player_shot_x
+   01EA 36 FA               628 	ld	(hl),#0xFA
+                            629 ;	bank2.c 93
+                            630 ; genAssign
+                            631 ; AOP_HL for _player_shot_y
+   01EC 21 09 00            632 	ld	hl,#_player_shot_y + 0
+   01EF 36 FA               633 	ld	(hl),#0xFA
+                            634 ;	bank2.c 94
+                            635 ; genAssign
+                            636 ; AOP_HL for _player_shot_z
+   01F1 21 0A 00            637 	ld	hl,#_player_shot_z + 0
+   01F4 36 00               638 	ld	(hl),#0x00
+                            639 ; genLabel
+   01F6                     640 00125$:
+                            641 ; genEndFunction
+                            642 	
+   01F6 C9                  643 	ret
+   01F7                     644 ___update_joypad_end:
+                            645 ;	bank2.c 99
+                            646 ; genLabel
+                            647 ; genFunction
+                            648 ;	---------------------------------
+                            649 ; Function update_badguy
+                            650 ; ---------------------------------
+   01F7                     651 ___update_badguy_start:
+   01F7                     652 _update_badguy:
+   01F7 C5                  653 	push	bc
+                            654 	
+                            655 ;	bank2.c 100
+                            656 ; genMinus
+                            657 ; AOP_HL for _badguy_x
+   01F8 21 04 00            658 	ld	hl,#_badguy_x + 0
+   01FB 35                  659 	dec	(hl)
+                            660 ;	bank2.c 101
+                            661 ; genCmpGt
+                            662 ; AOP_HL for _badguy_x
+   01FC AF                  663 	xor	a,a
+   01FD 3E F0               664 	ld	a,#0xF0
+   01FF 9E                  665 	sbc	a,(hl) ; 2
+   0200 D2 23 02            666 	jp	nc,00105$
+                            667 ;	bank2.c 102
+                            668 ; genCall
+   0203 CD 00 00            669 	call	_rand
+                            670 ; AOP_HL for _badguy_offset
+   0206 21 07 00            671 	ld	hl,#_badguy_offset + 0
+   0209 73                  672 	ld	(hl),e
+                            673 ;	bank2.c 103
+                            674 ; genLabel
+   020A                     675 00101$:
+                            676 ; genCmpGt
+                            677 ; AOP_HL for _badguy_offset
+   020A AF                  678 	xor	a,a
+   020B 3E 86               679 	ld	a,#0x86
+   020D 21 07 00            680 	ld	hl,#_badguy_offset + 0
+   0210 9E                  681 	sbc	a,(hl) ; 2
+   0211 D2 1E 02            682 	jp	nc,00103$
+                            683 ;	bank2.c 104
+                            684 ; genCall
+   0214 CD 00 00            685 	call	_rand
+                            686 ; AOP_HL for _badguy_offset
+   0217 21 07 00            687 	ld	hl,#_badguy_offset + 0
+   021A 73                  688 	ld	(hl),e
+                            689 ; genGoto
+   021B C3 0A 02            690 	jp	00101$
+                            691 ; genLabel
+   021E                     692 00103$:
+                            693 ;	bank2.c 107
+                            694 ; genAssign
+                            695 ; AOP_HL for _badguy_x
+   021E 21 04 00            696 	ld	hl,#_badguy_x + 0
+   0221 36 EF               697 	ld	(hl),#0xEF
+                            698 ; genLabel
+   0223                     699 00105$:
+                            700 ;	bank2.c 110
+                            701 ; genAssign
+                            702 ; AOP_HL for _badguy_z
+   0223 21 06 00            703 	ld	hl,#_badguy_z + 0
+   0226 4E                  704 	ld	c,(hl)
+                            705 ; genPlus
+                            706 ;	genPlusIncr failed
+   0227 3E 53               707 	ld	a,#<_badguy_ai
+   0229 81                  708 	add	a,c
+   022A 5F                  709 	ld	e,a
+   022B 3E 00               710 	ld	a,#>_badguy_ai
+   022D CE 00               711 	adc	a,#0x00
+   022F 57                  712 	ld	d,a
+                            713 ; genPointerGet
+   0230 1A                  714 	ld	a,(de)
+                            715 ; genPlus
+                            716 ; AOP_HL for _badguy_offset
+                            717 ; AOP_HL for _badguy_y
+                            718 ;	genPlusIncr failed
+   0231 21 07 00            719 	ld	hl,#_badguy_offset + 0
+   0234 86                  720 	add	a,(hl)
+   0235 21 05 00            721 	ld	hl,#_badguy_y + 0
+   0238 77                  722 	ld	(hl),a
+                            723 ;	bank2.c 112
+                            724 ; genPlus
+                            725 ; AOP_HL for _badguy_z
+                            726 ; genPlusIncr
+   0239 21 06 00            727 	ld	hl,#_badguy_z + 0
+   023C 34                  728 	inc	(hl)
+                            729 ; genLabel
+   023D                     730 00106$:
+                            731 ; genEndFunction
+                            732 	
+   023D C1                  733 	pop	bc
+   023E C9                  734 	ret
+   023F                     735 ___update_badguy_end:
+                            736 ;	bank2.c 116
+                            737 ; genLabel
+                            738 ; genFunction
+                            739 ;	---------------------------------
+                            740 ; Function collision_detection
+                            741 ; ---------------------------------
+   023F                     742 ___collision_detection_start:
+   023F                     743 _collision_detection:
+   023F C5                  744 	push	bc
+                            745 	
+                            746 ;	bank2.c 117
+                            747 ; genMinus
+                            748 ; AOP_HL for _badguy_y
+   0240 21 05 00            749 	ld	hl,#_badguy_y + 0
+   0243 7E                  750 	ld	a,(hl)
+   0244 C6 FC               751 	add	a,#0xFC
+   0246 4F                  752 	ld	c,a
+                            753 ; genCmpGt
+                            754 ; AOP_HL for _player_shot_y
+   0247 AF                  755 	xor	a,a
+   0248 79                  756 	ld	a,c
+   0249 21 09 00            757 	ld	hl,#_player_shot_y + 0
+   024C 9E                  758 	sbc	a,(hl) ; 2
+   024D D2 94 02            759 	jp	nc,00108$
+                            760 ;	bank2.c 118
+                            761 ; genPlus
+                            762 ; AOP_HL for _badguy_y
+                            763 ; genPlusIncr
+                            764 ;	genPlusIncr failed
+   0250 21 05 00            765 	ld	hl,#_badguy_y + 0
+   0253 7E                  766 	ld	a,(hl)
+   0254 C6 04               767 	add	a,#0x04
+   0256 47                  768 	ld	b,a
+                            769 ; genCmpLt
+                            770 ; AOP_HL for _player_shot_y
+   0257 AF                  771 	xor	a,a
+   0258 21 09 00            772 	ld	hl,#_player_shot_y + 0
+   025B 7E                  773 	ld	a,(hl)
+   025C 98                  774 	sbc	a,b ; 2
+   025D D2 94 02            775 	jp	nc,00108$
+                            776 ;	bank2.c 119
+                            777 ; genMinus
+                            778 ; AOP_HL for _badguy_x
+   0260 21 04 00            779 	ld	hl,#_badguy_x + 0
+   0263 7E                  780 	ld	a,(hl)
+   0264 C6 FC               781 	add	a,#0xFC
+   0266 47                  782 	ld	b,a
+                            783 ; genCmpGt
+                            784 ; AOP_HL for _player_shot_x
+   0267 AF                  785 	xor	a,a
+   0268 78                  786 	ld	a,b
+   0269 21 08 00            787 	ld	hl,#_player_shot_x + 0
+   026C 9E                  788 	sbc	a,(hl) ; 2
+   026D D2 94 02            789 	jp	nc,00108$
+                            790 ;	bank2.c 120
+                            791 ; genPlus
+                            792 ; AOP_HL for _badguy_x
+                            793 ; genPlusIncr
+                            794 ;	genPlusIncr failed
+   0270 21 04 00            795 	ld	hl,#_badguy_x + 0
+   0273 7E                  796 	ld	a,(hl)
+   0274 C6 04               797 	add	a,#0x04
+   0276 47                  798 	ld	b,a
+                            799 ; genCmpLt
+                            800 ; AOP_HL for _player_shot_x
+   0277 AF                  801 	xor	a,a
+   0278 21 08 00            802 	ld	hl,#_player_shot_x + 0
+   027B 7E                  803 	ld	a,(hl)
+   027C 98                  804 	sbc	a,b ; 2
+   027D D2 94 02            805 	jp	nc,00108$
+                            806 ;	bank2.c 121
+                            807 ; genAssign
+                            808 ; AOP_HL for _player_shot_z
+   0280 21 0A 00            809 	ld	hl,#_player_shot_z + 0
+   0283 36 00               810 	ld	(hl),#0x00
+                            811 ;	bank2.c 122
+                            812 ; genAssign
+                            813 ; AOP_HL for _player_shot_x
+   0285 21 08 00            814 	ld	hl,#_player_shot_x + 0
+   0288 36 FA               815 	ld	(hl),#0xFA
+                            816 ;	bank2.c 123
+                            817 ; genAssign
+                            818 ; AOP_HL for _player_shot_y
+   028A 21 09 00            819 	ld	hl,#_player_shot_y + 0
+   028D 36 FA               820 	ld	(hl),#0xFA
+                            821 ;	bank2.c 124
+                            822 ; genAssign
+                            823 ; AOP_HL for _badguy_x
+   028F 21 04 00            824 	ld	hl,#_badguy_x + 0
+   0292 36 FF               825 	ld	(hl),#0xFF
+                            826 ; genLabel
+   0294                     827 00108$:
+                            828 ;	bank2.c 130
+                            829 ; genCmpGt
+                            830 ; AOP_HL for _player_y
+   0294 AF                  831 	xor	a,a
+   0295 79                  832 	ld	a,c
+   0296 21 03 00            833 	ld	hl,#_player_y + 0
+   0299 9E                  834 	sbc	a,(hl) ; 2
+   029A D2 DB 02            835 	jp	nc,00117$
+                            836 ;	bank2.c 131
+                            837 ; genPlus
+                            838 ; AOP_HL for _badguy_y
+                            839 ; genPlusIncr
+                            840 ;	genPlusIncr failed
+   029D 21 05 00            841 	ld	hl,#_badguy_y + 0
+   02A0 7E                  842 	ld	a,(hl)
+   02A1 C6 04               843 	add	a,#0x04
+   02A3 4F                  844 	ld	c,a
+                            845 ; genCmpLt
+                            846 ; AOP_HL for _player_y
+   02A4 AF                  847 	xor	a,a
+   02A5 21 03 00            848 	ld	hl,#_player_y + 0
+   02A8 7E                  849 	ld	a,(hl)
+   02A9 99                  850 	sbc	a,c ; 2
+   02AA D2 DB 02            851 	jp	nc,00117$
+                            852 ;	bank2.c 132
+                            853 ; genMinus
+                            854 ; AOP_HL for _badguy_x
+   02AD 21 04 00            855 	ld	hl,#_badguy_x + 0
+   02B0 7E                  856 	ld	a,(hl)
+   02B1 C6 FC               857 	add	a,#0xFC
+   02B3 4F                  858 	ld	c,a
+                            859 ; genCmpGt
+                            860 ; AOP_HL for _player_x
+   02B4 AF                  861 	xor	a,a
+   02B5 79                  862 	ld	a,c
+   02B6 21 02 00            863 	ld	hl,#_player_x + 0
+   02B9 9E                  864 	sbc	a,(hl) ; 2
+   02BA D2 DB 02            865 	jp	nc,00117$
+                            866 ;	bank2.c 133
+                            867 ; genPlus
+                            868 ; AOP_HL for _badguy_x
+                            869 ; genPlusIncr
+                            870 ;	genPlusIncr failed
+   02BD 21 04 00            871 	ld	hl,#_badguy_x + 0
+   02C0 7E                  872 	ld	a,(hl)
+   02C1 C6 04               873 	add	a,#0x04
+   02C3 4F                  874 	ld	c,a
+                            875 ; genCmpLt
+                            876 ; AOP_HL for _player_x
+   02C4 AF                  877 	xor	a,a
+   02C5 21 02 00            878 	ld	hl,#_player_x + 0
+   02C8 7E                  879 	ld	a,(hl)
+   02C9 99                  880 	sbc	a,c ; 2
+   02CA D2 DB 02            881 	jp	nc,00117$
+                            882 ;	bank2.c 134
+                            883 ; genAssign
+                            884 ; AOP_HL for _playing
+   02CD 21 00 00            885 	ld	hl,#_playing + 0
+   02D0 36 00               886 	ld	(hl),#0x00
+                            887 ;	bank2.c 135
+                            888 ; genIpush
+   02D2 21 E8 03            889 	ld	hl,#0x03E8
+   02D5 E5                  890 	push	hl
+                            891 ; genCall
+   02D6 CD 00 00            892 	call	_delay
+   02D9 E8 02               893 	lda	sp,2(sp)
+                            894 ; genLabel
+   02DB                     895 00117$:
+                            896 ; genEndFunction
+                            897 	
+   02DB C1                  898 	pop	bc
+   02DC C9                  899 	ret
+   02DD                     900 ___collision_detection_end:
+                            901 ;	bank2.c 142
+                            902 ; genLabel
+                            903 ; genFunction
+                            904 ;	---------------------------------
+                            905 ; Function do_gameplay
+                            906 ; ---------------------------------
+   02DD                     907 ___do_gameplay_start:
+   02DD                     908 _do_gameplay:
+                            909 	
+                            910 ;	bank2.c 143
+                            911 ; genAssign
+                            912 ; AOP_HL for _playing
+   02DD 21 00 00            913 	ld	hl,#_playing + 0
+   02E0 36 01               914 	ld	(hl),#0x01
+                            915 ;	bank2.c 145
+                            916 ; genAssign
+                            917 ; AOP_HL for _player_x
+   02E2 21 02 00            918 	ld	hl,#_player_x + 0
+   02E5 36 50               919 	ld	(hl),#0x50
+                            920 ;	bank2.c 146
+                            921 ; genAssign
+                            922 ; AOP_HL for _player_y
+   02E7 21 03 00            923 	ld	hl,#_player_y + 0
+   02EA 36 48               924 	ld	(hl),#0x48
+                            925 ;	bank2.c 148
+                            926 ; genLabel
+   02EC                     927 00101$:
+                            928 ; genCmpEq
+                            929 ; AOP_HL for _playing
+   02EC 21 00 00            930 	ld	hl,#_playing + 0
+   02EF 7E                  931 	ld	a,(hl) ; 2
+   02F0 FE 01               932 	cp	a,#0x01
+   02F2 C2 F7 02            933 	jp	nz,00108$
+   02F5 18 03               934 	jr	00109$
+   02F7                     935 00108$:
+   02F7 C3 0F 03            936 	jp	00104$
+   02FA                     937 00109$:
+                            938 ;	bank2.c 149
+                            939 ; genCall
+   02FA CD 53 01            940 	call	_update_joypad
+                            941 ;	bank2.c 150
+                            942 ; genCall
+   02FD CD F7 01            943 	call	_update_badguy
+                            944 ;	bank2.c 151
+                            945 ; genCall
+   0300 CD 3F 02            946 	call	_collision_detection
+                            947 ;	bank2.c 152
+                            948 ; genIpush
+   0303 21 0A 00            949 	ld	hl,#0x000A
+   0306 E5                  950 	push	hl
+                            951 ; genCall
+   0307 CD 00 00            952 	call	_delay
+   030A E8 02               953 	lda	sp,2(sp)
+                            954 ; genGoto
+   030C C3 EC 02            955 	jp	00101$
+                            956 ; genLabel
+   030F                     957 00104$:
+                            958 ; genEndFunction
+                            959 	
+   030F C9                  960 	ret
+   0310                     961 ___do_gameplay_end:
+                            962 	.area _CODE_2
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  9 ___collision_detection_end         02DD R
+  9 ___collision_detection_start       023F R
+  9 ___do_gameplay_end                 0310 R
+  9 ___do_gameplay_start               02DD R
+  9 ___update_badguy_end               023F R
+  9 ___update_badguy_start             01F7 R
+  9 ___update_graphics_end             0053 R
+  9 ___update_graphics_start           0000 R
+  9 ___update_joypad_end               01F7 R
+  9 ___update_joypad_start             0153 R
+    __cpu                              **** GX
+    __io_in                            **** GX
+    __io_out                           **** GX
+    __io_status                        **** GX
+  9 _badguy_ai                         0053 GR
+  1 _badguy_offset                     0007 GR
+  1 _badguy_x                          0004 GR
+  1 _badguy_y                          0005 GR
+  1 _badguy_z                          0006 GR
+  9 _collision_detection               023F GR
+    _delay                             **** GX
+    _disable_interrupts                **** GX
+  9 _do_gameplay                       02DD GR
+    _enable_interrupts                 **** GX
+    _joypad                            **** GX
+  1 _joypad_state                      0001 GR
+    _move_sprite                       **** GX
+  1 _player_shot_x                     0008 GR
+  1 _player_shot_y                     0009 GR
+  1 _player_shot_z                     000A GR
+  1 _player_x                          0002 GR
+  1 _player_y                          0003 GR
+  1 _playing                           0000 GR
+    _rand                              **** GX
+    _scroll_bkg                        **** GX
+    _sys_time                          **** GX
+  9 _update_badguy                     01F7 GR
+  9 _update_graphics                   0000 GR
+  9 _update_joypad                     0153 GR
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size    0   flags 0
+   1 _DATA                              size    B   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size    0   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
+   9 _CODE_2                            size  310   flags 0

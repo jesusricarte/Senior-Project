@@ -1,0 +1,243 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.2.1 Thu Mar 18 22:15:37 2021
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc116640
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _load_game_tiles
+                             13 	.globl _draw_title_screen
+                             14 	.globl _do_gameplay
+                             15 	.globl _update_graphics
+                             16 	.globl _vblint
+                             17 	.globl _initrand
+                             18 	.globl _reset
+                             19 	.globl _disable_interrupts
+                             20 	.globl _enable_interrupts
+                             21 	.globl _add_VBL
+                             22 	.globl _seed
+                             23 	.globl _vblint
+                             24 	.globl _main
+                             25 ;--------------------------------------------------------
+                             26 ; Externals used
+                             27 ;--------------------------------------------------------
+                             28 	.globl __io_out
+                             29 	.globl __io_in
+                             30 	.globl __io_status
+                             31 	.globl _sys_time
+                             32 	.globl __cpu
+                             33 ;--------------------------------------------------------
+                             34 ; special function registers
+                             35 ;--------------------------------------------------------
+                             36 ;--------------------------------------------------------
+                             37 ; special function bits 
+                             38 ;--------------------------------------------------------
+                             39 ;--------------------------------------------------------
+                             40 ; internal ram data
+                             41 ;--------------------------------------------------------
+                             42 	.area _DATA
+   0000                      43 _seed::
+   0000                      44 	.ds 2
+                             45 ;--------------------------------------------------------
+                             46 ; overlayable items in internal ram 
+                             47 ;--------------------------------------------------------
+                             48 	.area _OVERLAY
+                             49 ;--------------------------------------------------------
+                             50 ; indirectly addressable internal ram data
+                             51 ;--------------------------------------------------------
+                             52 	.area _ISEG
+                             53 ;--------------------------------------------------------
+                             54 ; bit data
+                             55 ;--------------------------------------------------------
+                             56 	.area _BSEG
+                             57 ;--------------------------------------------------------
+                             58 ; external ram data
+                             59 ;--------------------------------------------------------
+                             60 	.area _XSEG
+                             61 ;--------------------------------------------------------
+                             62 ; global & static initialisations
+                             63 ;--------------------------------------------------------
+                             64 	.area _GSINIT
+                             65 	.area _GSFINAL
+                             66 	.area _GSINIT
+                             67 ;--------------------------------------------------------
+                             68 ; Home
+                             69 ;--------------------------------------------------------
+                             70 	.area _HOME
+                             71 	.area _CODE
+                             72 ;--------------------------------------------------------
+                             73 ; code
+                             74 ;--------------------------------------------------------
+                             75 	.area _CODE
+                             76 ;	simple_shmup.c 27
+                             77 ; genLabel
+                             78 ; genFunction
+                             79 ;	---------------------------------
+                             80 ; Function main
+                             81 ; ---------------------------------
+   0000                      82 ___main_start:
+   0000                      83 _main:
+   0000 C5                   84 	push	bc
+   0001 E8 FE                85 	lda	sp,-2(sp)
+                             86 ;	simple_shmup.c 28
+                             87 ; genAssign
+   0003 11 04 FF             88 	ld	de,#0xFF04
+                             89 ; genPointerGet
+   0006 1A                   90 	ld	a,(de)
+   0007 4F                   91 	ld	c,a
+                             92 ; genAssign (pointer)
+   0008 11 00 00             93 	ld	de,#_seed + 0
+   000B 79                   94 	ld	a,c
+   000C 12                   95 	ld	(de),a
+                             96 ;	simple_shmup.c 30
+                             97 ; genAssign
+   000D 11 00 20             98 	ld	de,#0x2000
+                             99 ; genAssign (pointer)
+   0010 3E 03               100 	ld	a,#0x03
+   0012 12                  101 	ld	(de),a
+                            102 ;	simple_shmup.c 32
+                            103 ; genCall
+   0013 CD 00 00            104 	call	_draw_title_screen
+                            105 ;	simple_shmup.c 34
+                            106 ; genPlus
+                            107 ; AOP_STK for _main_sloc0_1_0
+                            108 ; genPlusIncr
+                            109 ;	genPlusIncr failed
+   0016 11 00 00            110 	ld	de,#_seed + 0
+   0019 21 01 00            111 	ld	hl,#0x0001
+   001C 19                  112 	add	hl,de
+   001D 7D                  113 	ld	a,l
+   001E 54                  114 	ld	d,h
+   001F F8 00               115 	lda	hl,0(sp)
+   0021 22                  116 	ld	(hl+),a
+   0022 72                  117 	ld	(hl),d
+                            118 ; genAssign
+   0023 11 04 FF            119 	ld	de,#0xFF04
+                            120 ; genPointerGet
+   0026 1A                  121 	ld	a,(de)
+   0027 4F                  122 	ld	c,a
+                            123 ; genAssign (pointer)
+                            124 ; AOP_STK for _main_sloc0_1_0
+   0028 2B                  125 	dec	hl
+   0029 5E                  126 	ld	e,(hl)
+   002A 23                  127 	inc	hl
+   002B 56                  128 	ld	d,(hl)
+   002C 79                  129 	ld	a,c
+   002D 12                  130 	ld	(de),a
+                            131 ;	simple_shmup.c 36
+                            132 ; genPointerGet
+   002E 11 00 00            133 	ld	de,#_seed + 0
+   0031 1A                  134 	ld	a,(de)
+   0032 4F                  135 	ld	c,a
+   0033 13                  136 	inc	de
+   0034 1A                  137 	ld	a,(de)
+   0035 47                  138 	ld	b,a
+                            139 ; genIpush
+   0036 C5                  140 	push	bc
+                            141 ; genCall
+   0037 CD 00 00            142 	call	_initrand
+   003A E8 02               143 	lda	sp,2(sp)
+                            144 ;	simple_shmup.c 38
+                            145 ; genCall
+   003C CD 00 00            146 	call	_load_game_tiles
+                            147 ;	simple_shmup.c 40
+                            148 ; genCall
+   003F CD 00 00            149 	call	_disable_interrupts
+                            150 ;	simple_shmup.c 42
+                            151 ; genAssign
+   0042 01 5E 00            152 	ld	bc,#_vblint + 0
+                            153 ; genIpush
+   0045 C5                  154 	push	bc
+                            155 ; genCall
+   0046 CD 00 00            156 	call	_add_VBL
+   0049 E8 02               157 	lda	sp,2(sp)
+                            158 ;	simple_shmup.c 44
+                            159 ; genAssign
+   004B 11 00 20            160 	ld	de,#0x2000
+                            161 ; genAssign (pointer)
+   004E 3E 02               162 	ld	a,#0x02
+   0050 12                  163 	ld	(de),a
+                            164 ;	simple_shmup.c 46
+                            165 ; genCall
+   0051 CD 00 00            166 	call	_enable_interrupts
+                            167 ;	simple_shmup.c 48
+                            168 ; genCall
+   0054 CD 00 00            169 	call	_do_gameplay
+                            170 ;	simple_shmup.c 50
+                            171 ; genCall
+   0057 CD 00 00            172 	call	_reset
+                            173 ; genLabel
+   005A                     174 00101$:
+                            175 ; genEndFunction
+   005A E8 02               176 	lda	sp,2(sp)
+   005C C1                  177 	pop	bc
+   005D C9                  178 	ret
+   005E                     179 ___main_end:
+                            180 ;	simple_shmup.c 53
+                            181 ; genLabel
+                            182 ; genFunction
+                            183 ;	---------------------------------
+                            184 ; Function vblint
+                            185 ; ---------------------------------
+   005E                     186 ___vblint_start:
+   005E                     187 _vblint:
+                            188 	
+                            189 ;	simple_shmup.c 54
+                            190 ; genAssign
+   005E 11 00 20            191 	ld	de,#0x2000
+                            192 ; genAssign (pointer)
+   0061 3E 02               193 	ld	a,#0x02
+   0063 12                  194 	ld	(de),a
+                            195 ;	simple_shmup.c 56
+                            196 ; genCall
+   0064 CD 00 00            197 	call	_update_graphics
+                            198 ; genLabel
+   0067                     199 00101$:
+                            200 ; genEndFunction
+                            201 	
+   0067 C9                  202 	ret
+   0068                     203 ___vblint_end:
+                            204 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  0 ___main_end                        005E R
+  0 ___main_start                      0000 R
+  0 ___vblint_end                      0068 R
+  0 ___vblint_start                    005E R
+    __cpu                              **** GX
+    __io_in                            **** GX
+    __io_out                           **** GX
+    __io_status                        **** GX
+    _add_VBL                           **** GX
+    _disable_interrupts                **** GX
+    _do_gameplay                       **** GX
+    _draw_title_screen                 **** GX
+    _enable_interrupts                 **** GX
+    _initrand                          **** GX
+    _load_game_tiles                   **** GX
+  0 _main                              0000 GR
+    _reset                             **** GX
+  1 _seed                              0000 GR
+    _sys_time                          **** GX
+    _update_graphics                   **** GX
+  0 _vblint                            005E GR
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   68   flags 0
+   1 _DATA                              size    2   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size    0   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
