@@ -393,7 +393,7 @@ void do_gameplay(void) {
     while(playing == 1) {       
         update_joypad();
         update_badguy();
-        
+        //update_joypad();
         collision_detection();
         delay(10);
         

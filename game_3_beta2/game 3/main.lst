@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.2.1 Fri Mar 26 00:44:18 2021
+                              3 ; Version 2.2.1 Thu Apr 01 22:24:45 2021
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc60080
+                              6 	.module lcc66080
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -183,7 +183,7 @@
                             183 	.area _GSINIT
                             184 	.area _GSFINAL
                             185 	.area _GSINIT
-                            186 ;	main.c 586
+                            186 ;	main.c 474
                             187 ; genAssign (pointer)
    0000 11 00 00            188 	ld	de,#_text + 0
    0003 3E 7C               189 	ld	a,#0x7C
@@ -4790,7 +4790,7 @@
                            4790 ; genAssign (pointer)
    11FD 3E 00              4791 	ld	a,#0x00
    11FF 12                 4792 	ld	(de),a
-                           4793 ;	main.c 586
+                           4793 ;	main.c 474
                            4794 ; genAssign (pointer)
    1200 11 00 03           4795 	ld	de,#_scoremap + 0
    1203 3E FF              4796 	ld	a,#0xFF
@@ -6949,7 +6949,7 @@
                            6949 ; genAssign (pointer)
    1A6D 3E FF              6950 	ld	a,#0xFF
    1A6F 12                 6951 	ld	(de),a
-                           6952 ;	main.c 586
+                           6952 ;	main.c 474
                            6953 ; genAssign (pointer)
    1A70 11 68 04           6954 	ld	de,#_windowmap + 0
    1A73 3E 3D              6955 	ld	a,#0x3D
@@ -9108,7 +9108,7 @@
                            9108 ; genAssign (pointer)
    22DD 3E FF              9109 	ld	a,#0xFF
    22DF 12                 9110 	ld	(de),a
-                           9111 ;	main.c 586
+                           9111 ;	main.c 474
                            9112 ; genAssign (pointer)
    22E0 11 D0 05           9113 	ld	de,#_Coin + 0
    22E3 3E 3C              9114 	ld	a,#0x3C
@@ -9203,7 +9203,7 @@
                            9203 ; genAssign (pointer)
    233D 3E 3C              9204 	ld	a,#0x3C
    233F 12                 9205 	ld	(de),a
-                           9206 ;	main.c 586
+                           9206 ;	main.c 474
                            9207 ; genAssign (pointer)
    2340 11 E0 05           9208 	ld	de,#_blacktext + 0
    2343 3E 83              9209 	ld	a,#0x83
@@ -14098,7 +14098,7 @@
                           14098 ; genAssign (pointer)
    365D 3E FF             14099 	ld	a,#0xFF
    365F 12                14100 	ld	(de),a
-                          14101 ;	main.c 586
+                          14101 ;	main.c 474
                           14102 ; genAssign (pointer)
    3660 11 10 09          14103 	ld	de,#_bkghallway + 0
    3663 3E 00             14104 	ld	a,#0x00
@@ -15441,7 +15441,7 @@
                           15441 ; genAssign (pointer)
    3B9D 3E 00             15442 	ld	a,#0x00
    3B9F 12                15443 	ld	(de),a
-                          15444 ;	main.c 586
+                          15444 ;	main.c 474
                           15445 ; genAssign
                           15446 ; AOP_HL for _score
    3BA0 21 F0 09          15447 	ld	hl,#_score + 0
@@ -15457,7 +15457,7 @@
                           15457 ; code
                           15458 ;--------------------------------------------------------
                           15459 	.area _CODE
-                          15460 ;	main.c 172
+                          15460 ;	main.c 60
                           15461 ; genLabel
                           15462 ; genFunction
                           15463 ;	---------------------------------
@@ -15467,25 +15467,25 @@
    0000                   15467 _main:
    0000 C5                15468 	push	bc
    0001 E8 FE             15469 	lda	sp,-2(sp)
-                          15470 ;	main.c 173
+                          15470 ;	main.c 61
                           15471 ; genAssign
    0003 11 26 FF          15472 	ld	de,#0xFF26
                           15473 ; genAssign (pointer)
    0006 3E 80             15474 	ld	a,#0x80
    0008 12                15475 	ld	(de),a
-                          15476 ;	main.c 174
+                          15476 ;	main.c 62
                           15477 ; genAssign
    0009 11 24 FF          15478 	ld	de,#0xFF24
                           15479 ; genAssign (pointer)
    000C 3E 77             15480 	ld	a,#0x77
    000E 12                15481 	ld	(de),a
-                          15482 ;	main.c 175
+                          15482 ;	main.c 63
                           15483 ; genAssign
    000F 11 25 FF          15484 	ld	de,#0xFF25
                           15485 ; genAssign (pointer)
    0012 3E FF             15486 	ld	a,#0xFF
    0014 12                15487 	ld	(de),a
-                          15488 ;	main.c 177
+                          15488 ;	main.c 65
                           15489 ; genAssign
    0015 11 04 FF          15490 	ld	de,#0xFF04
                           15491 ; genPointerGet
@@ -15495,16 +15495,16 @@
    001A 11 09 0A          15495 	ld	de,#_seed + 0
    001D 79                15496 	ld	a,c
    001E 12                15497 	ld	(de),a
-                          15498 ;	main.c 179
+                          15498 ;	main.c 67
                           15499 ; genAssign
    001F 11 00 20          15500 	ld	de,#0x2000
                           15501 ; genAssign (pointer)
    0022 3E 03             15502 	ld	a,#0x03
    0024 12                15503 	ld	(de),a
-                          15504 ;	main.c 181
+                          15504 ;	main.c 69
                           15505 ; genCall
    0025 CD 54 16          15506 	call	_draw_title_screen
-                          15507 ;	main.c 183
+                          15507 ;	main.c 71
                           15508 ; genPlus
                           15509 ; AOP_STK for _main_sloc0_1_0
                           15510 ; genPlusIncr
@@ -15530,7 +15530,7 @@
    003D 56                15530 	ld	d,(hl)
    003E 79                15531 	ld	a,c
    003F 12                15532 	ld	(de),a
-                          15533 ;	main.c 185
+                          15533 ;	main.c 73
                           15534 ; genPointerGet
    0040 11 09 0A          15535 	ld	de,#_seed + 0
    0043 1A                15536 	ld	a,(de)
@@ -15543,13 +15543,13 @@
                           15543 ; genCall
    0049 CD 00 00          15544 	call	_initrand
    004C E8 02             15545 	lda	sp,2(sp)
-                          15546 ;	main.c 187
+                          15546 ;	main.c 75
                           15547 ; genCall
    004E CD 10 17          15548 	call	_load_game_tiles
-                          15549 ;	main.c 189
+                          15549 ;	main.c 77
                           15550 ; genCall
    0051 CD 00 00          15551 	call	_disable_interrupts
-                          15552 ;	main.c 191
+                          15552 ;	main.c 79
                           15553 ; genAssign
    0054 01 65 0E          15554 	ld	bc,#_vblint + 0
                           15555 ; genIpush
@@ -15557,16 +15557,16 @@
                           15557 ; genCall
    0058 CD 00 00          15558 	call	_add_VBL
    005B E8 02             15559 	lda	sp,2(sp)
-                          15560 ;	main.c 193
+                          15560 ;	main.c 81
                           15561 ; genAssign
    005D 11 00 20          15562 	ld	de,#0x2000
                           15563 ; genAssign (pointer)
    0060 3E 02             15564 	ld	a,#0x02
    0062 12                15565 	ld	(de),a
-                          15566 ;	main.c 195
+                          15566 ;	main.c 83
                           15567 ; genCall
    0063 CD 00 00          15568 	call	_enable_interrupts
-                          15569 ;	main.c 197
+                          15569 ;	main.c 85
                           15570 ; genCall
    0066 CD 3D 15          15571 	call	_do_gameplay
                           15572 ; genLabel
@@ -18423,127 +18423,127 @@
    0B83 00                18423 	.db #0x00
    0B84 00                18424 	.db #0x00
    0B85                   18425 _hallway:
-   0B85 31                18426 	.db #0x31
-   0B86 31                18427 	.db #0x31
-   0B87 31                18428 	.db #0x31
-   0B88 31                18429 	.db #0x31
-   0B89 31                18430 	.db #0x31
-   0B8A 31                18431 	.db #0x31
-   0B8B 31                18432 	.db #0x31
-   0B8C 31                18433 	.db #0x31
-   0B8D 31                18434 	.db #0x31
-   0B8E 31                18435 	.db #0x31
-   0B8F 31                18436 	.db #0x31
-   0B90 31                18437 	.db #0x31
-   0B91 31                18438 	.db #0x31
-   0B92 31                18439 	.db #0x31
-   0B93 31                18440 	.db #0x31
-   0B94 31                18441 	.db #0x31
-   0B95 31                18442 	.db #0x31
-   0B96 31                18443 	.db #0x31
-   0B97 31                18444 	.db #0x31
-   0B98 31                18445 	.db #0x31
-   0B99 31                18446 	.db #0x31
-   0B9A 31                18447 	.db #0x31
-   0B9B 31                18448 	.db #0x31
-   0B9C 31                18449 	.db #0x31
-   0B9D 31                18450 	.db #0x31
-   0B9E 31                18451 	.db #0x31
-   0B9F 31                18452 	.db #0x31
-   0BA0 31                18453 	.db #0x31
-   0BA1 31                18454 	.db #0x31
-   0BA2 31                18455 	.db #0x31
-   0BA3 31                18456 	.db #0x31
-   0BA4 31                18457 	.db #0x31
-   0BA5 31                18458 	.db #0x31
-   0BA6 31                18459 	.db #0x31
-   0BA7 31                18460 	.db #0x31
-   0BA8 31                18461 	.db #0x31
-   0BA9 31                18462 	.db #0x31
-   0BAA 31                18463 	.db #0x31
-   0BAB 31                18464 	.db #0x31
-   0BAC 31                18465 	.db #0x31
-   0BAD 31                18466 	.db #0x31
-   0BAE 31                18467 	.db #0x31
-   0BAF 31                18468 	.db #0x31
-   0BB0 31                18469 	.db #0x31
-   0BB1 31                18470 	.db #0x31
-   0BB2 31                18471 	.db #0x31
-   0BB3 31                18472 	.db #0x31
-   0BB4 31                18473 	.db #0x31
-   0BB5 31                18474 	.db #0x31
-   0BB6 31                18475 	.db #0x31
-   0BB7 31                18476 	.db #0x31
-   0BB8 31                18477 	.db #0x31
-   0BB9 31                18478 	.db #0x31
-   0BBA 31                18479 	.db #0x31
-   0BBB 31                18480 	.db #0x31
-   0BBC 31                18481 	.db #0x31
-   0BBD 31                18482 	.db #0x31
-   0BBE 31                18483 	.db #0x31
-   0BBF 31                18484 	.db #0x31
-   0BC0 31                18485 	.db #0x31
-   0BC1 31                18486 	.db #0x31
-   0BC2 31                18487 	.db #0x31
-   0BC3 31                18488 	.db #0x31
-   0BC4 31                18489 	.db #0x31
-   0BC5 31                18490 	.db #0x31
-   0BC6 31                18491 	.db #0x31
-   0BC7 31                18492 	.db #0x31
-   0BC8 31                18493 	.db #0x31
-   0BC9 31                18494 	.db #0x31
-   0BCA 31                18495 	.db #0x31
-   0BCB 31                18496 	.db #0x31
-   0BCC 31                18497 	.db #0x31
-   0BCD 31                18498 	.db #0x31
-   0BCE 31                18499 	.db #0x31
-   0BCF 31                18500 	.db #0x31
-   0BD0 31                18501 	.db #0x31
-   0BD1 31                18502 	.db #0x31
-   0BD2 31                18503 	.db #0x31
-   0BD3 31                18504 	.db #0x31
-   0BD4 31                18505 	.db #0x31
-   0BD5 31                18506 	.db #0x31
-   0BD6 31                18507 	.db #0x31
-   0BD7 31                18508 	.db #0x31
-   0BD8 31                18509 	.db #0x31
-   0BD9 31                18510 	.db #0x31
-   0BDA 31                18511 	.db #0x31
-   0BDB 31                18512 	.db #0x31
-   0BDC 31                18513 	.db #0x31
-   0BDD 31                18514 	.db #0x31
-   0BDE 31                18515 	.db #0x31
-   0BDF 31                18516 	.db #0x31
-   0BE0 31                18517 	.db #0x31
-   0BE1 31                18518 	.db #0x31
-   0BE2 31                18519 	.db #0x31
-   0BE3 31                18520 	.db #0x31
-   0BE4 31                18521 	.db #0x31
-   0BE5 31                18522 	.db #0x31
-   0BE6 31                18523 	.db #0x31
-   0BE7 31                18524 	.db #0x31
-   0BE8 31                18525 	.db #0x31
-   0BE9 31                18526 	.db #0x31
-   0BEA 31                18527 	.db #0x31
-   0BEB 31                18528 	.db #0x31
-   0BEC 31                18529 	.db #0x31
-   0BED 31                18530 	.db #0x31
-   0BEE 31                18531 	.db #0x31
-   0BEF 31                18532 	.db #0x31
-   0BF0 31                18533 	.db #0x31
-   0BF1 31                18534 	.db #0x31
-   0BF2 31                18535 	.db #0x31
-   0BF3 31                18536 	.db #0x31
-   0BF4 31                18537 	.db #0x31
-   0BF5 31                18538 	.db #0x31
-   0BF6 31                18539 	.db #0x31
-   0BF7 31                18540 	.db #0x31
-   0BF8 31                18541 	.db #0x31
-   0BF9 31                18542 	.db #0x31
-   0BFA 31                18543 	.db #0x31
-   0BFB 31                18544 	.db #0x31
-   0BFC 31                18545 	.db #0x31
-   0BFD 31                18546 	.db #0x31
+   0B85 3D                18426 	.db #0x3D
+   0B86 3D                18427 	.db #0x3D
+   0B87 3D                18428 	.db #0x3D
+   0B88 3D                18429 	.db #0x3D
+   0B89 3D                18430 	.db #0x3D
+   0B8A 3D                18431 	.db #0x3D
+   0B8B 3D                18432 	.db #0x3D
+   0B8C 3D                18433 	.db #0x3D
+   0B8D 3D                18434 	.db #0x3D
+   0B8E 3D                18435 	.db #0x3D
+   0B8F 3D                18436 	.db #0x3D
+   0B90 3D                18437 	.db #0x3D
+   0B91 3D                18438 	.db #0x3D
+   0B92 3D                18439 	.db #0x3D
+   0B93 3D                18440 	.db #0x3D
+   0B94 3D                18441 	.db #0x3D
+   0B95 3D                18442 	.db #0x3D
+   0B96 3D                18443 	.db #0x3D
+   0B97 3D                18444 	.db #0x3D
+   0B98 3D                18445 	.db #0x3D
+   0B99 3D                18446 	.db #0x3D
+   0B9A 3D                18447 	.db #0x3D
+   0B9B 3D                18448 	.db #0x3D
+   0B9C 3D                18449 	.db #0x3D
+   0B9D 3D                18450 	.db #0x3D
+   0B9E 3D                18451 	.db #0x3D
+   0B9F 3D                18452 	.db #0x3D
+   0BA0 3D                18453 	.db #0x3D
+   0BA1 3D                18454 	.db #0x3D
+   0BA2 3D                18455 	.db #0x3D
+   0BA3 3D                18456 	.db #0x3D
+   0BA4 3D                18457 	.db #0x3D
+   0BA5 3D                18458 	.db #0x3D
+   0BA6 3D                18459 	.db #0x3D
+   0BA7 3D                18460 	.db #0x3D
+   0BA8 3D                18461 	.db #0x3D
+   0BA9 3D                18462 	.db #0x3D
+   0BAA 3D                18463 	.db #0x3D
+   0BAB 3D                18464 	.db #0x3D
+   0BAC 3D                18465 	.db #0x3D
+   0BAD 3D                18466 	.db #0x3D
+   0BAE 3D                18467 	.db #0x3D
+   0BAF 3D                18468 	.db #0x3D
+   0BB0 3D                18469 	.db #0x3D
+   0BB1 3D                18470 	.db #0x3D
+   0BB2 3D                18471 	.db #0x3D
+   0BB3 3D                18472 	.db #0x3D
+   0BB4 3D                18473 	.db #0x3D
+   0BB5 3D                18474 	.db #0x3D
+   0BB6 3D                18475 	.db #0x3D
+   0BB7 3D                18476 	.db #0x3D
+   0BB8 3D                18477 	.db #0x3D
+   0BB9 3D                18478 	.db #0x3D
+   0BBA 3D                18479 	.db #0x3D
+   0BBB 3D                18480 	.db #0x3D
+   0BBC 3D                18481 	.db #0x3D
+   0BBD 3D                18482 	.db #0x3D
+   0BBE 3D                18483 	.db #0x3D
+   0BBF 3D                18484 	.db #0x3D
+   0BC0 3D                18485 	.db #0x3D
+   0BC1 3D                18486 	.db #0x3D
+   0BC2 3D                18487 	.db #0x3D
+   0BC3 3D                18488 	.db #0x3D
+   0BC4 3D                18489 	.db #0x3D
+   0BC5 3D                18490 	.db #0x3D
+   0BC6 3D                18491 	.db #0x3D
+   0BC7 3D                18492 	.db #0x3D
+   0BC8 3D                18493 	.db #0x3D
+   0BC9 3D                18494 	.db #0x3D
+   0BCA 3D                18495 	.db #0x3D
+   0BCB 3D                18496 	.db #0x3D
+   0BCC 3D                18497 	.db #0x3D
+   0BCD 3D                18498 	.db #0x3D
+   0BCE 3D                18499 	.db #0x3D
+   0BCF 3D                18500 	.db #0x3D
+   0BD0 3D                18501 	.db #0x3D
+   0BD1 3D                18502 	.db #0x3D
+   0BD2 3D                18503 	.db #0x3D
+   0BD3 3D                18504 	.db #0x3D
+   0BD4 3D                18505 	.db #0x3D
+   0BD5 3D                18506 	.db #0x3D
+   0BD6 3D                18507 	.db #0x3D
+   0BD7 3D                18508 	.db #0x3D
+   0BD8 3D                18509 	.db #0x3D
+   0BD9 3D                18510 	.db #0x3D
+   0BDA 3D                18511 	.db #0x3D
+   0BDB 3D                18512 	.db #0x3D
+   0BDC 3D                18513 	.db #0x3D
+   0BDD 3D                18514 	.db #0x3D
+   0BDE 3D                18515 	.db #0x3D
+   0BDF 3D                18516 	.db #0x3D
+   0BE0 3D                18517 	.db #0x3D
+   0BE1 3D                18518 	.db #0x3D
+   0BE2 3D                18519 	.db #0x3D
+   0BE3 3D                18520 	.db #0x3D
+   0BE4 3D                18521 	.db #0x3D
+   0BE5 3D                18522 	.db #0x3D
+   0BE6 3D                18523 	.db #0x3D
+   0BE7 3D                18524 	.db #0x3D
+   0BE8 3D                18525 	.db #0x3D
+   0BE9 3D                18526 	.db #0x3D
+   0BEA 3D                18527 	.db #0x3D
+   0BEB 3D                18528 	.db #0x3D
+   0BEC 3D                18529 	.db #0x3D
+   0BED 3D                18530 	.db #0x3D
+   0BEE 3D                18531 	.db #0x3D
+   0BEF 3D                18532 	.db #0x3D
+   0BF0 3D                18533 	.db #0x3D
+   0BF1 3D                18534 	.db #0x3D
+   0BF2 3D                18535 	.db #0x3D
+   0BF3 3D                18536 	.db #0x3D
+   0BF4 3D                18537 	.db #0x3D
+   0BF5 3D                18538 	.db #0x3D
+   0BF6 3D                18539 	.db #0x3D
+   0BF7 3D                18540 	.db #0x3D
+   0BF8 3D                18541 	.db #0x3D
+   0BF9 3D                18542 	.db #0x3D
+   0BFA 3D                18543 	.db #0x3D
+   0BFB 3D                18544 	.db #0x3D
+   0BFC 3D                18545 	.db #0x3D
+   0BFD 3D                18546 	.db #0x3D
    0BFE 32                18547 	.db #0x32
    0BFF 37                18548 	.db #0x37
    0C00 37                18549 	.db #0x37
@@ -18551,10 +18551,10 @@
    0C02 37                18551 	.db #0x37
    0C03 37                18552 	.db #0x37
    0C04 34                18553 	.db #0x34
-   0C05 31                18554 	.db #0x31
-   0C06 31                18555 	.db #0x31
-   0C07 31                18556 	.db #0x31
-   0C08 31                18557 	.db #0x31
+   0C05 3D                18554 	.db #0x3D
+   0C06 3D                18555 	.db #0x3D
+   0C07 3D                18556 	.db #0x3D
+   0C08 3D                18557 	.db #0x3D
    0C09 32                18558 	.db #0x32
    0C0A 37                18559 	.db #0x37
    0C0B 37                18560 	.db #0x37
@@ -18562,10 +18562,10 @@
    0C0D 37                18562 	.db #0x37
    0C0E 37                18563 	.db #0x37
    0C0F 34                18564 	.db #0x34
-   0C10 31                18565 	.db #0x31
-   0C11 31                18566 	.db #0x31
-   0C12 31                18567 	.db #0x31
-   0C13 31                18568 	.db #0x31
+   0C10 3D                18565 	.db #0x3D
+   0C11 3D                18566 	.db #0x3D
+   0C12 3D                18567 	.db #0x3D
+   0C13 3D                18568 	.db #0x3D
    0C14 32                18569 	.db #0x32
    0C15 37                18570 	.db #0x37
    0C16 37                18571 	.db #0x37
@@ -18573,28 +18573,28 @@
    0C18 37                18573 	.db #0x37
    0C19 37                18574 	.db #0x37
    0C1A 34                18575 	.db #0x34
-   0C1B 31                18576 	.db #0x31
-   0C1C 31                18577 	.db #0x31
-   0C1D 31                18578 	.db #0x31
-   0C1E 31                18579 	.db #0x31
-   0C1F 31                18580 	.db #0x31
-   0C20 31                18581 	.db #0x31
-   0C21 31                18582 	.db #0x31
-   0C22 31                18583 	.db #0x31
-   0C23 31                18584 	.db #0x31
-   0C24 31                18585 	.db #0x31
-   0C25 31                18586 	.db #0x31
+   0C1B 3D                18576 	.db #0x3D
+   0C1C 3D                18577 	.db #0x3D
+   0C1D 3D                18578 	.db #0x3D
+   0C1E 3D                18579 	.db #0x3D
+   0C1F 3D                18580 	.db #0x3D
+   0C20 3D                18581 	.db #0x3D
+   0C21 3D                18582 	.db #0x3D
+   0C22 3D                18583 	.db #0x3D
+   0C23 3D                18584 	.db #0x3D
+   0C24 3D                18585 	.db #0x3D
+   0C25 3D                18586 	.db #0x3D
    0C26 3A                18587 	.db #0x3A
-   0C27 36                18588 	.db #0x36
-   0C28 36                18589 	.db #0x36
-   0C29 36                18590 	.db #0x36
-   0C2A 36                18591 	.db #0x36
-   0C2B 36                18592 	.db #0x36
+   0C27 3D                18588 	.db #0x3D
+   0C28 3D                18589 	.db #0x3D
+   0C29 3D                18590 	.db #0x3D
+   0C2A 3D                18591 	.db #0x3D
+   0C2B 3D                18592 	.db #0x3D
    0C2C 39                18593 	.db #0x39
-   0C2D 31                18594 	.db #0x31
-   0C2E 31                18595 	.db #0x31
-   0C2F 31                18596 	.db #0x31
-   0C30 31                18597 	.db #0x31
+   0C2D 3D                18594 	.db #0x3D
+   0C2E 3D                18595 	.db #0x3D
+   0C2F 3D                18596 	.db #0x3D
+   0C30 3D                18597 	.db #0x3D
    0C31 3A                18598 	.db #0x3A
    0C32 3D                18599 	.db #0x3D
    0C33 3D                18600 	.db #0x3D
@@ -18602,39 +18602,39 @@
    0C35 3D                18602 	.db #0x3D
    0C36 3D                18603 	.db #0x3D
    0C37 39                18604 	.db #0x39
-   0C38 31                18605 	.db #0x31
-   0C39 31                18606 	.db #0x31
-   0C3A 31                18607 	.db #0x31
-   0C3B 31                18608 	.db #0x31
+   0C38 3D                18605 	.db #0x3D
+   0C39 3D                18606 	.db #0x3D
+   0C3A 3D                18607 	.db #0x3D
+   0C3B 3D                18608 	.db #0x3D
    0C3C 3A                18609 	.db #0x3A
-   0C3D 36                18610 	.db #0x36
-   0C3E 36                18611 	.db #0x36
+   0C3D 3D                18610 	.db #0x3D
+   0C3E 3D                18611 	.db #0x3D
    0C3F 3D                18612 	.db #0x3D
-   0C40 36                18613 	.db #0x36
-   0C41 36                18614 	.db #0x36
+   0C40 3D                18613 	.db #0x3D
+   0C41 3D                18614 	.db #0x3D
    0C42 39                18615 	.db #0x39
-   0C43 31                18616 	.db #0x31
-   0C44 31                18617 	.db #0x31
-   0C45 31                18618 	.db #0x31
-   0C46 31                18619 	.db #0x31
-   0C47 31                18620 	.db #0x31
-   0C48 31                18621 	.db #0x31
-   0C49 31                18622 	.db #0x31
-   0C4A 31                18623 	.db #0x31
-   0C4B 31                18624 	.db #0x31
-   0C4C 31                18625 	.db #0x31
-   0C4D 31                18626 	.db #0x31
+   0C43 3D                18616 	.db #0x3D
+   0C44 3D                18617 	.db #0x3D
+   0C45 3D                18618 	.db #0x3D
+   0C46 3D                18619 	.db #0x3D
+   0C47 3D                18620 	.db #0x3D
+   0C48 3D                18621 	.db #0x3D
+   0C49 3D                18622 	.db #0x3D
+   0C4A 3D                18623 	.db #0x3D
+   0C4B 3D                18624 	.db #0x3D
+   0C4C 3D                18625 	.db #0x3D
+   0C4D 3D                18626 	.db #0x3D
    0C4E 3A                18627 	.db #0x3A
-   0C4F 36                18628 	.db #0x36
-   0C50 36                18629 	.db #0x36
-   0C51 36                18630 	.db #0x36
-   0C52 36                18631 	.db #0x36
-   0C53 36                18632 	.db #0x36
+   0C4F 3D                18628 	.db #0x3D
+   0C50 3D                18629 	.db #0x3D
+   0C51 3D                18630 	.db #0x3D
+   0C52 3D                18631 	.db #0x3D
+   0C53 3D                18632 	.db #0x3D
    0C54 39                18633 	.db #0x39
-   0C55 31                18634 	.db #0x31
-   0C56 31                18635 	.db #0x31
-   0C57 31                18636 	.db #0x31
-   0C58 31                18637 	.db #0x31
+   0C55 3D                18634 	.db #0x3D
+   0C56 3D                18635 	.db #0x3D
+   0C57 3D                18636 	.db #0x3D
+   0C58 3D                18637 	.db #0x3D
    0C59 3A                18638 	.db #0x3A
    0C5A 3D                18639 	.db #0x3D
    0C5B 3D                18640 	.db #0x3D
@@ -18642,39 +18642,39 @@
    0C5D 3D                18642 	.db #0x3D
    0C5E 3D                18643 	.db #0x3D
    0C5F 39                18644 	.db #0x39
-   0C60 31                18645 	.db #0x31
-   0C61 31                18646 	.db #0x31
-   0C62 31                18647 	.db #0x31
-   0C63 31                18648 	.db #0x31
+   0C60 3D                18645 	.db #0x3D
+   0C61 3D                18646 	.db #0x3D
+   0C62 3D                18647 	.db #0x3D
+   0C63 3D                18648 	.db #0x3D
    0C64 3A                18649 	.db #0x3A
-   0C65 36                18650 	.db #0x36
+   0C65 3D                18650 	.db #0x3D
    0C66 3D                18651 	.db #0x3D
-   0C67 36                18652 	.db #0x36
-   0C68 36                18653 	.db #0x36
+   0C67 3D                18652 	.db #0x3D
+   0C68 3D                18653 	.db #0x3D
    0C69 3D                18654 	.db #0x3D
    0C6A 39                18655 	.db #0x39
-   0C6B 31                18656 	.db #0x31
-   0C6C 31                18657 	.db #0x31
-   0C6D 31                18658 	.db #0x31
-   0C6E 31                18659 	.db #0x31
-   0C6F 31                18660 	.db #0x31
-   0C70 31                18661 	.db #0x31
-   0C71 31                18662 	.db #0x31
-   0C72 31                18663 	.db #0x31
-   0C73 31                18664 	.db #0x31
-   0C74 31                18665 	.db #0x31
-   0C75 31                18666 	.db #0x31
+   0C6B 3D                18656 	.db #0x3D
+   0C6C 3D                18657 	.db #0x3D
+   0C6D 3D                18658 	.db #0x3D
+   0C6E 3D                18659 	.db #0x3D
+   0C6F 3D                18660 	.db #0x3D
+   0C70 3D                18661 	.db #0x3D
+   0C71 3D                18662 	.db #0x3D
+   0C72 3D                18663 	.db #0x3D
+   0C73 3D                18664 	.db #0x3D
+   0C74 3D                18665 	.db #0x3D
+   0C75 3D                18666 	.db #0x3D
    0C76 3A                18667 	.db #0x3A
-   0C77 36                18668 	.db #0x36
-   0C78 36                18669 	.db #0x36
-   0C79 36                18670 	.db #0x36
-   0C7A 36                18671 	.db #0x36
-   0C7B 36                18672 	.db #0x36
+   0C77 3D                18668 	.db #0x3D
+   0C78 3D                18669 	.db #0x3D
+   0C79 3D                18670 	.db #0x3D
+   0C7A 3D                18671 	.db #0x3D
+   0C7B 3D                18672 	.db #0x3D
    0C7C 39                18673 	.db #0x39
-   0C7D 31                18674 	.db #0x31
-   0C7E 31                18675 	.db #0x31
-   0C7F 31                18676 	.db #0x31
-   0C80 31                18677 	.db #0x31
+   0C7D 3D                18674 	.db #0x3D
+   0C7E 3D                18675 	.db #0x3D
+   0C7F 3D                18676 	.db #0x3D
+   0C80 3D                18677 	.db #0x3D
    0C81 3A                18678 	.db #0x3A
    0C82 3D                18679 	.db #0x3D
    0C83 3D                18680 	.db #0x3D
@@ -18682,39 +18682,39 @@
    0C85 3D                18682 	.db #0x3D
    0C86 3D                18683 	.db #0x3D
    0C87 39                18684 	.db #0x39
-   0C88 31                18685 	.db #0x31
-   0C89 31                18686 	.db #0x31
-   0C8A 31                18687 	.db #0x31
-   0C8B 31                18688 	.db #0x31
+   0C88 3D                18685 	.db #0x3D
+   0C89 3D                18686 	.db #0x3D
+   0C8A 3D                18687 	.db #0x3D
+   0C8B 3D                18688 	.db #0x3D
    0C8C 3A                18689 	.db #0x3A
    0C8D 3D                18690 	.db #0x3D
-   0C8E 36                18691 	.db #0x36
-   0C8F 36                18692 	.db #0x36
+   0C8E 3D                18691 	.db #0x3D
+   0C8F 3D                18692 	.db #0x3D
    0C90 3D                18693 	.db #0x3D
-   0C91 36                18694 	.db #0x36
+   0C91 3D                18694 	.db #0x3D
    0C92 39                18695 	.db #0x39
-   0C93 31                18696 	.db #0x31
-   0C94 31                18697 	.db #0x31
-   0C95 31                18698 	.db #0x31
-   0C96 31                18699 	.db #0x31
-   0C97 31                18700 	.db #0x31
-   0C98 31                18701 	.db #0x31
-   0C99 31                18702 	.db #0x31
-   0C9A 31                18703 	.db #0x31
-   0C9B 31                18704 	.db #0x31
-   0C9C 31                18705 	.db #0x31
-   0C9D 31                18706 	.db #0x31
+   0C93 3D                18696 	.db #0x3D
+   0C94 3D                18697 	.db #0x3D
+   0C95 3D                18698 	.db #0x3D
+   0C96 3D                18699 	.db #0x3D
+   0C97 3D                18700 	.db #0x3D
+   0C98 3D                18701 	.db #0x3D
+   0C99 3D                18702 	.db #0x3D
+   0C9A 3D                18703 	.db #0x3D
+   0C9B 3D                18704 	.db #0x3D
+   0C9C 3D                18705 	.db #0x3D
+   0C9D 3D                18706 	.db #0x3D
    0C9E 3A                18707 	.db #0x3A
-   0C9F 36                18708 	.db #0x36
-   0CA0 36                18709 	.db #0x36
-   0CA1 36                18710 	.db #0x36
-   0CA2 36                18711 	.db #0x36
-   0CA3 36                18712 	.db #0x36
+   0C9F 3D                18708 	.db #0x3D
+   0CA0 3D                18709 	.db #0x3D
+   0CA1 3D                18710 	.db #0x3D
+   0CA2 3D                18711 	.db #0x3D
+   0CA3 3D                18712 	.db #0x3D
    0CA4 39                18713 	.db #0x39
-   0CA5 31                18714 	.db #0x31
-   0CA6 31                18715 	.db #0x31
-   0CA7 31                18716 	.db #0x31
-   0CA8 31                18717 	.db #0x31
+   0CA5 3D                18714 	.db #0x3D
+   0CA6 3D                18715 	.db #0x3D
+   0CA7 3D                18716 	.db #0x3D
+   0CA8 3D                18717 	.db #0x3D
    0CA9 3A                18718 	.db #0x3A
    0CAA 3D                18719 	.db #0x3D
    0CAB 3D                18720 	.db #0x3D
@@ -18722,39 +18722,39 @@
    0CAD 3D                18722 	.db #0x3D
    0CAE 3D                18723 	.db #0x3D
    0CAF 39                18724 	.db #0x39
-   0CB0 31                18725 	.db #0x31
-   0CB1 31                18726 	.db #0x31
-   0CB2 31                18727 	.db #0x31
-   0CB3 31                18728 	.db #0x31
+   0CB0 3D                18725 	.db #0x3D
+   0CB1 3D                18726 	.db #0x3D
+   0CB2 3D                18727 	.db #0x3D
+   0CB3 3D                18728 	.db #0x3D
    0CB4 3A                18729 	.db #0x3A
-   0CB5 36                18730 	.db #0x36
-   0CB6 36                18731 	.db #0x36
+   0CB5 3D                18730 	.db #0x3D
+   0CB6 3D                18731 	.db #0x3D
    0CB7 3D                18732 	.db #0x3D
-   0CB8 36                18733 	.db #0x36
-   0CB9 36                18734 	.db #0x36
+   0CB8 3D                18733 	.db #0x3D
+   0CB9 3D                18734 	.db #0x3D
    0CBA 39                18735 	.db #0x39
-   0CBB 31                18736 	.db #0x31
-   0CBC 31                18737 	.db #0x31
-   0CBD 31                18738 	.db #0x31
-   0CBE 31                18739 	.db #0x31
-   0CBF 31                18740 	.db #0x31
-   0CC0 31                18741 	.db #0x31
-   0CC1 31                18742 	.db #0x31
-   0CC2 31                18743 	.db #0x31
-   0CC3 31                18744 	.db #0x31
-   0CC4 31                18745 	.db #0x31
-   0CC5 31                18746 	.db #0x31
+   0CBB 3D                18736 	.db #0x3D
+   0CBC 3D                18737 	.db #0x3D
+   0CBD 3D                18738 	.db #0x3D
+   0CBE 3D                18739 	.db #0x3D
+   0CBF 3D                18740 	.db #0x3D
+   0CC0 3D                18741 	.db #0x3D
+   0CC1 3D                18742 	.db #0x3D
+   0CC2 3D                18743 	.db #0x3D
+   0CC3 3D                18744 	.db #0x3D
+   0CC4 3D                18745 	.db #0x3D
+   0CC5 3D                18746 	.db #0x3D
    0CC6 3A                18747 	.db #0x3A
-   0CC7 36                18748 	.db #0x36
-   0CC8 36                18749 	.db #0x36
-   0CC9 36                18750 	.db #0x36
-   0CCA 36                18751 	.db #0x36
-   0CCB 36                18752 	.db #0x36
+   0CC7 3D                18748 	.db #0x3D
+   0CC8 3D                18749 	.db #0x3D
+   0CC9 3D                18750 	.db #0x3D
+   0CCA 3D                18751 	.db #0x3D
+   0CCB 3D                18752 	.db #0x3D
    0CCC 39                18753 	.db #0x39
-   0CCD 31                18754 	.db #0x31
-   0CCE 31                18755 	.db #0x31
-   0CCF 31                18756 	.db #0x31
-   0CD0 31                18757 	.db #0x31
+   0CCD 3D                18754 	.db #0x3D
+   0CCE 3D                18755 	.db #0x3D
+   0CCF 3D                18756 	.db #0x3D
+   0CD0 3D                18757 	.db #0x3D
    0CD1 3A                18758 	.db #0x3A
    0CD2 3D                18759 	.db #0x3D
    0CD3 3D                18760 	.db #0x3D
@@ -18762,39 +18762,39 @@
    0CD5 3D                18762 	.db #0x3D
    0CD6 3D                18763 	.db #0x3D
    0CD7 39                18764 	.db #0x39
-   0CD8 31                18765 	.db #0x31
-   0CD9 31                18766 	.db #0x31
-   0CDA 31                18767 	.db #0x31
-   0CDB 31                18768 	.db #0x31
+   0CD8 3D                18765 	.db #0x3D
+   0CD9 3D                18766 	.db #0x3D
+   0CDA 3D                18767 	.db #0x3D
+   0CDB 3D                18768 	.db #0x3D
    0CDC 3A                18769 	.db #0x3A
-   0CDD 36                18770 	.db #0x36
+   0CDD 3D                18770 	.db #0x3D
    0CDE 3D                18771 	.db #0x3D
-   0CDF 36                18772 	.db #0x36
-   0CE0 36                18773 	.db #0x36
+   0CDF 3D                18772 	.db #0x3D
+   0CE0 3D                18773 	.db #0x3D
    0CE1 3D                18774 	.db #0x3D
    0CE2 39                18775 	.db #0x39
-   0CE3 31                18776 	.db #0x31
-   0CE4 31                18777 	.db #0x31
-   0CE5 31                18778 	.db #0x31
-   0CE6 31                18779 	.db #0x31
-   0CE7 31                18780 	.db #0x31
-   0CE8 31                18781 	.db #0x31
-   0CE9 31                18782 	.db #0x31
-   0CEA 31                18783 	.db #0x31
-   0CEB 31                18784 	.db #0x31
-   0CEC 31                18785 	.db #0x31
-   0CED 31                18786 	.db #0x31
+   0CE3 3D                18776 	.db #0x3D
+   0CE4 3D                18777 	.db #0x3D
+   0CE5 3D                18778 	.db #0x3D
+   0CE6 3D                18779 	.db #0x3D
+   0CE7 3D                18780 	.db #0x3D
+   0CE8 3D                18781 	.db #0x3D
+   0CE9 3D                18782 	.db #0x3D
+   0CEA 3D                18783 	.db #0x3D
+   0CEB 3D                18784 	.db #0x3D
+   0CEC 3D                18785 	.db #0x3D
+   0CED 3D                18786 	.db #0x3D
    0CEE 3A                18787 	.db #0x3A
-   0CEF 36                18788 	.db #0x36
-   0CF0 36                18789 	.db #0x36
-   0CF1 36                18790 	.db #0x36
-   0CF2 36                18791 	.db #0x36
-   0CF3 36                18792 	.db #0x36
+   0CEF 3D                18788 	.db #0x3D
+   0CF0 3D                18789 	.db #0x3D
+   0CF1 3D                18790 	.db #0x3D
+   0CF2 3D                18791 	.db #0x3D
+   0CF3 3D                18792 	.db #0x3D
    0CF4 39                18793 	.db #0x39
-   0CF5 31                18794 	.db #0x31
-   0CF6 31                18795 	.db #0x31
-   0CF7 31                18796 	.db #0x31
-   0CF8 31                18797 	.db #0x31
+   0CF5 3D                18794 	.db #0x3D
+   0CF6 3D                18795 	.db #0x3D
+   0CF7 3D                18796 	.db #0x3D
+   0CF8 3D                18797 	.db #0x3D
    0CF9 3A                18798 	.db #0x3A
    0CFA 3D                18799 	.db #0x3D
    0CFB 3D                18800 	.db #0x3D
@@ -18802,39 +18802,39 @@
    0CFD 3D                18802 	.db #0x3D
    0CFE 3D                18803 	.db #0x3D
    0CFF 39                18804 	.db #0x39
-   0D00 31                18805 	.db #0x31
-   0D01 31                18806 	.db #0x31
-   0D02 31                18807 	.db #0x31
-   0D03 31                18808 	.db #0x31
+   0D00 3D                18805 	.db #0x3D
+   0D01 3D                18806 	.db #0x3D
+   0D02 3D                18807 	.db #0x3D
+   0D03 3D                18808 	.db #0x3D
    0D04 3A                18809 	.db #0x3A
    0D05 3D                18810 	.db #0x3D
-   0D06 36                18811 	.db #0x36
-   0D07 36                18812 	.db #0x36
+   0D06 3D                18811 	.db #0x3D
+   0D07 3D                18812 	.db #0x3D
    0D08 3D                18813 	.db #0x3D
-   0D09 36                18814 	.db #0x36
+   0D09 3D                18814 	.db #0x3D
    0D0A 39                18815 	.db #0x39
-   0D0B 31                18816 	.db #0x31
-   0D0C 31                18817 	.db #0x31
-   0D0D 31                18818 	.db #0x31
-   0D0E 31                18819 	.db #0x31
-   0D0F 31                18820 	.db #0x31
-   0D10 31                18821 	.db #0x31
-   0D11 31                18822 	.db #0x31
-   0D12 31                18823 	.db #0x31
-   0D13 31                18824 	.db #0x31
-   0D14 31                18825 	.db #0x31
-   0D15 31                18826 	.db #0x31
+   0D0B 3D                18816 	.db #0x3D
+   0D0C 3D                18817 	.db #0x3D
+   0D0D 3D                18818 	.db #0x3D
+   0D0E 3D                18819 	.db #0x3D
+   0D0F 3D                18820 	.db #0x3D
+   0D10 3D                18821 	.db #0x3D
+   0D11 3D                18822 	.db #0x3D
+   0D12 3D                18823 	.db #0x3D
+   0D13 3D                18824 	.db #0x3D
+   0D14 3D                18825 	.db #0x3D
+   0D15 3D                18826 	.db #0x3D
    0D16 3A                18827 	.db #0x3A
-   0D17 36                18828 	.db #0x36
-   0D18 36                18829 	.db #0x36
-   0D19 36                18830 	.db #0x36
-   0D1A 36                18831 	.db #0x36
-   0D1B 36                18832 	.db #0x36
+   0D17 3D                18828 	.db #0x3D
+   0D18 3D                18829 	.db #0x3D
+   0D19 3D                18830 	.db #0x3D
+   0D1A 3D                18831 	.db #0x3D
+   0D1B 3D                18832 	.db #0x3D
    0D1C 39                18833 	.db #0x39
-   0D1D 31                18834 	.db #0x31
-   0D1E 31                18835 	.db #0x31
-   0D1F 31                18836 	.db #0x31
-   0D20 31                18837 	.db #0x31
+   0D1D 3D                18834 	.db #0x3D
+   0D1E 3D                18835 	.db #0x3D
+   0D1F 3D                18836 	.db #0x3D
+   0D20 3D                18837 	.db #0x3D
    0D21 3A                18838 	.db #0x3A
    0D22 3D                18839 	.db #0x3D
    0D23 3D                18840 	.db #0x3D
@@ -18842,39 +18842,39 @@
    0D25 3D                18842 	.db #0x3D
    0D26 3D                18843 	.db #0x3D
    0D27 39                18844 	.db #0x39
-   0D28 31                18845 	.db #0x31
-   0D29 31                18846 	.db #0x31
-   0D2A 31                18847 	.db #0x31
-   0D2B 31                18848 	.db #0x31
+   0D28 3D                18845 	.db #0x3D
+   0D29 3D                18846 	.db #0x3D
+   0D2A 3D                18847 	.db #0x3D
+   0D2B 3D                18848 	.db #0x3D
    0D2C 3A                18849 	.db #0x3A
-   0D2D 36                18850 	.db #0x36
-   0D2E 36                18851 	.db #0x36
+   0D2D 3D                18850 	.db #0x3D
+   0D2E 3D                18851 	.db #0x3D
    0D2F 3D                18852 	.db #0x3D
-   0D30 36                18853 	.db #0x36
-   0D31 36                18854 	.db #0x36
+   0D30 3D                18853 	.db #0x3D
+   0D31 3D                18854 	.db #0x3D
    0D32 39                18855 	.db #0x39
-   0D33 31                18856 	.db #0x31
-   0D34 31                18857 	.db #0x31
-   0D35 31                18858 	.db #0x31
-   0D36 31                18859 	.db #0x31
-   0D37 31                18860 	.db #0x31
-   0D38 31                18861 	.db #0x31
-   0D39 31                18862 	.db #0x31
-   0D3A 31                18863 	.db #0x31
-   0D3B 31                18864 	.db #0x31
-   0D3C 31                18865 	.db #0x31
-   0D3D 31                18866 	.db #0x31
+   0D33 3D                18856 	.db #0x3D
+   0D34 3D                18857 	.db #0x3D
+   0D35 3D                18858 	.db #0x3D
+   0D36 3D                18859 	.db #0x3D
+   0D37 3D                18860 	.db #0x3D
+   0D38 3D                18861 	.db #0x3D
+   0D39 3D                18862 	.db #0x3D
+   0D3A 3D                18863 	.db #0x3D
+   0D3B 3D                18864 	.db #0x3D
+   0D3C 3D                18865 	.db #0x3D
+   0D3D 3D                18866 	.db #0x3D
    0D3E 3A                18867 	.db #0x3A
-   0D3F 36                18868 	.db #0x36
-   0D40 36                18869 	.db #0x36
-   0D41 36                18870 	.db #0x36
-   0D42 36                18871 	.db #0x36
-   0D43 36                18872 	.db #0x36
+   0D3F 3D                18868 	.db #0x3D
+   0D40 3D                18869 	.db #0x3D
+   0D41 3D                18870 	.db #0x3D
+   0D42 3D                18871 	.db #0x3D
+   0D43 3D                18872 	.db #0x3D
    0D44 39                18873 	.db #0x39
-   0D45 31                18874 	.db #0x31
-   0D46 31                18875 	.db #0x31
-   0D47 31                18876 	.db #0x31
-   0D48 31                18877 	.db #0x31
+   0D45 3D                18874 	.db #0x3D
+   0D46 3D                18875 	.db #0x3D
+   0D47 3D                18876 	.db #0x3D
+   0D48 3D                18877 	.db #0x3D
    0D49 3A                18878 	.db #0x3A
    0D4A 3D                18879 	.db #0x3D
    0D4B 3D                18880 	.db #0x3D
@@ -18882,39 +18882,39 @@
    0D4D 3D                18882 	.db #0x3D
    0D4E 3D                18883 	.db #0x3D
    0D4F 39                18884 	.db #0x39
-   0D50 31                18885 	.db #0x31
-   0D51 31                18886 	.db #0x31
-   0D52 31                18887 	.db #0x31
-   0D53 31                18888 	.db #0x31
+   0D50 3D                18885 	.db #0x3D
+   0D51 3D                18886 	.db #0x3D
+   0D52 3D                18887 	.db #0x3D
+   0D53 3D                18888 	.db #0x3D
    0D54 3A                18889 	.db #0x3A
-   0D55 36                18890 	.db #0x36
+   0D55 3D                18890 	.db #0x3D
    0D56 3D                18891 	.db #0x3D
-   0D57 36                18892 	.db #0x36
-   0D58 36                18893 	.db #0x36
-   0D59 36                18894 	.db #0x36
+   0D57 3D                18892 	.db #0x3D
+   0D58 3D                18893 	.db #0x3D
+   0D59 3D                18894 	.db #0x3D
    0D5A 39                18895 	.db #0x39
-   0D5B 31                18896 	.db #0x31
-   0D5C 31                18897 	.db #0x31
-   0D5D 31                18898 	.db #0x31
-   0D5E 31                18899 	.db #0x31
-   0D5F 31                18900 	.db #0x31
-   0D60 31                18901 	.db #0x31
-   0D61 31                18902 	.db #0x31
-   0D62 31                18903 	.db #0x31
-   0D63 31                18904 	.db #0x31
-   0D64 31                18905 	.db #0x31
-   0D65 31                18906 	.db #0x31
+   0D5B 3D                18896 	.db #0x3D
+   0D5C 3D                18897 	.db #0x3D
+   0D5D 3D                18898 	.db #0x3D
+   0D5E 3D                18899 	.db #0x3D
+   0D5F 3D                18900 	.db #0x3D
+   0D60 3D                18901 	.db #0x3D
+   0D61 3D                18902 	.db #0x3D
+   0D62 3D                18903 	.db #0x3D
+   0D63 3D                18904 	.db #0x3D
+   0D64 3D                18905 	.db #0x3D
+   0D65 3D                18906 	.db #0x3D
    0D66 33                18907 	.db #0x33
-   0D67 36                18908 	.db #0x36
-   0D68 36                18909 	.db #0x36
-   0D69 36                18910 	.db #0x36
-   0D6A 36                18911 	.db #0x36
-   0D6B 36                18912 	.db #0x36
+   0D67 3D                18908 	.db #0x3D
+   0D68 3D                18909 	.db #0x3D
+   0D69 3D                18910 	.db #0x3D
+   0D6A 3D                18911 	.db #0x3D
+   0D6B 3D                18912 	.db #0x3D
    0D6C 35                18913 	.db #0x35
-   0D6D 31                18914 	.db #0x31
-   0D6E 31                18915 	.db #0x31
-   0D6F 31                18916 	.db #0x31
-   0D70 31                18917 	.db #0x31
+   0D6D 3D                18914 	.db #0x3D
+   0D6E 3D                18915 	.db #0x3D
+   0D6F 3D                18916 	.db #0x3D
+   0D70 3D                18917 	.db #0x3D
    0D71 33                18918 	.db #0x33
    0D72 3D                18919 	.db #0x3D
    0D73 3D                18920 	.db #0x3D
@@ -18922,146 +18922,146 @@
    0D75 3D                18922 	.db #0x3D
    0D76 3D                18923 	.db #0x3D
    0D77 35                18924 	.db #0x35
-   0D78 31                18925 	.db #0x31
-   0D79 31                18926 	.db #0x31
-   0D7A 31                18927 	.db #0x31
-   0D7B 31                18928 	.db #0x31
+   0D78 3D                18925 	.db #0x3D
+   0D79 3D                18926 	.db #0x3D
+   0D7A 3D                18927 	.db #0x3D
+   0D7B 3D                18928 	.db #0x3D
    0D7C 33                18929 	.db #0x33
-   0D7D 36                18930 	.db #0x36
-   0D7E 36                18931 	.db #0x36
-   0D7F 36                18932 	.db #0x36
-   0D80 36                18933 	.db #0x36
-   0D81 36                18934 	.db #0x36
+   0D7D 3D                18930 	.db #0x3D
+   0D7E 3D                18931 	.db #0x3D
+   0D7F 3D                18932 	.db #0x3D
+   0D80 3D                18933 	.db #0x3D
+   0D81 3D                18934 	.db #0x3D
    0D82 35                18935 	.db #0x35
-   0D83 31                18936 	.db #0x31
-   0D84 31                18937 	.db #0x31
-   0D85 31                18938 	.db #0x31
-   0D86 31                18939 	.db #0x31
-   0D87 31                18940 	.db #0x31
-   0D88 31                18941 	.db #0x31
-   0D89 31                18942 	.db #0x31
-   0D8A 31                18943 	.db #0x31
-   0D8B 31                18944 	.db #0x31
-   0D8C 31                18945 	.db #0x31
-   0D8D 3E                18946 	.db #0x3E
+   0D83 3D                18936 	.db #0x3D
+   0D84 3D                18937 	.db #0x3D
+   0D85 3D                18938 	.db #0x3D
+   0D86 3D                18939 	.db #0x3D
+   0D87 3D                18940 	.db #0x3D
+   0D88 3D                18941 	.db #0x3D
+   0D89 3D                18942 	.db #0x3D
+   0D8A 3D                18943 	.db #0x3D
+   0D8B 3D                18944 	.db #0x3D
+   0D8C 3D                18945 	.db #0x3D
+   0D8D 31                18946 	.db #0x31
    0D8E 3D                18947 	.db #0x3D
-   0D8F 3E                18948 	.db #0x3E
+   0D8F 31                18948 	.db #0x31
    0D90 3D                18949 	.db #0x3D
-   0D91 3E                18950 	.db #0x3E
+   0D91 31                18950 	.db #0x31
    0D92 3D                18951 	.db #0x3D
-   0D93 3E                18952 	.db #0x3E
+   0D93 31                18952 	.db #0x31
    0D94 3D                18953 	.db #0x3D
-   0D95 3E                18954 	.db #0x3E
+   0D95 31                18954 	.db #0x31
    0D96 3D                18955 	.db #0x3D
-   0D97 3E                18956 	.db #0x3E
+   0D97 31                18956 	.db #0x31
    0D98 3D                18957 	.db #0x3D
-   0D99 3E                18958 	.db #0x3E
+   0D99 31                18958 	.db #0x31
    0D9A 3D                18959 	.db #0x3D
-   0D9B 3E                18960 	.db #0x3E
+   0D9B 31                18960 	.db #0x31
    0D9C 3D                18961 	.db #0x3D
-   0D9D 3E                18962 	.db #0x3E
+   0D9D 31                18962 	.db #0x31
    0D9E 3D                18963 	.db #0x3D
-   0D9F 3E                18964 	.db #0x3E
+   0D9F 31                18964 	.db #0x31
    0DA0 3D                18965 	.db #0x3D
-   0DA1 3E                18966 	.db #0x3E
+   0DA1 31                18966 	.db #0x31
    0DA2 3D                18967 	.db #0x3D
-   0DA3 3E                18968 	.db #0x3E
+   0DA3 31                18968 	.db #0x31
    0DA4 3D                18969 	.db #0x3D
-   0DA5 3E                18970 	.db #0x3E
+   0DA5 31                18970 	.db #0x31
    0DA6 3D                18971 	.db #0x3D
-   0DA7 3E                18972 	.db #0x3E
+   0DA7 31                18972 	.db #0x31
    0DA8 3D                18973 	.db #0x3D
-   0DA9 3E                18974 	.db #0x3E
+   0DA9 31                18974 	.db #0x31
    0DAA 3D                18975 	.db #0x3D
-   0DAB 3E                18976 	.db #0x3E
+   0DAB 31                18976 	.db #0x31
    0DAC 3D                18977 	.db #0x3D
-   0DAD 3E                18978 	.db #0x3E
+   0DAD 31                18978 	.db #0x31
    0DAE 3D                18979 	.db #0x3D
-   0DAF 3E                18980 	.db #0x3E
+   0DAF 31                18980 	.db #0x31
    0DB0 3D                18981 	.db #0x3D
-   0DB1 3E                18982 	.db #0x3E
+   0DB1 31                18982 	.db #0x31
    0DB2 3D                18983 	.db #0x3D
-   0DB3 3E                18984 	.db #0x3E
+   0DB3 31                18984 	.db #0x31
    0DB4 3D                18985 	.db #0x3D
    0DB5 3D                18986 	.db #0x3D
-   0DB6 3E                18987 	.db #0x3E
+   0DB6 31                18987 	.db #0x31
    0DB7 3D                18988 	.db #0x3D
-   0DB8 3E                18989 	.db #0x3E
+   0DB8 31                18989 	.db #0x31
    0DB9 3D                18990 	.db #0x3D
-   0DBA 3E                18991 	.db #0x3E
+   0DBA 31                18991 	.db #0x31
    0DBB 3D                18992 	.db #0x3D
-   0DBC 3E                18993 	.db #0x3E
+   0DBC 31                18993 	.db #0x31
    0DBD 3D                18994 	.db #0x3D
-   0DBE 3E                18995 	.db #0x3E
+   0DBE 31                18995 	.db #0x31
    0DBF 3D                18996 	.db #0x3D
-   0DC0 3E                18997 	.db #0x3E
+   0DC0 31                18997 	.db #0x31
    0DC1 3D                18998 	.db #0x3D
-   0DC2 3E                18999 	.db #0x3E
+   0DC2 31                18999 	.db #0x31
    0DC3 3D                19000 	.db #0x3D
-   0DC4 3E                19001 	.db #0x3E
+   0DC4 31                19001 	.db #0x31
    0DC5 3D                19002 	.db #0x3D
-   0DC6 3E                19003 	.db #0x3E
+   0DC6 31                19003 	.db #0x31
    0DC7 3D                19004 	.db #0x3D
-   0DC8 3E                19005 	.db #0x3E
+   0DC8 31                19005 	.db #0x31
    0DC9 3D                19006 	.db #0x3D
-   0DCA 3E                19007 	.db #0x3E
+   0DCA 31                19007 	.db #0x31
    0DCB 3D                19008 	.db #0x3D
-   0DCC 3E                19009 	.db #0x3E
+   0DCC 31                19009 	.db #0x31
    0DCD 3D                19010 	.db #0x3D
-   0DCE 3E                19011 	.db #0x3E
+   0DCE 31                19011 	.db #0x31
    0DCF 3D                19012 	.db #0x3D
-   0DD0 3E                19013 	.db #0x3E
+   0DD0 31                19013 	.db #0x31
    0DD1 3D                19014 	.db #0x3D
-   0DD2 3E                19015 	.db #0x3E
+   0DD2 31                19015 	.db #0x31
    0DD3 3D                19016 	.db #0x3D
-   0DD4 3E                19017 	.db #0x3E
+   0DD4 31                19017 	.db #0x31
    0DD5 3D                19018 	.db #0x3D
-   0DD6 3E                19019 	.db #0x3E
+   0DD6 31                19019 	.db #0x31
    0DD7 3D                19020 	.db #0x3D
-   0DD8 3E                19021 	.db #0x3E
+   0DD8 31                19021 	.db #0x31
    0DD9 3D                19022 	.db #0x3D
-   0DDA 3E                19023 	.db #0x3E
+   0DDA 31                19023 	.db #0x31
    0DDB 3D                19024 	.db #0x3D
-   0DDC 3E                19025 	.db #0x3E
-   0DDD 3E                19026 	.db #0x3E
+   0DDC 31                19025 	.db #0x31
+   0DDD 31                19026 	.db #0x31
    0DDE 3D                19027 	.db #0x3D
-   0DDF 3E                19028 	.db #0x3E
+   0DDF 31                19028 	.db #0x31
    0DE0 3D                19029 	.db #0x3D
-   0DE1 3E                19030 	.db #0x3E
+   0DE1 31                19030 	.db #0x31
    0DE2 3D                19031 	.db #0x3D
-   0DE3 3E                19032 	.db #0x3E
+   0DE3 31                19032 	.db #0x31
    0DE4 3D                19033 	.db #0x3D
-   0DE5 3E                19034 	.db #0x3E
+   0DE5 31                19034 	.db #0x31
    0DE6 3D                19035 	.db #0x3D
-   0DE7 3E                19036 	.db #0x3E
+   0DE7 31                19036 	.db #0x31
    0DE8 3D                19037 	.db #0x3D
-   0DE9 3E                19038 	.db #0x3E
+   0DE9 31                19038 	.db #0x31
    0DEA 3D                19039 	.db #0x3D
-   0DEB 3E                19040 	.db #0x3E
+   0DEB 31                19040 	.db #0x31
    0DEC 3D                19041 	.db #0x3D
-   0DED 3E                19042 	.db #0x3E
+   0DED 31                19042 	.db #0x31
    0DEE 3D                19043 	.db #0x3D
-   0DEF 3E                19044 	.db #0x3E
+   0DEF 31                19044 	.db #0x31
    0DF0 3D                19045 	.db #0x3D
-   0DF1 3E                19046 	.db #0x3E
+   0DF1 31                19046 	.db #0x31
    0DF2 3D                19047 	.db #0x3D
-   0DF3 3E                19048 	.db #0x3E
+   0DF3 31                19048 	.db #0x31
    0DF4 3D                19049 	.db #0x3D
-   0DF5 3E                19050 	.db #0x3E
+   0DF5 31                19050 	.db #0x31
    0DF6 3D                19051 	.db #0x3D
-   0DF7 3E                19052 	.db #0x3E
+   0DF7 31                19052 	.db #0x31
    0DF8 3D                19053 	.db #0x3D
-   0DF9 3E                19054 	.db #0x3E
+   0DF9 31                19054 	.db #0x31
    0DFA 3D                19055 	.db #0x3D
-   0DFB 3E                19056 	.db #0x3E
+   0DFB 31                19056 	.db #0x31
    0DFC 3D                19057 	.db #0x3D
-   0DFD 3E                19058 	.db #0x3E
+   0DFD 31                19058 	.db #0x31
    0DFE 3D                19059 	.db #0x3D
-   0DFF 3E                19060 	.db #0x3E
+   0DFF 31                19060 	.db #0x31
    0E00 3D                19061 	.db #0x3D
-   0E01 3E                19062 	.db #0x3E
+   0E01 31                19062 	.db #0x31
    0E02 3D                19063 	.db #0x3D
-   0E03 3E                19064 	.db #0x3E
+   0E03 31                19064 	.db #0x31
    0E04 3D                19065 	.db #0x3D
    0E05 3D                19066 	.db #0x3D
    0E06 3D                19067 	.db #0x3D
@@ -19153,7 +19153,7 @@
    0E5F 4A 29             19153 	.dw #0x294A
    0E61 94 52             19154 	.dw #0x5294
    0E63 DE 7B             19155 	.dw #0x7BDE
-                          19156 ;	main.c 203
+                          19156 ;	main.c 91
                           19157 ; genLabel
                           19158 ; genFunction
                           19159 ;	---------------------------------
@@ -19163,16 +19163,16 @@
    0E65                   19163 _vblint:
    0E65 C5                19164 	push	bc
    0E66 E8 FC             19165 	lda	sp,-4(sp)
-                          19166 ;	main.c 204
+                          19166 ;	main.c 92
                           19167 ; genAssign
    0E68 11 00 20          19168 	ld	de,#0x2000
                           19169 ; genAssign (pointer)
    0E6B 3E 02             19170 	ld	a,#0x02
    0E6D 12                19171 	ld	(de),a
-                          19172 ;	main.c 206
+                          19172 ;	main.c 94
                           19173 ; genCall
    0E6E CD DE 0E          19174 	call	_update_graphics
-                          19175 ;	main.c 207
+                          19175 ;	main.c 95
                           19176 ; genPlus
                           19177 ; AOP_STK for _vblint_sloc0_1_0
                           19178 ; genPlusIncr
@@ -19210,7 +19210,7 @@
    0E94 56                19210 	ld	d,(hl)
    0E95 79                19211 	ld	a,c
    0E96 12                19212 	ld	(de),a
-                          19213 ;	main.c 208
+                          19213 ;	main.c 96
                           19214 ; genPlus
                           19215 ; AOP_STK for _vblint_sloc0_1_0
                           19216 ; genPlusIncr
@@ -19253,7 +19253,7 @@
    0EBE 56                19253 	ld	d,(hl)
    0EBF 79                19254 	ld	a,c
    0EC0 12                19255 	ld	(de),a
-                          19256 ;	main.c 209
+                          19256 ;	main.c 97
                           19257 ; genIpush
    0EC1 21 68 04          19258 	ld	hl,#_windowmap + 0
    0EC4 E5                19259 	push	hl
@@ -19283,7 +19283,7 @@
    0EDC C1                19283 	pop	bc
    0EDD C9                19284 	ret
    0EDE                   19285 ___vblint_end:
-                          19286 ;	main.c 250
+                          19286 ;	main.c 138
                           19287 ; genLabel
                           19288 ; genFunction
                           19289 ;	---------------------------------
@@ -19292,10 +19292,10 @@
    0EDE                   19292 ___update_graphics_start:
    0EDE                   19293 _update_graphics:
                           19294 	
-                          19295 ;	main.c 251
+                          19295 ;	main.c 139
                           19296 ; genCall
    0EDE CD 00 00          19297 	call	_disable_interrupts
-                          19298 ;	main.c 254
+                          19298 ;	main.c 142
                           19299 ; genIpush
    0EE1 3E 00             19300 	ld	a,#0x00
    0EE3 F5                19301 	push	af
@@ -19307,7 +19307,7 @@
                           19307 ; genCall
    0EE9 CD 00 00          19308 	call	_scroll_bkg
    0EEC E8 02             19309 	lda	sp,2(sp)
-                          19310 ;	main.c 257
+                          19310 ;	main.c 145
                           19311 ; genIpush
                           19312 ; AOP_HL for _player_y
    0EEE 21 F5 09          19313 	ld	hl,#_player_y + 0
@@ -19327,7 +19327,7 @@
                           19327 ; genCall
    0EFE CD 00 00          19328 	call	_move_sprite
    0F01 E8 03             19329 	lda	sp,3(sp)
-                          19330 ;	main.c 259
+                          19330 ;	main.c 147
                           19331 ; genIpush
                           19332 ; AOP_HL for _badguy_y
    0F03 21 FB 09          19333 	ld	hl,#_badguy_y + 0
@@ -19347,7 +19347,7 @@
                           19347 ; genCall
    0F13 CD 00 00          19348 	call	_move_sprite
    0F16 E8 03             19349 	lda	sp,3(sp)
-                          19350 ;	main.c 260
+                          19350 ;	main.c 148
                           19351 ; genCmpGt
                           19352 ; AOP_HL for _score
    0F18 21 F0 09          19353 	ld	hl,#_score + 0
@@ -19359,7 +19359,7 @@
    0F21 21 FF 7F          19359 	ld	hl,#0x7FFF
    0F24 19                19360 	add	hl,de
    0F25 D2 3D 0F          19361 	jp	nc,00102$
-                          19362 ;	main.c 262
+                          19362 ;	main.c 150
                           19363 ; genIpush
                           19364 ; AOP_HL for _coin_y
    0F28 21 F7 09          19365 	ld	hl,#_coin_y + 0
@@ -19381,7 +19381,7 @@
    0F3B E8 03             19381 	lda	sp,3(sp)
                           19382 ; genLabel
    0F3D                   19383 00102$:
-                          19384 ;	main.c 264
+                          19384 ;	main.c 152
                           19385 ; genCmpGt
                           19386 ; AOP_HL for _score
    0F3D 21 F0 09          19387 	ld	hl,#_score + 0
@@ -19393,7 +19393,7 @@
    0F46 21 FE 7F          19393 	ld	hl,#0x7FFE
    0F49 19                19394 	add	hl,de
    0F4A D2 62 0F          19395 	jp	nc,00104$
-                          19396 ;	main.c 265
+                          19396 ;	main.c 153
                           19397 ; genIpush
                           19398 ; AOP_HL for _badguy2_y
    0F4D 21 FF 09          19399 	ld	hl,#_badguy2_y + 0
@@ -19415,7 +19415,7 @@
    0F60 E8 03             19415 	lda	sp,3(sp)
                           19416 ; genLabel
    0F62                   19417 00104$:
-                          19418 ;	main.c 268
+                          19418 ;	main.c 156
                           19419 ; genCmpGt
                           19420 ; AOP_HL for _score
    0F62 21 F0 09          19421 	ld	hl,#_score + 0
@@ -19427,7 +19427,7 @@
    0F6B 21 FC 7F          19427 	ld	hl,#0x7FFC
    0F6E 19                19428 	add	hl,de
    0F6F D2 87 0F          19429 	jp	nc,00106$
-                          19430 ;	main.c 269
+                          19430 ;	main.c 157
                           19431 ; genIpush
                           19432 ; AOP_HL for _badguy3_y
    0F72 21 03 0A          19433 	ld	hl,#_badguy3_y + 0
@@ -19449,7 +19449,7 @@
    0F85 E8 03             19449 	lda	sp,3(sp)
                           19450 ; genLabel
    0F87                   19451 00106$:
-                          19452 ;	main.c 272
+                          19452 ;	main.c 160
                           19453 ; genIpush
                           19454 ; AOP_HL for _player_shot_y
    0F87 21 07 0A          19455 	ld	hl,#_player_shot_y + 0
@@ -19469,7 +19469,7 @@
                           19469 ; genCall
    0F97 CD 00 00          19470 	call	_move_sprite
    0F9A E8 03             19471 	lda	sp,3(sp)
-                          19472 ;	main.c 274
+                          19472 ;	main.c 162
                           19473 ; genCall
    0F9C CD 00 00          19474 	call	_enable_interrupts
                           19475 ; genLabel
@@ -19735,7 +19735,7 @@
    109D 1D                19735 	.db #0x1D
    109E 1D                19736 	.db #0x1D
    109F 1E                19737 	.db #0x1E
-                          19738 ;	main.c 278
+                          19738 ;	main.c 166
                           19739 ; genLabel
                           19740 ; genFunction
                           19741 ;	---------------------------------
@@ -19744,19 +19744,19 @@
    10A0                   19744 ___update_joypad_start:
    10A0                   19745 _update_joypad:
                           19746 	
-                          19747 ;	main.c 279
+                          19747 ;	main.c 167
                           19748 ; genCall
    10A0 CD 00 00          19749 	call	_joypad
                           19750 ; AOP_HL for _joypad_state
    10A3 21 F3 09          19751 	ld	hl,#_joypad_state + 0
    10A6 73                19752 	ld	(hl),e
-                          19753 ;	main.c 281
+                          19753 ;	main.c 169
                           19754 ; genAnd
                           19755 ; AOP_HL for _joypad_state
    10A7 7E                19756 	ld	a,(hl)
    10A8 CB 4F             19757 	bit	1,a
    10AA CA B8 10          19758 	jp	z,00104$
-                          19759 ;	main.c 282
+                          19759 ;	main.c 170
                           19760 ; genCmpGt
                           19761 ; AOP_HL for _player_x
    10AD AF                19762 	xor	a,a
@@ -19764,41 +19764,41 @@
    10B0 21 F4 09          19764 	ld	hl,#_player_x + 0
    10B3 9E                19765 	sbc	a,(hl) ; 2
    10B4 D2 B8 10          19766 	jp	nc,00104$
-                          19767 ;	main.c 283
+                          19767 ;	main.c 171
                           19768 ; genMinus
                           19769 ; AOP_HL for _player_x
    10B7 35                19770 	dec	(hl)
                           19771 ; genLabel
    10B8                   19772 00104$:
-                          19773 ;	main.c 285
+                          19773 ;	main.c 173
                           19774 ; genAnd
                           19775 ; AOP_HL for _joypad_state
    10B8 21 F3 09          19776 	ld	hl,#_joypad_state + 0
    10BB 7E                19777 	ld	a,(hl)
    10BC CB 47             19778 	bit	0,a
    10BE CA CB 10          19779 	jp	z,00108$
-                          19780 ;	main.c 286
+                          19780 ;	main.c 174
                           19781 ; genCmpLt
                           19782 ; AOP_HL for _player_x
    10C1 21 F4 09          19783 	ld	hl,#_player_x + 0
    10C4 7E                19784 	ld	a,(hl)
    10C5 FE A0             19785 	cp	#0xA0
    10C7 D2 CB 10          19786 	jp	nc,00108$
-                          19787 ;	main.c 287
+                          19787 ;	main.c 175
                           19788 ; genPlus
                           19789 ; AOP_HL for _player_x
                           19790 ; genPlusIncr
    10CA 34                19791 	inc	(hl)
                           19792 ; genLabel
    10CB                   19793 00108$:
-                          19794 ;	main.c 289
+                          19794 ;	main.c 177
                           19795 ; genAnd
                           19796 ; AOP_HL for _joypad_state
    10CB 21 F3 09          19797 	ld	hl,#_joypad_state + 0
    10CE 7E                19798 	ld	a,(hl)
    10CF CB 57             19799 	bit	2,a
    10D1 CA DF 10          19800 	jp	z,00112$
-                          19801 ;	main.c 290
+                          19801 ;	main.c 178
                           19802 ; genCmpGt
                           19803 ; AOP_HL for _player_y
    10D4 AF                19804 	xor	a,a
@@ -19806,41 +19806,41 @@
    10D7 21 F5 09          19806 	ld	hl,#_player_y + 0
    10DA 9E                19807 	sbc	a,(hl) ; 2
    10DB D2 DF 10          19808 	jp	nc,00112$
-                          19809 ;	main.c 291
+                          19809 ;	main.c 179
                           19810 ; genMinus
                           19811 ; AOP_HL for _player_y
    10DE 35                19812 	dec	(hl)
                           19813 ; genLabel
    10DF                   19814 00112$:
-                          19815 ;	main.c 293
+                          19815 ;	main.c 181
                           19816 ; genAnd
                           19817 ; AOP_HL for _joypad_state
    10DF 21 F3 09          19818 	ld	hl,#_joypad_state + 0
    10E2 7E                19819 	ld	a,(hl)
    10E3 CB 5F             19820 	bit	3,a
    10E5 CA F2 10          19821 	jp	z,00116$
-                          19822 ;	main.c 294
+                          19822 ;	main.c 182
                           19823 ; genCmpLt
                           19824 ; AOP_HL for _player_y
    10E8 21 F5 09          19825 	ld	hl,#_player_y + 0
    10EB 7E                19826 	ld	a,(hl)
    10EC FE 98             19827 	cp	#0x98
    10EE D2 F2 10          19828 	jp	nc,00116$
-                          19829 ;	main.c 295
+                          19829 ;	main.c 183
                           19830 ; genPlus
                           19831 ; AOP_HL for _player_y
                           19832 ; genPlusIncr
    10F1 34                19833 	inc	(hl)
                           19834 ; genLabel
    10F2                   19835 00116$:
-                          19836 ;	main.c 298
+                          19836 ;	main.c 186
                           19837 ; genAnd
                           19838 ; AOP_HL for _joypad_state
    10F2 21 F3 09          19839 	ld	hl,#_joypad_state + 0
    10F5 7E                19840 	ld	a,(hl)
    10F6 CB 67             19841 	bit	4,a
    10F8 CA 3B 11          19842 	jp	z,00120$
-                          19843 ;	main.c 300
+                          19843 ;	main.c 188
                           19844 ; genCmpEq
                           19845 ; AOP_HL for _player_shot_z
    10FB 21 08 0A          19846 	ld	hl,#_player_shot_z + 0
@@ -19851,42 +19851,42 @@
    1105                   19851 00139$:
    1105 C3 3B 11          19852 	jp	00120$
    1108                   19853 00140$:
-                          19854 ;	main.c 301
+                          19854 ;	main.c 189
                           19855 ; genAssign
    1108 11 10 FF          19856 	ld	de,#0xFF10
                           19857 ; genAssign (pointer)
    110B 3E 39             19858 	ld	a,#0x39
    110D 12                19859 	ld	(de),a
-                          19860 ;	main.c 302
+                          19860 ;	main.c 190
                           19861 ; genAssign
    110E 11 11 FF          19862 	ld	de,#0xFF11
                           19863 ; genAssign (pointer)
    1111 3E 83             19864 	ld	a,#0x83
    1113 12                19865 	ld	(de),a
-                          19866 ;	main.c 303
+                          19866 ;	main.c 191
                           19867 ; genAssign
    1114 11 12 FF          19868 	ld	de,#0xFF12
                           19869 ; genAssign (pointer)
    1117 3E 24             19870 	ld	a,#0x24
    1119 12                19871 	ld	(de),a
-                          19872 ;	main.c 304
+                          19872 ;	main.c 192
                           19873 ; genAssign
    111A 11 13 FF          19874 	ld	de,#0xFF13
                           19875 ; genAssign (pointer)
    111D 3E 73             19876 	ld	a,#0x73
    111F 12                19877 	ld	(de),a
-                          19878 ;	main.c 305
+                          19878 ;	main.c 193
                           19879 ; genAssign
    1120 11 14 FF          19880 	ld	de,#0xFF14
                           19881 ; genAssign (pointer)
    1123 3E 86             19882 	ld	a,#0x86
    1125 12                19883 	ld	(de),a
-                          19884 ;	main.c 306
+                          19884 ;	main.c 194
                           19885 ; genAssign
                           19886 ; AOP_HL for _player_shot_z
    1126 21 08 0A          19887 	ld	hl,#_player_shot_z + 0
    1129 36 01             19888 	ld	(hl),#0x01
-                          19889 ;	main.c 307
+                          19889 ;	main.c 195
                           19890 ; genAssign
                           19891 ; AOP_HL for _player_x
                           19892 ; AOP_HL for _player_shot_x
@@ -19894,7 +19894,7 @@
    112E 7E                19894 	ld	a,(hl)
    112F 21 06 0A          19895 	ld	hl,#_player_shot_x + 0
    1132 77                19896 	ld	(hl),a
-                          19897 ;	main.c 308
+                          19897 ;	main.c 196
                           19898 ; genAssign
                           19899 ; AOP_HL for _player_y
                           19900 ; AOP_HL for _player_shot_y
@@ -19904,7 +19904,7 @@
    113A 77                19904 	ld	(hl),a
                           19905 ; genLabel
    113B                   19906 00120$:
-                          19907 ;	main.c 311
+                          19907 ;	main.c 199
                           19908 ; genCmpEq
                           19909 ; AOP_HL for _player_shot_z
    113B 21 08 0A          19910 	ld	hl,#_player_shot_z + 0
@@ -19915,30 +19915,30 @@
    1146                   19915 00141$:
    1146 C3 61 11          19916 	jp	00125$
    1149                   19917 00142$:
-                          19918 ;	main.c 313
+                          19918 ;	main.c 201
                           19919 ; genPlus
                           19920 ; AOP_HL for _player_shot_x
                           19921 ; genPlusIncr
    1149 21 06 0A          19922 	ld	hl,#_player_shot_x + 0
    114C 34                19923 	inc	(hl)
    114D 34                19924 	inc	(hl)
-                          19925 ;	main.c 314
+                          19925 ;	main.c 202
                           19926 ; genCmpGt
                           19927 ; AOP_HL for _player_shot_x
    114E AF                19928 	xor	a,a
    114F 3E F0             19929 	ld	a,#0xF0
    1151 9E                19930 	sbc	a,(hl) ; 2
    1152 D2 61 11          19931 	jp	nc,00125$
-                          19932 ;	main.c 315
+                          19932 ;	main.c 203
                           19933 ; genAssign
                           19934 ; AOP_HL for _player_shot_x
    1155 36 FA             19935 	ld	(hl),#0xFA
-                          19936 ;	main.c 316
+                          19936 ;	main.c 204
                           19937 ; genAssign
                           19938 ; AOP_HL for _player_shot_y
    1157 21 07 0A          19939 	ld	hl,#_player_shot_y + 0
    115A 36 FA             19940 	ld	(hl),#0xFA
-                          19941 ;	main.c 317
+                          19941 ;	main.c 205
                           19942 ; genAssign
                           19943 ; AOP_HL for _player_shot_z
    115C 21 08 0A          19944 	ld	hl,#_player_shot_z + 0
@@ -19949,7 +19949,7 @@
                           19949 	
    1161 C9                19950 	ret
    1162                   19951 ___update_joypad_end:
-                          19952 ;	main.c 322
+                          19952 ;	main.c 210
                           19953 ; genLabel
                           19954 ; genFunction
                           19955 ;	---------------------------------
@@ -19959,25 +19959,25 @@
    1162                   19959 _update_badguy:
    1162 C5                19960 	push	bc
                           19961 	
-                          19962 ;	main.c 323
+                          19962 ;	main.c 211
                           19963 ; genMinus
                           19964 ; AOP_HL for _badguy_x
    1163 21 FA 09          19965 	ld	hl,#_badguy_x + 0
    1166 35                19966 	dec	(hl)
-                          19967 ;	main.c 324
+                          19967 ;	main.c 212
                           19968 ; genCmpGt
                           19969 ; AOP_HL for _badguy_x
    1167 AF                19970 	xor	a,a
    1168 3E F0             19971 	ld	a,#0xF0
    116A 9E                19972 	sbc	a,(hl) ; 2
    116B D2 8E 11          19973 	jp	nc,00105$
-                          19974 ;	main.c 325
+                          19974 ;	main.c 213
                           19975 ; genCall
    116E CD 00 00          19976 	call	_rand
                           19977 ; AOP_HL for _badguy_offset
    1171 21 FD 09          19978 	ld	hl,#_badguy_offset + 0
    1174 73                19979 	ld	(hl),e
-                          19980 ;	main.c 326
+                          19980 ;	main.c 214
                           19981 ; genLabel
    1175                   19982 00101$:
                           19983 ; genCmpGt
@@ -19987,7 +19987,7 @@
    1178 21 FD 09          19987 	ld	hl,#_badguy_offset + 0
    117B 9E                19988 	sbc	a,(hl) ; 2
    117C D2 89 11          19989 	jp	nc,00103$
-                          19990 ;	main.c 327
+                          19990 ;	main.c 215
                           19991 ; genCall
    117F CD 00 00          19992 	call	_rand
                           19993 ; AOP_HL for _badguy_offset
@@ -19997,14 +19997,14 @@
    1186 C3 75 11          19997 	jp	00101$
                           19998 ; genLabel
    1189                   19999 00103$:
-                          20000 ;	main.c 330
+                          20000 ;	main.c 218
                           20001 ; genAssign
                           20002 ; AOP_HL for _badguy_x
    1189 21 FA 09          20003 	ld	hl,#_badguy_x + 0
    118C 36 EF             20004 	ld	(hl),#0xEF
                           20005 ; genLabel
    118E                   20006 00105$:
-                          20007 ;	main.c 334
+                          20007 ;	main.c 222
                           20008 ; genAssign
                           20009 ; AOP_HL for _badguy_z
    118E 21 FC 09          20010 	ld	hl,#_badguy_z + 0
@@ -20027,13 +20027,13 @@
    119F 86                20027 	add	a,(hl)
    11A0 21 FB 09          20028 	ld	hl,#_badguy_y + 0
    11A3 77                20029 	ld	(hl),a
-                          20030 ;	main.c 336
+                          20030 ;	main.c 224
                           20031 ; genPlus
                           20032 ; AOP_HL for _badguy_z
                           20033 ; genPlusIncr
    11A4 21 FC 09          20034 	ld	hl,#_badguy_z + 0
    11A7 34                20035 	inc	(hl)
-                          20036 ;	main.c 338
+                          20036 ;	main.c 226
                           20037 ; genCmpGt
                           20038 ; AOP_HL for _score
    11A8 21 F0 09          20039 	ld	hl,#_score + 0
@@ -20045,25 +20045,25 @@
    11B1 21 FB 7F          20045 	ld	hl,#0x7FFB
    11B4 19                20046 	add	hl,de
    11B5 D2 08 12          20047 	jp	nc,00112$
-                          20048 ;	main.c 340
+                          20048 ;	main.c 228
                           20049 ; genMinus
                           20050 ; AOP_HL for _coin_x
    11B8 21 F6 09          20051 	ld	hl,#_coin_x + 0
    11BB 35                20052 	dec	(hl)
-                          20053 ;	main.c 341
+                          20053 ;	main.c 229
                           20054 ; genCmpGt
                           20055 ; AOP_HL for _coin_x
    11BC AF                20056 	xor	a,a
    11BD 3E F0             20057 	ld	a,#0xF0
    11BF 9E                20058 	sbc	a,(hl) ; 2
    11C0 D2 EE 11          20059 	jp	nc,00110$
-                          20060 ;	main.c 342
+                          20060 ;	main.c 230
                           20061 ; genCall
    11C3 CD 00 00          20062 	call	_rand
                           20063 ; AOP_HL for _coin_offset
    11C6 21 F9 09          20064 	ld	hl,#_coin_offset + 0
    11C9 73                20065 	ld	(hl),e
-                          20066 ;	main.c 343
+                          20066 ;	main.c 231
                           20067 ; genLabel
    11CA                   20068 00106$:
                           20069 ; genCmpGt
@@ -20073,7 +20073,7 @@
    11CD 21 F9 09          20073 	ld	hl,#_coin_offset + 0
    11D0 9E                20074 	sbc	a,(hl) ; 2
    11D1 D2 DE 11          20075 	jp	nc,00108$
-                          20076 ;	main.c 344
+                          20076 ;	main.c 232
                           20077 ; genCall
    11D4 CD 00 00          20078 	call	_rand
                           20079 ; AOP_HL for _coin_offset
@@ -20083,12 +20083,12 @@
    11DB C3 CA 11          20083 	jp	00106$
                           20084 ; genLabel
    11DE                   20085 00108$:
-                          20086 ;	main.c 347
+                          20086 ;	main.c 235
                           20087 ; genAssign
                           20088 ; AOP_HL for _coin_x
    11DE 21 F6 09          20089 	ld	hl,#_coin_x + 0
    11E1 36 EF             20090 	ld	(hl),#0xEF
-                          20091 ;	main.c 348
+                          20091 ;	main.c 236
                           20092 ; genMinus
                           20093 ; AOP_HL for _score
    11E3 21 F0 09          20094 	ld	hl,#_score + 0
@@ -20100,7 +20100,7 @@
    11ED 77                20100 	ld	(hl),a
                           20101 ; genLabel
    11EE                   20102 00110$:
-                          20103 ;	main.c 351
+                          20103 ;	main.c 239
                           20104 ; genAssign
                           20105 ; AOP_HL for _coin_z
    11EE 21 F8 09          20106 	ld	hl,#_coin_z + 0
@@ -20123,7 +20123,7 @@
    11FF 86                20123 	add	a,(hl)
    1200 21 F7 09          20124 	ld	hl,#_coin_y + 0
    1203 77                20125 	ld	(hl),a
-                          20126 ;	main.c 353
+                          20126 ;	main.c 241
                           20127 ; genPlus
                           20128 ; AOP_HL for _coin_z
                           20129 ; genPlusIncr
@@ -20131,7 +20131,7 @@
    1207 34                20131 	inc	(hl)
                           20132 ; genLabel
    1208                   20133 00112$:
-                          20134 ;	main.c 357
+                          20134 ;	main.c 245
                           20135 ; genCmpGt
                           20136 ; AOP_HL for _score
    1208 21 F0 09          20137 	ld	hl,#_score + 0
@@ -20143,25 +20143,25 @@
    1211 21 FE 7F          20143 	ld	hl,#0x7FFE
    1214 19                20144 	add	hl,de
    1215 D2 5D 12          20145 	jp	nc,00119$
-                          20146 ;	main.c 358
+                          20146 ;	main.c 246
                           20147 ; genMinus
                           20148 ; AOP_HL for _badguy2_x
    1218 21 FE 09          20149 	ld	hl,#_badguy2_x + 0
    121B 35                20150 	dec	(hl)
-                          20151 ;	main.c 359
+                          20151 ;	main.c 247
                           20152 ; genCmpGt
                           20153 ; AOP_HL for _badguy2_x
    121C AF                20154 	xor	a,a
    121D 3E F0             20155 	ld	a,#0xF0
    121F 9E                20156 	sbc	a,(hl) ; 2
    1220 D2 43 12          20157 	jp	nc,00117$
-                          20158 ;	main.c 360
+                          20158 ;	main.c 248
                           20159 ; genCall
    1223 CD 00 00          20160 	call	_rand
                           20161 ; AOP_HL for _badguy2_offset
    1226 21 01 0A          20162 	ld	hl,#_badguy2_offset + 0
    1229 73                20163 	ld	(hl),e
-                          20164 ;	main.c 361
+                          20164 ;	main.c 249
                           20165 ; genLabel
    122A                   20166 00113$:
                           20167 ; genCmpGt
@@ -20171,7 +20171,7 @@
    122D 21 01 0A          20171 	ld	hl,#_badguy2_offset + 0
    1230 9E                20172 	sbc	a,(hl) ; 2
    1231 D2 3E 12          20173 	jp	nc,00115$
-                          20174 ;	main.c 362
+                          20174 ;	main.c 250
                           20175 ; genCall
    1234 CD 00 00          20176 	call	_rand
                           20177 ; AOP_HL for _badguy2_offset
@@ -20181,14 +20181,14 @@
    123B C3 2A 12          20181 	jp	00113$
                           20182 ; genLabel
    123E                   20183 00115$:
-                          20184 ;	main.c 365
+                          20184 ;	main.c 253
                           20185 ; genAssign
                           20186 ; AOP_HL for _badguy2_x
    123E 21 FE 09          20187 	ld	hl,#_badguy2_x + 0
    1241 36 EF             20188 	ld	(hl),#0xEF
                           20189 ; genLabel
    1243                   20190 00117$:
-                          20191 ;	main.c 368
+                          20191 ;	main.c 256
                           20192 ; genAssign
                           20193 ; AOP_HL for _badguy2_z
    1243 21 00 0A          20194 	ld	hl,#_badguy2_z + 0
@@ -20211,7 +20211,7 @@
    1254 86                20211 	add	a,(hl)
    1255 21 FF 09          20212 	ld	hl,#_badguy2_y + 0
    1258 77                20213 	ld	(hl),a
-                          20214 ;	main.c 370
+                          20214 ;	main.c 258
                           20215 ; genPlus
                           20216 ; AOP_HL for _badguy2_z
                           20217 ; genPlusIncr
@@ -20219,7 +20219,7 @@
    125C 34                20219 	inc	(hl)
                           20220 ; genLabel
    125D                   20221 00119$:
-                          20222 ;	main.c 374
+                          20222 ;	main.c 262
                           20223 ; genCmpGt
                           20224 ; AOP_HL for _score
    125D 21 F0 09          20225 	ld	hl,#_score + 0
@@ -20231,25 +20231,25 @@
    1266 21 FC 7F          20231 	ld	hl,#0x7FFC
    1269 19                20232 	add	hl,de
    126A D2 B2 12          20233 	jp	nc,00127$
-                          20234 ;	main.c 375
+                          20234 ;	main.c 263
                           20235 ; genMinus
                           20236 ; AOP_HL for _badguy3_x
    126D 21 02 0A          20237 	ld	hl,#_badguy3_x + 0
    1270 35                20238 	dec	(hl)
-                          20239 ;	main.c 376
+                          20239 ;	main.c 264
                           20240 ; genCmpGt
                           20241 ; AOP_HL for _badguy3_x
    1271 AF                20242 	xor	a,a
    1272 3E F0             20243 	ld	a,#0xF0
    1274 9E                20244 	sbc	a,(hl) ; 2
    1275 D2 98 12          20245 	jp	nc,00124$
-                          20246 ;	main.c 377
+                          20246 ;	main.c 265
                           20247 ; genCall
    1278 CD 00 00          20248 	call	_rand
                           20249 ; AOP_HL for _badguy3_offset
    127B 21 05 0A          20250 	ld	hl,#_badguy3_offset + 0
    127E 73                20251 	ld	(hl),e
-                          20252 ;	main.c 378
+                          20252 ;	main.c 266
                           20253 ; genLabel
    127F                   20254 00120$:
                           20255 ; genCmpGt
@@ -20259,7 +20259,7 @@
    1282 21 05 0A          20259 	ld	hl,#_badguy3_offset + 0
    1285 9E                20260 	sbc	a,(hl) ; 2
    1286 D2 93 12          20261 	jp	nc,00122$
-                          20262 ;	main.c 379
+                          20262 ;	main.c 267
                           20263 ; genCall
    1289 CD 00 00          20264 	call	_rand
                           20265 ; AOP_HL for _badguy3_offset
@@ -20269,14 +20269,14 @@
    1290 C3 7F 12          20269 	jp	00120$
                           20270 ; genLabel
    1293                   20271 00122$:
-                          20272 ;	main.c 382
+                          20272 ;	main.c 270
                           20273 ; genAssign
                           20274 ; AOP_HL for _badguy3_x
    1293 21 02 0A          20275 	ld	hl,#_badguy3_x + 0
    1296 36 EF             20276 	ld	(hl),#0xEF
                           20277 ; genLabel
    1298                   20278 00124$:
-                          20279 ;	main.c 385
+                          20279 ;	main.c 273
                           20280 ; genAssign
                           20281 ; AOP_HL for _badguy3_z
    1298 21 04 0A          20282 	ld	hl,#_badguy3_z + 0
@@ -20299,7 +20299,7 @@
    12A9 86                20299 	add	a,(hl)
    12AA 21 03 0A          20300 	ld	hl,#_badguy3_y + 0
    12AD 77                20301 	ld	(hl),a
-                          20302 ;	main.c 387
+                          20302 ;	main.c 275
                           20303 ; genPlus
                           20304 ; AOP_HL for _badguy3_z
                           20305 ; genPlusIncr
@@ -20312,7 +20312,7 @@
    12B2 C1                20312 	pop	bc
    12B3 C9                20313 	ret
    12B4                   20314 ___update_badguy_end:
-                          20315 ;	main.c 392
+                          20315 ;	main.c 280
                           20316 ; genLabel
                           20317 ; genFunction
                           20318 ;	---------------------------------
@@ -20322,7 +20322,7 @@
    12B4                   20322 _collision_detection:
    12B4 C5                20323 	push	bc
                           20324 	
-                          20325 ;	main.c 393
+                          20325 ;	main.c 281
                           20326 ; genMinus
                           20327 ; AOP_HL for _badguy_y
    12B5 21 FB 09          20328 	ld	hl,#_badguy_y + 0
@@ -20336,7 +20336,7 @@
    12BE 21 07 0A          20336 	ld	hl,#_player_shot_y + 0
    12C1 9E                20337 	sbc	a,(hl) ; 2
    12C2 D2 11 13          20338 	jp	nc,00108$
-                          20339 ;	main.c 394
+                          20339 ;	main.c 282
                           20340 ; genPlus
                           20341 ; AOP_HL for _badguy_y
                           20342 ; genPlusIncr
@@ -20352,7 +20352,7 @@
    12D0 7E                20352 	ld	a,(hl)
    12D1 99                20353 	sbc	a,c ; 2
    12D2 D2 11 13          20354 	jp	nc,00108$
-                          20355 ;	main.c 395
+                          20355 ;	main.c 283
                           20356 ; genMinus
                           20357 ; AOP_HL for _badguy_x
    12D5 21 FA 09          20358 	ld	hl,#_badguy_x + 0
@@ -20366,7 +20366,7 @@
    12DE 21 06 0A          20366 	ld	hl,#_player_shot_x + 0
    12E1 9E                20367 	sbc	a,(hl) ; 2
    12E2 D2 11 13          20368 	jp	nc,00108$
-                          20369 ;	main.c 396
+                          20369 ;	main.c 284
                           20370 ; genPlus
                           20371 ; AOP_HL for _badguy_x
                           20372 ; genPlusIncr
@@ -20382,27 +20382,27 @@
    12F0 7E                20382 	ld	a,(hl)
    12F1 99                20383 	sbc	a,c ; 2
    12F2 D2 11 13          20384 	jp	nc,00108$
-                          20385 ;	main.c 397
+                          20385 ;	main.c 285
                           20386 ; genAssign
                           20387 ; AOP_HL for _player_shot_z
    12F5 21 08 0A          20388 	ld	hl,#_player_shot_z + 0
    12F8 36 00             20389 	ld	(hl),#0x00
-                          20390 ;	main.c 398
+                          20390 ;	main.c 286
                           20391 ; genAssign
                           20392 ; AOP_HL for _player_shot_x
    12FA 21 06 0A          20393 	ld	hl,#_player_shot_x + 0
    12FD 36 FA             20394 	ld	(hl),#0xFA
-                          20395 ;	main.c 399
+                          20395 ;	main.c 287
                           20396 ; genAssign
                           20397 ; AOP_HL for _player_shot_y
    12FF 21 07 0A          20398 	ld	hl,#_player_shot_y + 0
    1302 36 FA             20399 	ld	(hl),#0xFA
-                          20400 ;	main.c 400
+                          20400 ;	main.c 288
                           20401 ; genAssign
                           20402 ; AOP_HL for _badguy_x
    1304 21 FA 09          20403 	ld	hl,#_badguy_x + 0
    1307 36 FF             20404 	ld	(hl),#0xFF
-                          20405 ;	main.c 402
+                          20405 ;	main.c 290
                           20406 ; genPlus
                           20407 ; AOP_HL for _score
                           20408 ; genPlusIncr
@@ -20414,7 +20414,7 @@
    1311                   20414 00193$:
                           20415 ; genLabel
    1311                   20416 00108$:
-                          20417 ;	main.c 410
+                          20417 ;	main.c 298
                           20418 ; genMinus
                           20419 ; AOP_HL for _badguy_y
    1311 21 FB 09          20420 	ld	hl,#_badguy_y + 0
@@ -20428,7 +20428,7 @@
    131A 21 F5 09          20428 	ld	hl,#_player_y + 0
    131D 9E                20429 	sbc	a,(hl) ; 2
    131E D2 5F 13          20430 	jp	nc,00116$
-                          20431 ;	main.c 411
+                          20431 ;	main.c 299
                           20432 ; genPlus
                           20433 ; AOP_HL for _badguy_y
                           20434 ; genPlusIncr
@@ -20444,7 +20444,7 @@
    132C 7E                20444 	ld	a,(hl)
    132D 99                20445 	sbc	a,c ; 2
    132E D2 5F 13          20446 	jp	nc,00116$
-                          20447 ;	main.c 412
+                          20447 ;	main.c 300
                           20448 ; genMinus
                           20449 ; AOP_HL for _badguy_x
    1331 21 FA 09          20450 	ld	hl,#_badguy_x + 0
@@ -20458,7 +20458,7 @@
    133A 21 F4 09          20458 	ld	hl,#_player_x + 0
    133D 9E                20459 	sbc	a,(hl) ; 2
    133E D2 5F 13          20460 	jp	nc,00116$
-                          20461 ;	main.c 413
+                          20461 ;	main.c 301
                           20462 ; genPlus
                           20463 ; AOP_HL for _badguy_x
                           20464 ; genPlusIncr
@@ -20474,12 +20474,12 @@
    134C 7E                20474 	ld	a,(hl)
    134D 99                20475 	sbc	a,c ; 2
    134E D2 5F 13          20476 	jp	nc,00116$
-                          20477 ;	main.c 414
+                          20477 ;	main.c 302
                           20478 ; genAssign
                           20479 ; AOP_HL for _playing
    1351 21 F2 09          20480 	ld	hl,#_playing + 0
    1354 36 00             20481 	ld	(hl),#0x00
-                          20482 ;	main.c 415
+                          20482 ;	main.c 303
                           20483 ; genIpush
    1356 21 E8 03          20484 	ld	hl,#0x03E8
    1359 E5                20485 	push	hl
@@ -20488,7 +20488,7 @@
    135D E8 02             20488 	lda	sp,2(sp)
                           20489 ; genLabel
    135F                   20490 00116$:
-                          20491 ;	main.c 421
+                          20491 ;	main.c 309
                           20492 ; genMinus
                           20493 ; AOP_HL for _coin_y
    135F 21 F7 09          20494 	ld	hl,#_coin_y + 0
@@ -20502,7 +20502,7 @@
    1368 21 F5 09          20502 	ld	hl,#_player_y + 0
    136B 9E                20503 	sbc	a,(hl) ; 2
    136C D2 C7 13          20504 	jp	nc,00124$
-                          20505 ;	main.c 422
+                          20505 ;	main.c 310
                           20506 ; genPlus
                           20507 ; AOP_HL for _coin_y
                           20508 ; genPlusIncr
@@ -20518,7 +20518,7 @@
    137A 7E                20518 	ld	a,(hl)
    137B 99                20519 	sbc	a,c ; 2
    137C D2 C7 13          20520 	jp	nc,00124$
-                          20521 ;	main.c 423
+                          20521 ;	main.c 311
                           20522 ; genMinus
                           20523 ; AOP_HL for _coin_x
    137F 21 F6 09          20524 	ld	hl,#_coin_x + 0
@@ -20532,7 +20532,7 @@
    1388 21 F4 09          20532 	ld	hl,#_player_x + 0
    138B 9E                20533 	sbc	a,(hl) ; 2
    138C D2 C7 13          20534 	jp	nc,00124$
-                          20535 ;	main.c 424
+                          20535 ;	main.c 312
                           20536 ; genPlus
                           20537 ; AOP_HL for _coin_x
                           20538 ; genPlusIncr
@@ -20548,36 +20548,36 @@
    139A 7E                20548 	ld	a,(hl)
    139B 99                20549 	sbc	a,c ; 2
    139C D2 C7 13          20550 	jp	nc,00124$
-                          20551 ;	main.c 425
+                          20551 ;	main.c 313
                           20552 ; genAssign
    139F 11 16 FF          20553 	ld	de,#0xFF16
                           20554 ; genAssign (pointer)
    13A2 3E 82             20555 	ld	a,#0x82
    13A4 12                20556 	ld	(de),a
-                          20557 ;	main.c 426
+                          20557 ;	main.c 314
                           20558 ; genAssign
    13A5 11 17 FF          20559 	ld	de,#0xFF17
                           20560 ; genAssign (pointer)
    13A8 3E 54             20561 	ld	a,#0x54
    13AA 12                20562 	ld	(de),a
-                          20563 ;	main.c 427
+                          20563 ;	main.c 315
                           20564 ; genAssign
    13AB 11 18 FF          20565 	ld	de,#0xFF18
                           20566 ; genAssign (pointer)
    13AE 3E 96             20567 	ld	a,#0x96
    13B0 12                20568 	ld	(de),a
-                          20569 ;	main.c 428
+                          20569 ;	main.c 316
                           20570 ; genAssign
    13B1 11 19 FF          20571 	ld	de,#0xFF19
                           20572 ; genAssign (pointer)
    13B4 3E 87             20573 	ld	a,#0x87
    13B6 12                20574 	ld	(de),a
-                          20575 ;	main.c 430
+                          20575 ;	main.c 318
                           20576 ; genAssign
                           20577 ; AOP_HL for _coin_x
    13B7 21 F6 09          20578 	ld	hl,#_coin_x + 0
    13BA 36 FF             20579 	ld	(hl),#0xFF
-                          20580 ;	main.c 431
+                          20580 ;	main.c 319
                           20581 ; genPlus
                           20582 ; AOP_HL for _score
                           20583 ; genPlusIncr
@@ -20591,7 +20591,7 @@
    13C6 77                20591 	ld	(hl),a
                           20592 ; genLabel
    13C7                   20593 00124$:
-                          20594 ;	main.c 437
+                          20594 ;	main.c 325
                           20595 ; genCmpGt
                           20596 ; AOP_HL for _score
    13C7 21 F0 09          20597 	ld	hl,#_score + 0
@@ -20603,7 +20603,7 @@
    13D0 21 FE 7F          20603 	ld	hl,#0x7FFE
    13D3 19                20604 	add	hl,de
    13D4 D2 81 14          20605 	jp	nc,00142$
-                          20606 ;	main.c 438
+                          20606 ;	main.c 326
                           20607 ; genMinus
                           20608 ; AOP_HL for _badguy2_y
    13D7 21 FF 09          20609 	ld	hl,#_badguy2_y + 0
@@ -20617,7 +20617,7 @@
    13E0 21 07 0A          20617 	ld	hl,#_player_shot_y + 0
    13E3 9E                20618 	sbc	a,(hl) ; 2
    13E4 D2 33 14          20619 	jp	nc,00132$
-                          20620 ;	main.c 439
+                          20620 ;	main.c 327
                           20621 ; genPlus
                           20622 ; AOP_HL for _badguy2_y
                           20623 ; genPlusIncr
@@ -20633,7 +20633,7 @@
    13F2 7E                20633 	ld	a,(hl)
    13F3 99                20634 	sbc	a,c ; 2
    13F4 D2 33 14          20635 	jp	nc,00132$
-                          20636 ;	main.c 440
+                          20636 ;	main.c 328
                           20637 ; genMinus
                           20638 ; AOP_HL for _badguy2_x
    13F7 21 FE 09          20639 	ld	hl,#_badguy2_x + 0
@@ -20647,7 +20647,7 @@
    1400 21 06 0A          20647 	ld	hl,#_player_shot_x + 0
    1403 9E                20648 	sbc	a,(hl) ; 2
    1404 D2 33 14          20649 	jp	nc,00132$
-                          20650 ;	main.c 441
+                          20650 ;	main.c 329
                           20651 ; genPlus
                           20652 ; AOP_HL for _badguy2_x
                           20653 ; genPlusIncr
@@ -20663,27 +20663,27 @@
    1412 7E                20663 	ld	a,(hl)
    1413 99                20664 	sbc	a,c ; 2
    1414 D2 33 14          20665 	jp	nc,00132$
-                          20666 ;	main.c 442
+                          20666 ;	main.c 330
                           20667 ; genAssign
                           20668 ; AOP_HL for _player_shot_z
    1417 21 08 0A          20669 	ld	hl,#_player_shot_z + 0
    141A 36 00             20670 	ld	(hl),#0x00
-                          20671 ;	main.c 443
+                          20671 ;	main.c 331
                           20672 ; genAssign
                           20673 ; AOP_HL for _player_shot_x
    141C 21 06 0A          20674 	ld	hl,#_player_shot_x + 0
    141F 36 FA             20675 	ld	(hl),#0xFA
-                          20676 ;	main.c 444
+                          20676 ;	main.c 332
                           20677 ; genAssign
                           20678 ; AOP_HL for _player_shot_y
    1421 21 07 0A          20679 	ld	hl,#_player_shot_y + 0
    1424 36 FA             20680 	ld	(hl),#0xFA
-                          20681 ;	main.c 445
+                          20681 ;	main.c 333
                           20682 ; genAssign
                           20683 ; AOP_HL for _badguy2_x
    1426 21 FE 09          20684 	ld	hl,#_badguy2_x + 0
    1429 36 FF             20685 	ld	(hl),#0xFF
-                          20686 ;	main.c 446
+                          20686 ;	main.c 334
                           20687 ; genPlus
                           20688 ; AOP_HL for _score
                           20689 ; genPlusIncr
@@ -20695,7 +20695,7 @@
    1433                   20695 00194$:
                           20696 ; genLabel
    1433                   20697 00132$:
-                          20698 ;	main.c 453
+                          20698 ;	main.c 341
                           20699 ; genMinus
                           20700 ; AOP_HL for _badguy2_y
    1433 21 FF 09          20701 	ld	hl,#_badguy2_y + 0
@@ -20709,7 +20709,7 @@
    143C 21 F5 09          20709 	ld	hl,#_player_y + 0
    143F 9E                20710 	sbc	a,(hl) ; 2
    1440 D2 81 14          20711 	jp	nc,00142$
-                          20712 ;	main.c 454
+                          20712 ;	main.c 342
                           20713 ; genPlus
                           20714 ; AOP_HL for _badguy2_y
                           20715 ; genPlusIncr
@@ -20725,7 +20725,7 @@
    144E 7E                20725 	ld	a,(hl)
    144F 99                20726 	sbc	a,c ; 2
    1450 D2 81 14          20727 	jp	nc,00142$
-                          20728 ;	main.c 455
+                          20728 ;	main.c 343
                           20729 ; genMinus
                           20730 ; AOP_HL for _badguy2_x
    1453 21 FE 09          20731 	ld	hl,#_badguy2_x + 0
@@ -20739,7 +20739,7 @@
    145C 21 F4 09          20739 	ld	hl,#_player_x + 0
    145F 9E                20740 	sbc	a,(hl) ; 2
    1460 D2 81 14          20741 	jp	nc,00142$
-                          20742 ;	main.c 456
+                          20742 ;	main.c 344
                           20743 ; genPlus
                           20744 ; AOP_HL for _badguy2_x
                           20745 ; genPlusIncr
@@ -20755,12 +20755,12 @@
    146E 7E                20755 	ld	a,(hl)
    146F 99                20756 	sbc	a,c ; 2
    1470 D2 81 14          20757 	jp	nc,00142$
-                          20758 ;	main.c 457
+                          20758 ;	main.c 345
                           20759 ; genAssign
                           20760 ; AOP_HL for _playing
    1473 21 F2 09          20761 	ld	hl,#_playing + 0
    1476 36 00             20762 	ld	(hl),#0x00
-                          20763 ;	main.c 458
+                          20763 ;	main.c 346
                           20764 ; genIpush
    1478 21 E8 03          20765 	ld	hl,#0x03E8
    147B E5                20766 	push	hl
@@ -20769,7 +20769,7 @@
    147F E8 02             20769 	lda	sp,2(sp)
                           20770 ; genLabel
    1481                   20771 00142$:
-                          20772 ;	main.c 465
+                          20772 ;	main.c 353
                           20773 ; genCmpGt
                           20774 ; AOP_HL for _score
    1481 21 F0 09          20775 	ld	hl,#_score + 0
@@ -20781,7 +20781,7 @@
    148A 21 FC 7F          20781 	ld	hl,#0x7FFC
    148D 19                20782 	add	hl,de
    148E D2 3B 15          20783 	jp	nc,00161$
-                          20784 ;	main.c 466
+                          20784 ;	main.c 354
                           20785 ; genMinus
                           20786 ; AOP_HL for _badguy3_y
    1491 21 03 0A          20787 	ld	hl,#_badguy3_y + 0
@@ -20795,7 +20795,7 @@
    149A 21 07 0A          20795 	ld	hl,#_player_shot_y + 0
    149D 9E                20796 	sbc	a,(hl) ; 2
    149E D2 ED 14          20797 	jp	nc,00150$
-                          20798 ;	main.c 467
+                          20798 ;	main.c 355
                           20799 ; genPlus
                           20800 ; AOP_HL for _badguy3_y
                           20801 ; genPlusIncr
@@ -20811,7 +20811,7 @@
    14AC 7E                20811 	ld	a,(hl)
    14AD 99                20812 	sbc	a,c ; 2
    14AE D2 ED 14          20813 	jp	nc,00150$
-                          20814 ;	main.c 468
+                          20814 ;	main.c 356
                           20815 ; genMinus
                           20816 ; AOP_HL for _badguy3_x
    14B1 21 02 0A          20817 	ld	hl,#_badguy3_x + 0
@@ -20825,7 +20825,7 @@
    14BA 21 06 0A          20825 	ld	hl,#_player_shot_x + 0
    14BD 9E                20826 	sbc	a,(hl) ; 2
    14BE D2 ED 14          20827 	jp	nc,00150$
-                          20828 ;	main.c 469
+                          20828 ;	main.c 357
                           20829 ; genPlus
                           20830 ; AOP_HL for _badguy3_x
                           20831 ; genPlusIncr
@@ -20841,27 +20841,27 @@
    14CC 7E                20841 	ld	a,(hl)
    14CD 99                20842 	sbc	a,c ; 2
    14CE D2 ED 14          20843 	jp	nc,00150$
-                          20844 ;	main.c 470
+                          20844 ;	main.c 358
                           20845 ; genAssign
                           20846 ; AOP_HL for _player_shot_z
    14D1 21 08 0A          20847 	ld	hl,#_player_shot_z + 0
    14D4 36 00             20848 	ld	(hl),#0x00
-                          20849 ;	main.c 471
+                          20849 ;	main.c 359
                           20850 ; genAssign
                           20851 ; AOP_HL for _player_shot_x
    14D6 21 06 0A          20852 	ld	hl,#_player_shot_x + 0
    14D9 36 FA             20853 	ld	(hl),#0xFA
-                          20854 ;	main.c 472
+                          20854 ;	main.c 360
                           20855 ; genAssign
                           20856 ; AOP_HL for _player_shot_y
    14DB 21 07 0A          20857 	ld	hl,#_player_shot_y + 0
    14DE 36 FA             20858 	ld	(hl),#0xFA
-                          20859 ;	main.c 473
+                          20859 ;	main.c 361
                           20860 ; genAssign
                           20861 ; AOP_HL for _badguy3_x
    14E0 21 02 0A          20862 	ld	hl,#_badguy3_x + 0
    14E3 36 FF             20863 	ld	(hl),#0xFF
-                          20864 ;	main.c 474
+                          20864 ;	main.c 362
                           20865 ; genPlus
                           20866 ; AOP_HL for _score
                           20867 ; genPlusIncr
@@ -20873,7 +20873,7 @@
    14ED                   20873 00195$:
                           20874 ; genLabel
    14ED                   20875 00150$:
-                          20876 ;	main.c 481
+                          20876 ;	main.c 369
                           20877 ; genMinus
                           20878 ; AOP_HL for _badguy3_y
    14ED 21 03 0A          20879 	ld	hl,#_badguy3_y + 0
@@ -20887,7 +20887,7 @@
    14F6 21 F5 09          20887 	ld	hl,#_player_y + 0
    14F9 9E                20888 	sbc	a,(hl) ; 2
    14FA D2 3B 15          20889 	jp	nc,00161$
-                          20890 ;	main.c 482
+                          20890 ;	main.c 370
                           20891 ; genPlus
                           20892 ; AOP_HL for _badguy3_y
                           20893 ; genPlusIncr
@@ -20903,7 +20903,7 @@
    1508 7E                20903 	ld	a,(hl)
    1509 99                20904 	sbc	a,c ; 2
    150A D2 3B 15          20905 	jp	nc,00161$
-                          20906 ;	main.c 483
+                          20906 ;	main.c 371
                           20907 ; genMinus
                           20908 ; AOP_HL for _badguy3_x
    150D 21 02 0A          20909 	ld	hl,#_badguy3_x + 0
@@ -20917,7 +20917,7 @@
    1516 21 F4 09          20917 	ld	hl,#_player_x + 0
    1519 9E                20918 	sbc	a,(hl) ; 2
    151A D2 3B 15          20919 	jp	nc,00161$
-                          20920 ;	main.c 484
+                          20920 ;	main.c 372
                           20921 ; genPlus
                           20922 ; AOP_HL for _badguy3_x
                           20923 ; genPlusIncr
@@ -20933,12 +20933,12 @@
    1528 7E                20933 	ld	a,(hl)
    1529 99                20934 	sbc	a,c ; 2
    152A D2 3B 15          20935 	jp	nc,00161$
-                          20936 ;	main.c 485
+                          20936 ;	main.c 373
                           20937 ; genAssign
                           20938 ; AOP_HL for _playing
    152D 21 F2 09          20939 	ld	hl,#_playing + 0
    1530 36 00             20940 	ld	(hl),#0x00
-                          20941 ;	main.c 486
+                          20941 ;	main.c 374
                           20942 ; genIpush
    1532 21 E8 03          20943 	ld	hl,#0x03E8
    1535 E5                20944 	push	hl
@@ -20952,7 +20952,7 @@
    153B C1                20952 	pop	bc
    153C C9                20953 	ret
    153D                   20954 ___collision_detection_end:
-                          20955 ;	main.c 496
+                          20955 ;	main.c 384
                           20956 ; genLabel
                           20957 ; genFunction
                           20958 ;	---------------------------------
@@ -20962,22 +20962,22 @@
    153D                   20962 _do_gameplay:
    153D C5                20963 	push	bc
    153E E8 FE             20964 	lda	sp,-2(sp)
-                          20965 ;	main.c 498
+                          20965 ;	main.c 386
                           20966 ; genAssign
                           20967 ; AOP_HL for _playing
    1540 21 F2 09          20968 	ld	hl,#_playing + 0
    1543 36 01             20969 	ld	(hl),#0x01
-                          20970 ;	main.c 500
+                          20970 ;	main.c 388
                           20971 ; genAssign
                           20972 ; AOP_HL for _player_x
    1545 21 F4 09          20973 	ld	hl,#_player_x + 0
    1548 36 50             20974 	ld	(hl),#0x50
-                          20975 ;	main.c 501
+                          20975 ;	main.c 389
                           20976 ; genAssign
                           20977 ; AOP_HL for _player_y
    154A 21 F5 09          20978 	ld	hl,#_player_y + 0
    154D 36 48             20979 	ld	(hl),#0x48
-                          20980 ;	main.c 505
+                          20980 ;	main.c 393
                           20981 ; genLabel
    154F                   20982 00101$:
                           20983 ; genCmpEq
@@ -20990,16 +20990,16 @@
    155A                   20990 00108$:
    155A C3 72 15          20991 	jp	00103$
    155D                   20992 00109$:
-                          20993 ;	main.c 506
+                          20993 ;	main.c 394
                           20994 ; genCall
    155D CD A0 10          20995 	call	_update_joypad
-                          20996 ;	main.c 507
+                          20996 ;	main.c 395
                           20997 ; genCall
    1560 CD 62 11          20998 	call	_update_badguy
-                          20999 ;	main.c 509
+                          20999 ;	main.c 397
                           21000 ; genCall
    1563 CD B4 12          21001 	call	_collision_detection
-                          21002 ;	main.c 510
+                          21002 ;	main.c 398
                           21003 ; genIpush
    1566 21 0A 00          21004 	ld	hl,#0x000A
    1569 E5                21005 	push	hl
@@ -21010,31 +21010,31 @@
    156F C3 4F 15          21010 	jp	00101$
                           21011 ; genLabel
    1572                   21012 00103$:
-                          21013 ;	main.c 513
+                          21013 ;	main.c 401
                           21014 ; genAssign
    1572 11 20 FF          21015 	ld	de,#0xFF20
                           21016 ; genAssign (pointer)
    1575 3E 3F             21017 	ld	a,#0x3F
    1577 12                21018 	ld	(de),a
-                          21019 ;	main.c 514
+                          21019 ;	main.c 402
                           21020 ; genAssign
    1578 11 21 FF          21021 	ld	de,#0xFF21
                           21022 ; genAssign (pointer)
    157B 3E 4B             21023 	ld	a,#0x4B
    157D 12                21024 	ld	(de),a
-                          21025 ;	main.c 515
+                          21025 ;	main.c 403
                           21026 ; genAssign
    157E 11 22 FF          21027 	ld	de,#0xFF22
                           21028 ; genAssign (pointer)
    1581 3E 6F             21029 	ld	a,#0x6F
    1583 12                21030 	ld	(de),a
-                          21031 ;	main.c 516
+                          21031 ;	main.c 404
                           21032 ; genAssign
    1584 11 23 FF          21033 	ld	de,#0xFF23
                           21034 ; genAssign (pointer)
    1587 3E C0             21035 	ld	a,#0xC0
    1589 12                21036 	ld	(de),a
-                          21037 ;	main.c 518
+                          21037 ;	main.c 406
                           21038 ; genAssign
                           21039 ; AOP_STK for _do_gameplay_sloc0_1_0
    158A F8 00             21040 	lda	hl,0(sp)
@@ -21058,7 +21058,7 @@
    159D 56                21058 	ld	d,(hl)
    159E 79                21059 	ld	a,c
    159F 12                21060 	ld	(de),a
-                          21061 ;	main.c 519
+                          21061 ;	main.c 407
                           21062 ; genAssign
                           21063 ; AOP_STK for _do_gameplay_sloc0_1_0
    15A0 2B                21064 	dec	hl
@@ -21082,7 +21082,7 @@
    15B2 56                21082 	ld	d,(hl)
    15B3 79                21083 	ld	a,c
    15B4 12                21084 	ld	(de),a
-                          21085 ;	main.c 520
+                          21085 ;	main.c 408
                           21086 ; genAssign
                           21087 ; AOP_STK for _do_gameplay_sloc0_1_0
    15B5 2B                21088 	dec	hl
@@ -21106,7 +21106,7 @@
    15C7 56                21106 	ld	d,(hl)
    15C8 79                21107 	ld	a,c
    15C9 12                21108 	ld	(de),a
-                          21109 ;	main.c 521
+                          21109 ;	main.c 409
                           21110 ; genIpush
    15CA 21 D5 0A          21111 	ld	hl,#_BGTile + 0
    15CD E5                21112 	push	hl
@@ -21121,7 +21121,7 @@
                           21121 ; genCall
    15D6 CD 00 00          21122 	call	_set_bkg_data
    15D9 E8 04             21123 	lda	sp,4(sp)
-                          21124 ;	main.c 522
+                          21124 ;	main.c 410
                           21125 ; genAssign
                           21126 ; AOP_STK for _do_gameplay_sloc0_1_0
    15DB F8 00             21127 	lda	hl,0(sp)
@@ -21145,7 +21145,7 @@
    15EE 56                21145 	ld	d,(hl)
    15EF 79                21146 	ld	a,c
    15F0 12                21147 	ld	(de),a
-                          21148 ;	main.c 523
+                          21148 ;	main.c 411
                           21149 ; genAssign
                           21150 ; AOP_STK for _do_gameplay_sloc0_1_0
    15F1 2B                21151 	dec	hl
@@ -21169,7 +21169,7 @@
    1603 56                21169 	ld	d,(hl)
    1604 79                21170 	ld	a,c
    1605 12                21171 	ld	(de),a
-                          21172 ;	main.c 524
+                          21172 ;	main.c 412
                           21173 ; genAssign
                           21174 ; AOP_STK for _do_gameplay_sloc0_1_0
    1606 2B                21175 	dec	hl
@@ -21193,7 +21193,7 @@
    1618 56                21193 	ld	d,(hl)
    1619 79                21194 	ld	a,c
    161A 12                21195 	ld	(de),a
-                          21196 ;	main.c 525
+                          21196 ;	main.c 413
                           21197 ; genIpush
                           21198 ; AOP_HL for _score
    161B 21 F0 09          21199 	ld	hl,#_score + 0
@@ -21224,7 +21224,7 @@
         53 63 6F 72 65 3A
         20 25 64
    1653 00                21221 	.db 0x00
-                          21222 ;	main.c 530
+                          21222 ;	main.c 418
                           21223 ; genLabel
                           21224 ; genFunction
                           21225 ;	---------------------------------
@@ -21234,13 +21234,13 @@
    1654                   21229 _draw_title_screen:
    1654 C5                21230 	push	bc
    1655 E8 FE             21231 	lda	sp,-2(sp)
-                          21232 ;	main.c 531
+                          21232 ;	main.c 419
                           21233 ; genCall
    1657 CD 00 00          21234 	call	_wait_vbl_done
-                          21235 ;	main.c 533
+                          21235 ;	main.c 421
                           21236 ; genCall
    165A CD 00 00          21237 	call	_display_off
-                          21238 ;	main.c 535
+                          21238 ;	main.c 423
                           21239 ; genIpush
    165D 21 6D 00          21240 	ld	hl,#_bg_title_tiledata + 0
    1660 E5                21241 	push	hl
@@ -21255,7 +21255,7 @@
                           21250 ; genCall
    1669 CD 00 00          21251 	call	_set_bkg_data
    166C E8 04             21252 	lda	sp,4(sp)
-                          21253 ;	main.c 536
+                          21253 ;	main.c 424
                           21254 ; genIpush
    166E 21 6D 09          21255 	ld	hl,#_bg_title_tilemap + 0
    1671 E5                21256 	push	hl
@@ -21278,7 +21278,7 @@
                           21273 ; genCall
    1682 CD 00 00          21274 	call	_set_bkg_tiles
    1685 E8 06             21275 	lda	sp,6(sp)
-                          21276 ;	main.c 539
+                          21276 ;	main.c 427
                           21277 ; genAssign
                           21278 ; AOP_STK for _draw_title_screen_sloc0_1_0
    1687 F8 00             21279 	lda	hl,0(sp)
@@ -21304,7 +21304,7 @@
    169A 56                21299 	ld	d,(hl)
    169B 79                21300 	ld	a,c
    169C 12                21301 	ld	(de),a
-                          21302 ;	main.c 541
+                          21302 ;	main.c 429
                           21303 ; genAssign
                           21304 ; AOP_STK for _draw_title_screen_sloc0_1_0
    169D 2B                21305 	dec	hl
@@ -21328,7 +21328,7 @@
    16AF 56                21323 	ld	d,(hl)
    16B0 79                21324 	ld	a,c
    16B1 12                21325 	ld	(de),a
-                          21326 ;	main.c 543
+                          21326 ;	main.c 431
                           21327 ; genAssign
                           21328 ; AOP_STK for _draw_title_screen_sloc0_1_0
    16B2 2B                21329 	dec	hl
@@ -21352,10 +21352,10 @@
    16C4 56                21347 	ld	d,(hl)
    16C5 79                21348 	ld	a,c
    16C6 12                21349 	ld	(de),a
-                          21350 ;	main.c 545
+                          21350 ;	main.c 433
                           21351 ; genCall
    16C7 CD 00 00          21352 	call	_wait_vbl_done
-                          21353 ;	main.c 547
+                          21353 ;	main.c 435
                           21354 ; genAssign
                           21355 ; AOP_STK for _draw_title_screen_sloc0_1_0
    16CA F8 00             21356 	lda	hl,0(sp)
@@ -21381,7 +21381,7 @@
    16DD 56                21376 	ld	d,(hl)
    16DE 79                21377 	ld	a,c
    16DF 12                21378 	ld	(de),a
-                          21379 ;	main.c 549
+                          21379 ;	main.c 437
                           21380 ; genIpush
    16E0 3E FF             21381 	ld	a,#0xFF
    16E2 F5                21382 	push	af
@@ -21389,7 +21389,7 @@
                           21384 ; genCall
    16E4 CD 00 00          21385 	call	_waitpad
    16E7 E8 01             21386 	lda	sp,1(sp)
-                          21387 ;	main.c 550
+                          21387 ;	main.c 438
                           21388 ; genIpush
    16E9 3E 80             21389 	ld	a,#0x80
    16EB F5                21390 	push	af
@@ -21401,7 +21401,7 @@
                           21396 ; genCall
    16F1 CD 00 00          21397 	call	_move_win
    16F4 E8 02             21398 	lda	sp,2(sp)
-                          21399 ;	main.c 551
+                          21399 ;	main.c 439
                           21400 ; genAssign
                           21401 ; AOP_STK for _draw_title_screen_sloc0_1_0
    16F6 F8 00             21402 	lda	hl,0(sp)
@@ -21434,7 +21434,7 @@
    170E C1                21429 	pop	bc
    170F C9                21430 	ret
    1710                   21431 ___draw_title_screen_end:
-                          21432 ;	main.c 554
+                          21432 ;	main.c 442
                           21433 ; genLabel
                           21434 ; genFunction
                           21435 ;	---------------------------------
@@ -21444,13 +21444,13 @@
    1710                   21439 _load_game_tiles:
    1710 C5                21440 	push	bc
    1711 E8 FE             21441 	lda	sp,-2(sp)
-                          21442 ;	main.c 555
+                          21442 ;	main.c 443
                           21443 ; genCall
    1713 CD 00 00          21444 	call	_wait_vbl_done
-                          21445 ;	main.c 557
+                          21445 ;	main.c 445
                           21446 ; genCall
    1716 CD 00 00          21447 	call	_display_off
-                          21448 ;	main.c 559
+                          21448 ;	main.c 447
                           21449 ; genIpush
    1719 21 D5 0A          21450 	ld	hl,#_BGTile + 0
    171C E5                21451 	push	hl
@@ -21465,7 +21465,7 @@
                           21460 ; genCall
    1725 CD 00 00          21461 	call	_set_bkg_data
    1728 E8 04             21462 	lda	sp,4(sp)
-                          21463 ;	main.c 561
+                          21463 ;	main.c 449
                           21464 ; genIpush
    172A 21 E0 05          21465 	ld	hl,#_blacktext + 0
    172D E5                21466 	push	hl
@@ -21480,7 +21480,7 @@
                           21475 ; genCall
    1736 CD 00 00          21476 	call	_set_bkg_data
    1739 E8 04             21477 	lda	sp,4(sp)
-                          21478 ;	main.c 562
+                          21478 ;	main.c 450
                           21479 ; genIpush
    173B 21 10 09          21480 	ld	hl,#_bkghallway + 0
    173E E5                21481 	push	hl
@@ -21495,7 +21495,7 @@
                           21490 ; genCall
    1747 CD 00 00          21491 	call	_set_bkg_data
    174A E8 04             21492 	lda	sp,4(sp)
-                          21493 ;	main.c 563
+                          21493 ;	main.c 451
                           21494 ; genIpush
    174C 21 85 0B          21495 	ld	hl,#_hallway + 0
    174F E5                21496 	push	hl
@@ -21518,7 +21518,7 @@
                           21513 ; genCall
    1760 CD 00 00          21514 	call	_set_bkg_tiles
    1763 E8 06             21515 	lda	sp,6(sp)
-                          21516 ;	main.c 566
+                          21516 ;	main.c 454
                           21517 ; genIpush
    1765 21 05 0B          21518 	ld	hl,#_Bloke + 0
    1768 E5                21519 	push	hl
@@ -21533,7 +21533,7 @@
                           21528 ; genCall
    1771 CD 00 00          21529 	call	_set_sprite_data
    1774 E8 04             21530 	lda	sp,4(sp)
-                          21531 ;	main.c 567
+                          21531 ;	main.c 455
                           21532 ; genIpush
    1776 21 F5 0A          21533 	ld	hl,#_Ghost + 0
    1779 E5                21534 	push	hl
@@ -21548,7 +21548,7 @@
                           21543 ; genCall
    1782 CD 00 00          21544 	call	_set_sprite_data
    1785 E8 04             21545 	lda	sp,4(sp)
-                          21546 ;	main.c 568
+                          21546 ;	main.c 456
                           21547 ; genIpush
    1787 21 F5 0A          21548 	ld	hl,#_Ghost + 0
    178A E5                21549 	push	hl
@@ -21563,7 +21563,7 @@
                           21558 ; genCall
    1793 CD 00 00          21559 	call	_set_sprite_data
    1796 E8 04             21560 	lda	sp,4(sp)
-                          21561 ;	main.c 569
+                          21561 ;	main.c 457
                           21562 ; genIpush
    1798 21 F5 0A          21563 	ld	hl,#_Ghost + 0
    179B E5                21564 	push	hl
@@ -21578,7 +21578,7 @@
                           21573 ; genCall
    17A4 CD 00 00          21574 	call	_set_sprite_data
    17A7 E8 04             21575 	lda	sp,4(sp)
-                          21576 ;	main.c 570
+                          21576 ;	main.c 458
                           21577 ; genIpush
    17A9 21 D0 05          21578 	ld	hl,#_Coin + 0
    17AC E5                21579 	push	hl
@@ -21593,7 +21593,7 @@
                           21588 ; genCall
    17B5 CD 00 00          21589 	call	_set_sprite_data
    17B8 E8 04             21590 	lda	sp,4(sp)
-                          21591 ;	main.c 571
+                          21591 ;	main.c 459
                           21592 ; genIpush
    17BA 21 E5 0A          21593 	ld	hl,#_SpriteTiles + 0
    17BD E5                21594 	push	hl
@@ -21608,7 +21608,7 @@
                           21603 ; genCall
    17C6 CD 00 00          21604 	call	_set_sprite_data
    17C9 E8 04             21605 	lda	sp,4(sp)
-                          21606 ;	main.c 572
+                          21606 ;	main.c 460
                           21607 ; genIpush
    17CB 3E 00             21608 	ld	a,#0x00
    17CD F5                21609 	push	af
@@ -21620,7 +21620,7 @@
                           21615 ; genCall
    17D3 CD 00 00          21616 	call	_set_sprite_tile
    17D6 E8 02             21617 	lda	sp,2(sp)
-                          21618 ;	main.c 573
+                          21618 ;	main.c 461
                           21619 ; genIpush
    17D8 3E 01             21620 	ld	a,#0x01
    17DA F5                21621 	push	af
@@ -21632,7 +21632,7 @@
                           21627 ; genCall
    17E0 CD 00 00          21628 	call	_set_sprite_tile
    17E3 E8 02             21629 	lda	sp,2(sp)
-                          21630 ;	main.c 574
+                          21630 ;	main.c 462
                           21631 ; genIpush
    17E5 3E 02             21632 	ld	a,#0x02
    17E7 F5                21633 	push	af
@@ -21644,7 +21644,7 @@
                           21639 ; genCall
    17ED CD 00 00          21640 	call	_set_sprite_tile
    17F0 E8 02             21641 	lda	sp,2(sp)
-                          21642 ;	main.c 575
+                          21642 ;	main.c 463
                           21643 ; genIpush
    17F2 3E 03             21644 	ld	a,#0x03
    17F4 F5                21645 	push	af
@@ -21656,7 +21656,7 @@
                           21651 ; genCall
    17FA CD 00 00          21652 	call	_set_sprite_tile
    17FD E8 02             21653 	lda	sp,2(sp)
-                          21654 ;	main.c 576
+                          21654 ;	main.c 464
                           21655 ; genIpush
    17FF 3E 04             21656 	ld	a,#0x04
    1801 F5                21657 	push	af
@@ -21668,7 +21668,7 @@
                           21663 ; genCall
    1807 CD 00 00          21664 	call	_set_sprite_tile
    180A E8 02             21665 	lda	sp,2(sp)
-                          21666 ;	main.c 577
+                          21666 ;	main.c 465
                           21667 ; genIpush
    180C 3E 05             21668 	ld	a,#0x05
    180E F5                21669 	push	af
@@ -21680,7 +21680,7 @@
                           21675 ; genCall
    1814 CD 00 00          21676 	call	_set_sprite_tile
    1817 E8 02             21677 	lda	sp,2(sp)
-                          21678 ;	main.c 578
+                          21678 ;	main.c 466
                           21679 ; genAssign
                           21680 ; AOP_STK for _load_game_tiles_sloc0_1_0
    1819 F8 00             21681 	lda	hl,0(sp)
@@ -21704,7 +21704,7 @@
    182C 56                21699 	ld	d,(hl)
    182D 79                21700 	ld	a,c
    182E 12                21701 	ld	(de),a
-                          21702 ;	main.c 580
+                          21702 ;	main.c 468
                           21703 ; genAssign
                           21704 ; AOP_STK for _load_game_tiles_sloc0_1_0
    182F 2B                21705 	dec	hl
@@ -21730,7 +21730,7 @@
    1841 56                21725 	ld	d,(hl)
    1842 79                21726 	ld	a,c
    1843 12                21727 	ld	(de),a
-                          21728 ;	main.c 582
+                          21728 ;	main.c 470
                           21729 ; genAssign
                           21730 ; AOP_STK for _load_game_tiles_sloc0_1_0
    1844 2B                21731 	dec	hl
@@ -21756,7 +21756,7 @@
    1856 56                21751 	ld	d,(hl)
    1857 79                21752 	ld	a,c
    1858 12                21753 	ld	(de),a
-                          21754 ;	main.c 584
+                          21754 ;	main.c 472
                           21755 ; genAssign
                           21756 ; AOP_STK for _load_game_tiles_sloc0_1_0
    1859 2B                21757 	dec	hl
