@@ -514,12 +514,12 @@ else if(level==2){
 }
 
 else if(level==3){
-    badguy_i[0]=(count/2)%20;
-    badguy_i[1]=(count/2)%14;
-    badguy_i[2]=((count/2)+10)%20;
-    badguy_i[3]=(count/2)%22;
-    badguy_i[4]=(count/2)%12;
-    badguy_i[5]=(count/2)%24;
+    badguy_i[0]=(count/2)%8;
+    badguy_i[1]=(count/2)%10;
+    badguy_i[2]=(count/2)%14;
+    badguy_i[3]=(count/2)%18;
+    badguy_i[4]=(count/2)%18;
+    badguy_i[5]=(count/2)%17;
 
     //door changer
     
@@ -538,31 +538,31 @@ else if(level==3){
     
     for(q=0; q < 3; q++){
         
-        if(player_y > badguy3_ai[q][1][badguy_i[q]] - 8) {
-            if(player_y < badguy3_ai[q][1][badguy_i[q]] + 8) {
-                if(player_x > badguy3_ai[q][0][badguy_i[q]] - 8) {
-                    if(player_x < badguy3_ai[q][0][badguy_i[q]] + 8) {
+        if(player_y > badguy5_ai[q][1][badguy_i[q]] - 8) {
+            if(player_y < badguy5_ai[q][1][badguy_i[q]] + 8) {
+                if(player_x > badguy5_ai[q][0][badguy_i[q]] - 8) {
+                    if(player_x < badguy5_ai[q][0][badguy_i[q]] + 8) {
                         playing = 0;
                         //delay(1000);
                     }
                 }
             }
-        }
+        }  
 
-        if(player_y > badguy4_ai[q][1][badguy_i[q+3]] - 8) {
-            if(player_y < badguy4_ai[q][1][badguy_i[q+3]] + 8) {
-                if(player_x > badguy4_ai[q][0][badguy_i[q+3]] - 8) {
-                    if(player_x < badguy4_ai[q][0][badguy_i[q+3]] + 8) {
+        if(player_y > badguy6_ai[q][1][badguy_i[q+3]] - 8) {
+            if(player_y < badguy6_ai[q][1][badguy_i[q+3]] + 8) {
+                if(player_x > badguy6_ai[q][0][badguy_i[q+3]] - 8) {
+                    if(player_x < badguy6_ai[q][0][badguy_i[q+3]] + 8) {
                         playing = 0;
                         //delay(1000);
                     }
                 }
             }
         }
-            move_sprite(q+1, badguy3_ai[q][0][badguy_i[q]], badguy3_ai[q][1][badguy_i[q]]);
+            move_sprite(q+1, badguy5_ai[q][0][badguy_i[q]], badguy5_ai[q][1][badguy_i[q]]);
 
         
-            move_sprite(q+4, badguy4_ai[q][0][badguy_i[q+3]], badguy4_ai[q][1][badguy_i[q+3]]);
+            move_sprite(q+4, badguy6_ai[q][0][badguy_i[q+3]], badguy6_ai[q][1][badguy_i[q+3]]);
         
     }
 
