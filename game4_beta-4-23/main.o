@@ -1,6 +1,6 @@
 XL
 H 9 areas 4B global symbols
-M lcc150880
+M lcc196120
 S _reset Ref0000
 S __cpu Ref0000
 S _waitpad Ref0000

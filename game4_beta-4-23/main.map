@@ -353,7 +353,7 @@ MODULES
 	FILE C:\gbdk\lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE main.o
-		NAME lcc150880
+		NAME lcc196120
 LIBRARIES
 	LIBRARY C:\gbdk\lib/small/asxxxx/gb/gb.lib
 		MODULE pad.o
