@@ -809,6 +809,8 @@ void do_gameplay(void) {
     }
     delay(1000);
     HIDE_SPRITES;
+    set_bkg_tiles(0, 0, 20, 18, NULL);
+
     if(deathby == 1)
     {
     printf("  The Wolf has seen\n  you,and has ripped   you apart.\n    Press Start.\n");
